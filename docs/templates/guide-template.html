@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ЗАМЕНИТЬ: title, description, canonical, OG-теги -->
+  <title>GUIDE_TITLE — GAME_NAME | Guides</title>
+  <meta name="description" content="META_DESCRIPTION">
+  <link rel="canonical" href="https://image774477.github.io/Guides/guides/SLUG/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GUIDE_TITLE — GAME_NAME">
+  <meta property="og:description" content="META_DESCRIPTION">
+  <meta property="og:url" content="https://image774477.github.io/Guides/guides/SLUG/">
+  <meta property="og:image" content="https://image774477.github.io/Guides/guides/SLUG/cover.webp">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GUIDE_TITLE — GAME_NAME">
+  <meta name="twitter:description" content="META_DESCRIPTION">
+  <meta name="twitter:image" content="https://image774477.github.io/Guides/guides/SLUG/cover.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/guide.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="guide-header" id="top">
+    <h1 class="guide-header__title">GAME_NAME</h1>
+    <p class="guide-header__subtitle">GUIDE_TITLE</p>
+    <p class="guide-header__description">SUBTITLE_TEXT</p>
+    <div class="guide-header__meta-badges">
+      <!-- ЗАМЕНИТЬ: бейджи платформ, спойлеров, missables, даты -->
+      <span class="badge badge--platform">PS5</span>
+      <span class="badge badge--platform">Xbox</span>
+      <span class="badge badge--platform">PC</span>
+      <span class="badge badge--spoiler">Умеренные спойлеры</span>
+      <time class="badge badge--date" datetime="YYYY-MM-DD">Обновлено: ДД.ММ.ГГГГ</time>
+    </div>
+  </header>
+
+  <!-- ===== RESUME BANNER (hidden, shown by JS if lastStepId exists) ===== -->
+  <div class="resume-banner" id="resume-banner" hidden>
+    <p class="resume-banner__text">Вы остановились на шаге <span id="resume-step-name"></span></p>
+    <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+    <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
+  </div>
+
+  <!-- ===== META SUMMARY ===== -->
+  <section class="meta-summary" aria-label="Сводка">
+    <dl class="meta-summary__list">
+      <!-- ЗАМЕНИТЬ: значения -->
+      <div class="meta-summary__item">
+        <dt>Время</dt>
+        <dd>X–Y часов</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Missables</dt>
+        <dd>Нет / Да</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Точка невозврата</dt>
+        <dd>Нет / Да</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Платформы</dt>
+        <dd>PS5 / Xbox / PC</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Версия</dt>
+        <dd>X.X</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ===== QUICK ACTIONS ===== -->
+  <nav class="quick-actions" aria-label="Быстрые действия">
+    <button class="quick-actions__btn" id="btn-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+    <button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+    <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+  </nav>
+
+  <!-- ===== TABLE OF CONTENTS ===== -->
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
+    <h2 class="toc__heading">Оглавление</h2>
+    <ol class="toc__list">
+      <!-- ЗАМЕНИТЬ: ссылки на секции -->
+      <li class="toc__item"><a class="toc__link" href="#section-1">1. Название секции</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-next">Что дальше</a></li>
+    </ol>
+  </nav>
+
+  <!-- ===== QUICK ROUTE ===== -->
+  <section class="quick-route" id="quick-route">
+    <h2 class="quick-route__heading">Краткий маршрут</h2>
+    <!-- ЗАМЕНИТЬ: краткий маршрут прохождения -->
+    <p>Описание краткого маршрута.</p>
+  </section>
+
+  <!-- ===== MAIN STEPS ===== -->
+  <!-- ЗАМЕНИТЬ: data-guide-id на slug гайда, data-total-steps на число маршрутных шагов -->
+  <main class="guide-content" id="guide-content"
+        data-guide-id="SLUG"
+        data-total-steps="0">
+
+    <section id="section-1" aria-labelledby="section-1-heading">
+      <h2 id="section-1-heading" class="section-heading">1. Название секции</h2>
+
+      <!-- Пример шага. data-step-type: critical | optional | collectible | boss | decision -->
+      <article class="step" id="step-1" data-step-type="critical" data-step-num="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <h3 class="step__title">Название шага</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-1" aria-label="Отметить шаг 1">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-1"
+                    aria-label="Копировать ссылку на шаг 1" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Текст шага.</p>
+
+          <!-- Примеры встраиваемых блоков (раскомментируйте нужные):
+
+          <div class="note">
+            <p><strong>Совет:</strong> текст совета.</p>
+          </div>
+
+          <div class="warning">
+            <p><strong>Важно:</strong> текст предупреждения.</p>
+          </div>
+
+          <div class="missable">
+            <p><strong>Missable:</strong> текст о missable-элементе.</p>
+          </div>
+
+          <div class="platform-note">
+            <p><strong>PS5:</strong> платформенная заметка.</p>
+          </div>
+
+          <details class="spoiler">
+            <summary>Показать спойлер</summary>
+            <p>Скрытый текст.</p>
+          </details>
+
+          <figure class="step__media">
+            <img src="media/step-01.webp"
+                 alt="Описание скриншота"
+                 loading="lazy"
+                 width="1280" height="720">
+            <figcaption>Подпись к изображению</figcaption>
+          </figure>
+
+          -->
+        </div>
+      </article>
+
+      <!-- Добавляйте больше шагов по аналогии -->
+
+    </section>
+
+    <!-- Добавляйте больше секций по аналогии -->
+
+  </main>
+
+  <!-- ===== TROPHY CHECKLIST (справочный, вне основного маршрута) ===== -->
+  <!-- Удалите эту секцию, если в гайде нет трофеев/ачивок -->
+  <section class="trophy-checklist" id="trophy-checklist">
+    <h2 class="trophy-checklist__heading" id="trophy-heading">Трофеи / Ачивки</h2>
+
+    <div class="trophy-checklist__category" id="trophy-cat-a">
+      <h3 class="trophy-checklist__category-title">A. Название категории</h3>
+      <div class="trophy-checklist__item">
+        <label>
+          <input type="checkbox" data-trophy="trophy-name">
+          <span>
+            <span class="trophy-checklist__name">Trophy Name</span>
+            <span class="trophy-checklist__desc"> — описание трофея.</span>
+          </span>
+        </label>
+      </div>
+      <!-- Добавляйте больше трофеев по аналогии -->
+    </div>
+
+    <!-- Добавляйте больше категорий по аналогии -->
+  </section>
+
+  <!-- ===== COMMON MISTAKES ===== -->
+  <section class="mistakes" id="section-mistakes" aria-labelledby="mistakes-heading">
+    <h2 id="mistakes-heading" class="section-heading">Частые ошибки</h2>
+    <ul class="mistakes__list">
+      <!-- ЗАМЕНИТЬ: ошибки -->
+      <li>Описание ошибки.</li>
+    </ul>
+  </section>
+
+  <!-- ===== WHAT NEXT ===== -->
+  <section class="next-guide" id="section-next" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-heading">Что дальше</h2>
+    <p>Другие гайды:</p>
+    <ul class="next-guide__list">
+      <!-- ЗАМЕНИТЬ: ссылки на другие гайды -->
+      <li><a href="../OTHER-SLUG/">Название другого гайда</a></li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="guide-footer">
+    <p>&copy; 2026 image774477. Все данные собраны из открытых источников.</p>
+  </footer>
+
+  <!-- ===== MOBILE ACTION BAR ===== -->
+  <nav class="action-bar" id="action-bar" aria-label="Мобильные действия">
+    <button class="action-bar__btn" id="mob-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+    <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+  </nav>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Scripts (order matters: progress → ui → guide) -->
+  <script src="../../assets/js/progress.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <script src="../../assets/js/guide.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Source files (not part of the published site)
+Сам гайд с разными форматами файлов сам выбери какой удобнее/
+developer brief + план работ по спринтам.txt
+
+# Claude
+.claude/

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Полный гайд к платине — Hades II | Guides</title>
+  <meta name="description" content="Пошаговый маршрут к платиновому трофею Goddess of Nightmares в Hades II на PS5, Xbox и PC. Все 50 трофеев, оружие, фамильяры, True Ending и эндгейм.">
+  <link rel="canonical" href="https://image774477.github.io/Guides/guides/hades-2-platinum/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Полный гайд к платине — Hades II">
+  <meta property="og:description" content="Пошаговый маршрут к платиновому трофею Goddess of Nightmares в Hades II. Все 50 трофеев, оружие, фамильяры и эндгейм.">
+  <meta property="og:url" content="https://image774477.github.io/Guides/guides/hades-2-platinum/">
+  <meta property="og:image" content="https://image774477.github.io/Guides/guides/hades-2-platinum/cover.webp">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Полный гайд к платине — Hades II">
+  <meta name="twitter:description" content="Пошаговый маршрут к платиновому трофею Goddess of Nightmares в Hades II. Все 50 трофеев, оружие, фамильяры и эндгейм.">
+  <meta name="twitter:image" content="https://image774477.github.io/Guides/guides/hades-2-platinum/cover.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/guide.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="guide-header" id="top">
+    <h1 class="guide-header__title">Hades II</h1>
+    <p class="guide-header__subtitle">Полный гайд к платине на консолях</p>
+    <p class="guide-header__description">Рабочий маршрут к Goddess of Nightmares для консольной версии v1.0</p>
+    <div class="guide-header__meta-badges">
+      <span class="badge badge--platform">PS5</span>
+      <span class="badge badge--platform">Xbox Series X|S</span>
+      <span class="badge badge--platform">PC</span>
+      <span class="badge badge--spoiler">Умеренные спойлеры</span>
+      <time class="badge badge--date" datetime="2026-04-14">Обновлено: 14.04.2026</time>
+    </div>
+  </header>
+
+  <!-- ===== RESUME BANNER ===== -->
+  <div class="resume-banner" id="resume-banner" hidden>
+    <p class="resume-banner__text">Вы остановились на шаге <span id="resume-step-name"></span></p>
+    <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+    <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
+  </div>
+
+  <!-- ===== META SUMMARY ===== -->
+  <section class="meta-summary" aria-label="Сводка">
+    <dl class="meta-summary__list">
+      <div class="meta-summary__item">
+        <dt>Время</dt>
+        <dd>60–80 часов</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Missables</dt>
+        <dd>Нет</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Точка невозврата</dt>
+        <dd>Нет</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Платформы</dt>
+        <dd>PS5 / Xbox / PC</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Версия</dt>
+        <dd>1.0 + Patch 1</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ===== QUICK ACTIONS ===== -->
+  <nav class="quick-actions" aria-label="Быстрые действия">
+    <button class="quick-actions__btn" id="btn-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+    <button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+    <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+  </nav>
+
+  <!-- ===== TABLE OF CONTENTS ===== -->
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
+    <h2 class="toc__heading">Оглавление</h2>
+    <ol class="toc__list">
+      <li class="toc__item"><a class="toc__link" href="#section-before-start">1. Что важно знать до первого забега</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-principles">2. Базовые принципы платинового маршрута</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-roadmap">3. Пошаговая дорожная карта</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-resources">4. Ресурсы и приоритеты прокачки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-incantations">5. Crossroads: важные инкантации</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-weapons">6. Оружие, аспекты и hidden aspects</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-familiars">7. Фамильяры</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-endings">8. Death to Chronos, True Ending, Golden Age</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-elysium">9. Elysium и Zagreus</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-endgame">10. Fear, Gift of the Veil и Chaos Trials</a></li>
+      <li class="toc__item"><a class="toc__link" href="#trophy-checklist">Все 50 трофеев</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-next">Что дальше</a></li>
+    </ol>
+  </nav>
+
+  <!-- ===== QUICK ROUTE ===== -->
+  <section class="quick-route" id="quick-route">
+    <h2 class="quick-route__heading">Краткий маршрут</h2>
+    <p>Все keepsakes и 10 bonds → все familiars, прокачка и формы → все weapon aspects и hidden aspects → Gift of the Veil на обоих маршрутах → Elysium/Zagreus и Calling Card → all-random Chaos Trials и Great Chaos Below.</p>
+  </section>
+
+  <!-- ===== MAIN STEPS ===== -->
+  <main class="guide-content" id="guide-content"
+        data-guide-id="hades-2-platinum"
+        data-total-steps="30">
+
+    <!-- ===== SECTION 1: Что важно знать ===== -->
+    <section id="section-before-start" aria-labelledby="section-before-start-heading">
+      <h2 id="section-before-start-heading" class="section-heading">1. Что важно знать до первого забега</h2>
+
+      <article class="step" id="step-1" data-step-type="critical" data-step-num="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <h3 class="step__title">God Mode не блокирует трофеи</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-1" aria-label="Отметить шаг 1">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-1" aria-label="Копировать ссылку на шаг 1" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>God Mode даёт 20% сопротивления урону, добавляет по 2% после каждого неудачного забега и упирается в 80%. Режим можно включать и выключать в любой момент — он не блокирует контент и достижения.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Для платинового маршрута God Mode — штатный инструмент снижения стресса на позднем Fear и в Great Chaos Below.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-2" data-step-type="critical" data-step-num="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <h3 class="step__title">Crossroads — не просто хаб, а лагерь сопротивления</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-2" aria-label="Отметить шаг 2">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-2" aria-label="Копировать ссылку на шаг 2" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Melinoë — ритуальный охотник, чья сила строится через подготовку, повторение и правильный порядок действий. Именно в Crossroads запускаются поздние unlock'и, отношения, ritual-прогресс и эпиложные линии. После каждого забега обходите Crossroads полностью.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-3" data-step-type="critical" data-step-num="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <h3 class="step__title">Не читайте early access-гайды</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-3" aria-label="Отметить шаг 3">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-3" aria-label="Копировать ссылку на шаг 3" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Консольная версия v1.0 и Patch 1 существенно изменили требования к hidden aspects, путь к True Ending и часть prophecy-цепочек. Ранние гайды дают неточную информацию.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Этот гайд составлен под актуальную консольную версию от 14 апреля 2026, а не под early access.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 2: Базовые принципы ===== -->
+    <section id="section-principles" aria-labelledby="section-principles-heading">
+      <h2 id="section-principles-heading" class="section-heading">2. Базовые принципы платинового маршрута</h2>
+
+      <article class="step" id="step-4" data-step-type="critical" data-step-num="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <h3 class="step__title">Каждый забег — минимум два направления</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-4" aria-label="Отметить шаг 4">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-4" aria-label="Копировать ссылку на шаг 4" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Hades II наказывает не за поражения, а за пустые ночи. Каждый забег должен продвигать сюжет, отношения, ресурсы, prophecy-прогресс или конкретный трофей. После каждого забега — обход Crossroads: Cauldron, Broker, питомцы, подарки и диалоги.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-5" data-step-type="critical" data-step-num="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <h3 class="step__title">Underworld и Surface — параллельно</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-5" aria-label="Отметить шаг 5">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-5" aria-label="Копировать ссылку на шаг 5" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Не «сначала низ, потом верх». Трофеи за биомы есть на обоих маршрутах, ресурсы распределены по обоим, а часть NPC и постгейм-цепочек не раскрывается без регулярных surface-забегов. Оптимальный маршрут — чередование.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-6" data-step-type="critical" data-step-num="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <h3 class="step__title">True Ending и Epilogue — разные вещи</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-6" aria-label="Отметить шаг 6">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-6" aria-label="Копировать ссылку на шаг 6" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>На v1.0 игра добавила True Ending и Epilogue как отдельные сюжетные состояния. Patch 1 расширил путь к True Ending. Трофей Golden Age — это Epilogue, а не True Ending. Любой гайд, смешивающий их, неточен.</p>
+          <div class="missable">
+            <p><strong>Не путайте:</strong> Death to Chronos → True Ending → Golden Age (Epilogue) — это три разных этапа, не одно событие.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 3: Дорожная карта ===== -->
+    <section id="section-roadmap" aria-labelledby="section-roadmap-heading">
+      <h2 id="section-roadmap-heading" class="section-heading">3. Пошаговая дорожная карта</h2>
+
+      <article class="step" id="step-7" data-step-type="critical" data-step-num="7">
+        <div class="step__header">
+          <span class="step__number">7</span>
+          <h3 class="step__title">Этап I. Ранний Underworld</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-7" aria-label="Отметить шаг 7">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-7" aria-label="Копировать ссылку на шаг 7" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Первые забеги: поднять Grasp, открыть Arcana, продвинуть Crossroads Cauldron, начать раздавать Nectar. Важны Ashes и Psyche — через них строится базовая сила аккаунта. Закрываются Witch of the Woods, Depths, Plains и Abyss.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-8" data-step-type="critical" data-step-num="8">
+        <div class="step__header">
+          <span class="step__number">8</span>
+          <h3 class="step__title">Этап II. Ранний Surface</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-8" aria-label="Отметить шаг 8">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-8" aria-label="Копировать ссылку на шаг 8" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После первых побед над Chronos — сразу подключайте Surface. Маршрутные трофеи Witch of the Outskirts, Waters, Mountains, Clouds. Surface выводит к Medea, Circe, Prometheus, Typhon. Это не бонусная ветка, а обязательная половина игры.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-9" data-step-type="critical" data-step-num="9">
+        <div class="step__header">
+          <span class="step__number">9</span>
+          <h3 class="step__title">Этап III. Социальная инфраструктура</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-9" aria-label="Отметить шаг 9">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-9" aria-label="Копировать ссылку на шаг 9" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Как можно раньше восстановите Hot Springs, Fishing Pier и Taverna. Это открывает линии к Soothing Soak, Catch of the Night, Ambrosia for Two и ускоряет bonds. Параллельно — прогресс к Close Comrades и Sentimental Value.</p>
+          <div class="missable">
+            <p><strong>Не откладывайте:</strong> Social-инфраструктура — самый частый источник задержек в платиновом прохождении.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-10" data-step-type="critical" data-step-num="10">
+        <div class="step__header">
+          <span class="step__number">10</span>
+          <h3 class="step__title">Этап IV. Оружие, аспекты, Arcana</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-10" aria-label="Отметить шаг 10">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-10" aria-label="Копировать ссылку на шаг 10" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Фокус на Nocturnal Arms, weapon aspects, Arcana completion и Fated List. Закрываются The Arms of Night, Arcana of the Ages, Sword of the Night. Самый длинный, но самый предсказуемый сегмент платины.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-11" data-step-type="critical" data-step-num="11">
+        <div class="step__header">
+          <span class="step__number">11</span>
+          <h3 class="step__title">Этап V. Поздний сюжет</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-11" aria-label="Отметить шаг 11">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-11" aria-label="Копировать ссылку на шаг 11" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Death to Chronos → True Ending → Golden Age. Параллельно: поздний social/prophecy-контент — Hypnos, Dora, Odysseus, Narcissus/Echo, Arachne/Athena, Chaos.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-12" data-step-type="boss" data-step-num="12">
+        <div class="step__header">
+          <span class="step__number">12</span>
+          <h3 class="step__title">Этап VI. Полный эндгейм</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-12" aria-label="Отметить шаг 12">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-12" aria-label="Копировать ссылку на шаг 12" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Elysium, Gift of the Veil, Chaos Trials, добор keepsakes, familiars, hidden aspects и prophecy-трофеев. Здесь остаются самые редкие: Elysian Glory, Mercy Night's Executioner, Chaos in Hell, Improbable Outcomes, Unfamiliar Forms.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 4: Ресурсы ===== -->
+    <section id="section-resources" aria-labelledby="section-resources-heading">
+      <h2 id="section-resources-heading" class="section-heading">4. Ресурсы и приоритеты прокачки</h2>
+
+      <article class="step" id="step-13" data-step-type="critical" data-step-num="13">
+        <div class="step__header">
+          <span class="step__number">13</span>
+          <h3 class="step__title">Пять групп ресурсов</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-13" aria-label="Отметить шаг 13">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-13" aria-label="Копировать ссылку на шаг 13" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p><strong>Ashes + Psyche</strong> → Altar of Ashes и Grasp. <strong>Silver / Cinder / Bronze / Glassrock / Adamant</strong> → оружие. <strong>Nectar / Ambrosia</strong> → keepsakes и bonds. <strong>Witch's Delight</strong> → familiars. <strong>Nightmare + Moon Dust</strong> → аспекты и Arcana.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Все 6 Nocturnal Arms открываются обычными реагентами (19 Silver, 5 Cinder, 1 Bronze, 2 Glassrock, 2 Adamant), не Nightmare'ами.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-14" data-step-type="optional" data-step-num="14">
+        <div class="step__header">
+          <span class="step__number">14</span>
+          <h3 class="step__title">Nectar и Witch's Delight — тратьте рано</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-14" aria-label="Отметить шаг 14">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-14" aria-label="Копировать ссылку на шаг 14" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Не складируйте Nectar и Witch's Delight. Nectar подталкивает Sentimental Value и Close Comrades, Witch's Delight — Animal Whisperer, Beast Master и Unfamiliar Forms. Оба выгоднее тратить рано и регулярно.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 5: Инкантации ===== -->
+    <section id="section-incantations" aria-labelledby="section-incantations-heading">
+      <h2 id="section-incantations-heading" class="section-heading">5. Crossroads: важные инкантации</h2>
+
+      <article class="step" id="step-15" data-step-type="critical" data-step-num="15">
+        <div class="step__header">
+          <span class="step__number">15</span>
+          <h3 class="step__title">Social-инфраструктура: три ключевые инкантации</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-15" aria-label="Отметить шаг 15">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-15" aria-label="Копировать ссылку на шаг 15" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p><strong>Rite of Vapor-Cleansing</strong> → Hot Springs (2 Moly, 2 Lotus, 2 Nightshade). <strong>Rite of River-Fording</strong> → Fishing Pier (2 Cattail, 4 Driftwood). <strong>Rite of Social Solidarity</strong> → Taverna (2 Nectar, 2 Garlic).</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-16" data-step-type="critical" data-step-num="16">
+        <div class="step__header">
+          <span class="step__number">16</span>
+          <h3 class="step__title">Familiars и Chaos Trials</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-16" aria-label="Отметить шаг 16">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-16" aria-label="Копировать ссылку на шаг 16" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p><strong>Faith of Familiar Spirits</strong> (1 Lotus + 2 Nectar) — открывает рекрут фамильяров. <strong>Abyssal Insight</strong> (2 Moly, 2 Nightshade, 2 Fate Fabric, 2 Pearl) — активирует Pitch-Black Stone для Chaos Trials.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 6: Оружие ===== -->
+    <section id="section-weapons" aria-labelledby="section-weapons-heading">
+      <h2 id="section-weapons-heading" class="section-heading">6. Оружие, аспекты и hidden aspects</h2>
+
+      <article class="step" id="step-17" data-step-type="critical" data-step-num="17">
+        <div class="step__header">
+          <span class="step__number">17</span>
+          <h3 class="step__title">Порядок прокачки оружия</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-17" aria-label="Отметить шаг 17">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-17" aria-label="Копировать ссылку на шаг 17" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Закрывайте пакетами: открыть все 6 оружий → выбрать одно стабильное → довести не-Mel аспект до Rank V → получить hidden phrase → открыть hidden aspect → следующее оружие. Экономит Nightmare и снижает риск ложных тупиков.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> После v1.0 требования к hidden aspects строже, чем в ранних гайдах. Нужны все 6 оружий, все аспекты нужного оружия и хотя бы один не-Melinoë аспект на Rank V.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-18" data-step-type="collectible" data-step-num="18">
+        <div class="step__header">
+          <span class="step__number">18</span>
+          <h3 class="step__title">NPC-связки для hidden aspects</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-18" aria-label="Отметить шаг 18">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-18" aria-label="Копировать ссылку на шаг 18" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Circe — Staff, Artemis — Blades, Moros — Flames, Charon — Axe, Medea — Skull, Selene — Black Coat.</p>
+          <details class="spoiler">
+            <summary>Подробнее про Selene</summary>
+            <p>У Selene цепочка менее очевидна из-за формата её появления. Waking phrases иногда задерживаются из-за очереди обычных диалогов.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 7: Фамильяры ===== -->
+    <section id="section-familiars" aria-labelledby="section-familiars-heading">
+      <h2 id="section-familiars-heading" class="section-heading">7. Фамильяры</h2>
+
+      <article class="step" id="step-19" data-step-type="collectible" data-step-num="19">
+        <div class="step__header">
+          <span class="step__number">19</span>
+          <h3 class="step__title">Рекрут, прокачка и формы</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-19" aria-label="Отметить шаг 19">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-19" aria-label="Копировать ссылку на шаг 19" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Три ступени трофеев: Animal Whisperer (рекрутировать всех) → Beast Master (полностью прокачать) → Unfamiliar Forms (сменить облик каждого). Откройте систему рано, тратьте Witch's Delight регулярно, берите разных спутников в забеги.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 8: Endings ===== -->
+    <section id="section-endings" aria-labelledby="section-endings-heading">
+      <h2 id="section-endings-heading" class="section-heading">8. Death to Chronos, True Ending, Golden Age</h2>
+
+      <article class="step" id="step-20" data-step-type="boss" data-step-num="20">
+        <div class="step__header">
+          <span class="step__number">20</span>
+          <h3 class="step__title">Три этапа завершения сюжета</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-20" aria-label="Отметить шаг 20">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-20" aria-label="Копировать ссылку на шаг 20" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Death to Chronos — завершение боевой задачи. True Ending — расширен в Patch 1. Golden Age — Epilogue, проходит через prophecy-линии и Moros's Engraved Pin.</p>
+          <details class="spoiler">
+            <summary>Как работает эпиложная механика</summary>
+            <p>В Oceanus нужно активировать эффект пина три раза в последовательных encounter-комнатах, выживая, а затем умереть в четвёртой. Это часть поздней story-прогрессии, не exploit.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 9: Elysium ===== -->
+    <section id="section-elysium" aria-labelledby="section-elysium-heading">
+      <h2 id="section-elysium-heading" class="section-heading">9. Elysium и Zagreus</h2>
+
+      <article class="step" id="step-21" data-step-type="boss" data-step-num="21">
+        <div class="step__header">
+          <span class="step__number">21</span>
+          <h3 class="step__title">Contest of Champions</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-21" aria-label="Отметить шаг 21">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-21" aria-label="Копировать ссылку на шаг 21" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После True Ending в магазинах Харона появляется Infernal Contract → Elysium → Contest of Champions против Zagreus (Elysian Glory). После второй победы — keepsake Calling Card. Нужен для Sentimental Value.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== SECTION 10: Эндгейм ===== -->
+    <section id="section-endgame" aria-labelledby="section-endgame-heading">
+      <h2 id="section-endgame-heading" class="section-heading">10. Fear, Gift of the Veil и Chaos Trials</h2>
+
+      <article class="step" id="step-22" data-step-type="boss" data-step-num="22">
+        <div class="step__header">
+          <span class="step__number">22</span>
+          <h3 class="step__title">Gift of the Veil: две ступени</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-22" aria-label="Отметить шаг 22">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-22" aria-label="Копировать ссылку на шаг 22" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Stone statue: 6 Fear Surface + 8 Fear Underworld (Behold Night's Champion). Silver statue: 12 Fear Surface + 16 Fear Underworld (Mercy, Night's Executioner). Пороги разные для двух маршрутов.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> High-Fear забеги лучше оставить на поздний аккаунт, когда собраны Arcana, aspects, keepsakes и familiars.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-23" data-step-type="boss" data-step-num="23">
+        <div class="step__header">
+          <span class="step__number">23</span>
+          <h3 class="step__title">Chaos Trials: три разных трофея</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-23" aria-label="Отметить шаг 23">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-23" aria-label="Копировать ссылку на шаг 23" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p><strong>Infinite Possibility</strong> — пройти 20 Chaos Trials. <strong>Improbable Outcomes</strong> — две подряд успешные all-random Chaos Trials. <strong>Chaos in Hell</strong> — пройти Great Chaos Below.</p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- ===== TROPHY CHECKLIST ===== -->
+  <section class="trophy-checklist" id="trophy-checklist">
+    <h2 class="trophy-checklist__heading" id="trophy-heading">Все 50 трофеев по категориям</h2>
+
+    <!-- A. Сюжет и зачистка маршрутов -->
+    <div class="trophy-checklist__category" id="trophy-cat-a">
+      <h3 class="trophy-checklist__category-title">A. Сюжет и зачистка маршрутов</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-woods"><span><span class="trophy-checklist__name">Witch of the Woods</span><span class="trophy-checklist__desc"> — очистить Erebus.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-depths"><span><span class="trophy-checklist__name">Witch of the Depths</span><span class="trophy-checklist__desc"> — очистить Oceanus.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-plains"><span><span class="trophy-checklist__name">Witch of the Plains</span><span class="trophy-checklist__desc"> — очистить Fields of Mourning.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-abyss"><span><span class="trophy-checklist__name">Witch of the Abyss</span><span class="trophy-checklist__desc"> — очистить Tartarus.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-outskirts"><span><span class="trophy-checklist__name">Witch of the Outskirts</span><span class="trophy-checklist__desc"> — очистить City of Ephyra.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-waters"><span><span class="trophy-checklist__name">Witch of the Waters</span><span class="trophy-checklist__desc"> — очистить Rift of Thessaly.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-mountains"><span><span class="trophy-checklist__name">Witch of the Mountains</span><span class="trophy-checklist__desc"> — очистить Mount Olympus.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-clouds"><span><span class="trophy-checklist__name">Witch of the Clouds</span><span class="trophy-checklist__desc"> — очистить the Summit.</span></span></label></div>
+    </div>
+
+    <!-- B. Поздний сюжет и постгейм -->
+    <div class="trophy-checklist__category" id="trophy-cat-b">
+      <h3 class="trophy-checklist__category-title">B. Поздний сюжет и постгейм</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="death-chronos"><span><span class="trophy-checklist__name">Death to Chronos</span><span class="trophy-checklist__desc"> — завершить главную задачу Melinoë.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="golden-age"><span><span class="trophy-checklist__name">Golden Age</span><span class="trophy-checklist__desc"> — дойти до story epilogue.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="elysian-glory"><span><span class="trophy-checklist__name">Elysian Glory</span><span class="trophy-checklist__desc"> — победить в Contest of Champions.</span></span></label></div>
+    </div>
+
+    <!-- C. Crossroads, отношения и keepsakes -->
+    <div class="trophy-checklist__category" id="trophy-cat-c">
+      <h3 class="trophy-checklist__category-title">C. Crossroads, отношения и keepsakes</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="so-mote"><span><span class="trophy-checklist__name">So Mote It Be</span><span class="trophy-checklist__desc"> — провести 50 инкантаций.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="soothing-soak"><span><span class="trophy-checklist__name">Soothing Soak</span><span class="trophy-checklist__desc"> — сводить союзника в Hot Springs.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="catch-night"><span><span class="trophy-checklist__name">Catch of the Night</span><span class="trophy-checklist__desc"> — сводить союзника к Fishing Pier.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="ambrosia-two"><span><span class="trophy-checklist__name">Ambrosia for Two</span><span class="trophy-checklist__desc"> — сводить союзника в Taverna.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="close-comrades"><span><span class="trophy-checklist__name">Close Comrades</span><span class="trophy-checklist__desc"> — сформировать 10 bonds.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sentimental-value"><span><span class="trophy-checklist__name">Sentimental Value</span><span class="trophy-checklist__desc"> — собрать все keepsakes.</span></span></label></div>
+    </div>
+
+    <!-- D. Arcana и Altar of Ashes -->
+    <div class="trophy-checklist__category" id="trophy-cat-d">
+      <h3 class="trophy-checklist__category-title">D. Arcana и Altar of Ashes</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="mind-magick"><span><span class="trophy-checklist__name">Mind for Magick</span><span class="trophy-checklist__desc"> — довести Grasp до 30.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="breadth-knowledge"><span><span class="trophy-checklist__name">Breadth of Knowledge</span><span class="trophy-checklist__desc"> — открыть все Arcana.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unassailable-insight"><span><span class="trophy-checklist__name">Unassailable Insight</span><span class="trophy-checklist__desc"> — полностью улучшить все Arcana.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="arcana-ages"><span><span class="trophy-checklist__name">Arcana of the Ages</span><span class="trophy-checklist__desc"> — prophecy: победы с каждой Arcana против Chronos.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="natural-talent"><span><span class="trophy-checklist__name">Natural Talent</span><span class="trophy-checklist__desc"> — победа над Hecate без активных Arcana.</span></span></label></div>
+    </div>
+
+    <!-- E. Оружие и боевые трофеи -->
+    <div class="trophy-checklist__category" id="trophy-cat-e">
+      <h3 class="trophy-checklist__category-title">E. Оружие и боевые трофеи</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="arms-night"><span><span class="trophy-checklist__name">The Arms of Night</span><span class="trophy-checklist__desc"> — открыть все Nocturnal Arms.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sword-night"><span><span class="trophy-checklist__name">Sword of the Night</span><span class="trophy-checklist__desc"> — победа на Вершине всеми 6 видами оружия.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unseen-sentinel"><span><span class="trophy-checklist__name">The Unseen Sentinel</span><span class="trophy-checklist__desc"> — все аспекты всех оружий.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="bearing-dark"><span><span class="trophy-checklist__name">Bearing Dark Gifts</span><span class="trophy-checklist__desc"> — победы всеми аспектами.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="breaking-band"><span><span class="trophy-checklist__name">Breaking Up the Band</span><span class="trophy-checklist__desc"> — поднять Siren через Night Bloom.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sheeps-clothing"><span><span class="trophy-checklist__name">Sheep's Clothing</span><span class="trophy-checklist__desc"> — убить Sister of the Dead под Twilight Curse.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="dressed-kill"><span><span class="trophy-checklist__name">Dressed to Kill</span><span class="trophy-checklist__desc"> — финальное противостояние в наряде Arachne.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="fair-fight"><span><span class="trophy-checklist__name">Fair Fight</span><span class="trophy-checklist__desc"> — 1,000 Gold в состязаниях с Nemesis.</span></span></label></div>
+    </div>
+
+    <!-- F. Фамильяры и рыбалка -->
+    <div class="trophy-checklist__category" id="trophy-cat-f">
+      <h3 class="trophy-checklist__category-title">F. Фамильяры и рыбалка</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="animal-whisperer"><span><span class="trophy-checklist__name">Animal Whisperer</span><span class="trophy-checklist__desc"> — завербовать всех familiars.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="beast-master"><span><span class="trophy-checklist__name">Beast Master</span><span class="trophy-checklist__desc"> — полностью прокачать всех familiars.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unfamiliar-forms"><span><span class="trophy-checklist__name">Unfamiliar Forms</span><span class="trophy-checklist__desc"> — изменить облик каждого familiar.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="familiar-confidant"><span><span class="trophy-checklist__name">Familiar Confidant</span><span class="trophy-checklist__desc"> — prophecy на Frinos.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="denizens-depths"><span><span class="trophy-checklist__name">Denizens of the Depths</span><span class="trophy-checklist__desc"> — поймать 20 разных видов рыбы.</span></span></label></div>
+    </div>
+
+    <!-- G. Персональные prophecy-цепочки -->
+    <div class="trophy-checklist__category" id="trophy-cat-g">
+      <h3 class="trophy-checklist__category-title">G. Персональные prophecy-цепочки</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="born-win"><span><span class="trophy-checklist__name">Born to Win</span><span class="trophy-checklist__desc"> — prophecy Хаоса.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="haunted-past"><span><span class="trophy-checklist__name">Haunted by the Past</span><span class="trophy-checklist__desc"> — prophecy Dora.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="soundest-sleepers"><span><span class="trophy-checklist__name">Soundest of Sleepers</span><span class="trophy-checklist__desc"> — prophecy Hypnos.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="voice-vanity"><span><span class="trophy-checklist__name">Voice and Vanity</span><span class="trophy-checklist__desc"> — prophecy Narcissus и Echo.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unfinished-business"><span><span class="trophy-checklist__name">Unfinished Business</span><span class="trophy-checklist__desc"> — prophecy Odysseus.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="silk-spite"><span><span class="trophy-checklist__name">Silk and Spitefulness</span><span class="trophy-checklist__desc"> — prophecy Arachne/Athena.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="hand-fates"><span><span class="trophy-checklist__name">Hand of the Fates</span><span class="trophy-checklist__desc"> — выполнить 60 Minor Prophecies.</span></span></label></div>
+    </div>
+
+    <!-- H. Fear, Chaos и поздний эндгейм -->
+    <div class="trophy-checklist__category" id="trophy-cat-h">
+      <h3 class="trophy-checklist__category-title">H. Fear, Chaos и поздний эндгейм</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="behold-champion"><span><span class="trophy-checklist__name">Behold Night's Champion</span><span class="trophy-checklist__desc"> — первый Gift of the Veil.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="mercy-executioner"><span><span class="trophy-checklist__name">Mercy, Night's Executioner</span><span class="trophy-checklist__desc"> — второй Gift of the Veil.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="infinite-possibility"><span><span class="trophy-checklist__name">Infinite Possibility</span><span class="trophy-checklist__desc"> — пройти 20 Chaos Trials.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="improbable-outcomes"><span><span class="trophy-checklist__name">Improbable Outcomes</span><span class="trophy-checklist__desc"> — две подряд all-random Chaos Trials.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="chaos-hell"><span><span class="trophy-checklist__name">Chaos in Hell</span><span class="trophy-checklist__desc"> — пройти Great Chaos Below.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="giving-back"><span><span class="trophy-checklist__name">Giving Back</span><span class="trophy-checklist__desc"> — заработать 10,000 Kudos.</span></span></label></div>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unrivaled-prowess"><span><span class="trophy-checklist__name">Unrivaled Prowess</span><span class="trophy-checklist__desc"> — guardian-бои с Vow of Rivals на обоих маршрутах.</span></span></label></div>
+    </div>
+
+    <!-- I. Платина -->
+    <div class="trophy-checklist__category" id="trophy-cat-i">
+      <h3 class="trophy-checklist__category-title">I. Платина</h3>
+      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="goddess-nightmares"><span><span class="trophy-checklist__name">Goddess of Nightmares</span><span class="trophy-checklist__desc"> — получить все остальные трофеи.</span></span></label></div>
+    </div>
+  </section>
+
+  <!-- ===== COMMON MISTAKES ===== -->
+  <section class="mistakes" id="section-mistakes" aria-labelledby="mistakes-heading">
+    <h2 id="mistakes-heading" class="section-heading">Частые ошибки</h2>
+    <ul class="mistakes__list">
+      <li>Путать True Ending и Epilogue (Golden Age) — это разные сюжетные состояния.</li>
+      <li>Откладывать social-инфраструктуру (Hot Springs, Fishing Pier, Taverna) на конец игры.</li>
+      <li>Читать early access-гайды как руководство к релизной версии v1.0.</li>
+      <li>Пытаться открыть hidden aspects без Rank V на не-Melinoë аспекте.</li>
+      <li>Складировать Nectar и Witch's Delight вместо регулярной раздачи.</li>
+      <li>Проходить только Underworld, игнорируя Surface-маршрут.</li>
+    </ul>
+  </section>
+
+  <!-- ===== WHAT NEXT ===== -->
+  <section class="next-guide" id="section-next" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-heading">Что дальше</h2>
+    <p>Скоро здесь появятся ссылки на другие гайды.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="guide-footer">
+    <p>&copy; 2026 image774477. Все данные собраны из открытых источников.</p>
+  </footer>
+
+  <!-- ===== MOBILE ACTION BAR ===== -->
+  <nav class="action-bar" id="action-bar" aria-label="Мобильные действия">
+    <button class="action-bar__btn" id="mob-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+    <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+  </nav>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/progress.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <script src="../../assets/js/guide.js"></script>
+</body>
+</html>
