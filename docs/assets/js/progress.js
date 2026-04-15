@@ -14,7 +14,8 @@ window.Guide.Progress = (function () {
     checkedTrophies: [],
     lastStepId: null,
     viewMode: 'all',
-    spoilersHidden: false
+    spoilersHidden: false,
+    achievementShown: false
   };
 
   function _getKey(guideId) {
@@ -32,7 +33,8 @@ window.Guide.Progress = (function () {
         checkedTrophies: Array.isArray(parsed.checkedTrophies) ? parsed.checkedTrophies : [],
         lastStepId: parsed.lastStepId || null,
         viewMode: parsed.viewMode === 'story' ? 'story' : 'all',
-        spoilersHidden: !!parsed.spoilersHidden
+        spoilersHidden: !!parsed.spoilersHidden,
+        achievementShown: !!parsed.achievementShown
       };
     } catch (e) {
       return _copy(DEFAULT_STATE);
@@ -104,6 +106,12 @@ window.Guide.Progress = (function () {
     getTrophyCount: function (guideId) {
       var state = _load(guideId);
       return state.checkedTrophies.length;
+    },
+
+    setAchievementShown: function (guideId, shown) {
+      var state = _load(guideId);
+      state.achievementShown = !!shown;
+      _save(guideId, state);
     },
 
     clearProgress: function (guideId) {
