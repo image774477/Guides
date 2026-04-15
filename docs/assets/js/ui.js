@@ -1,42 +1,168 @@
 /**
  * Guide UI — interaction handlers
- * Spoiler toggle, story mode, lightbox, TOC overlay, highlight, clipboard, scroll.
+ * Top controls: scrollToToc, saveCurrentReadingPosition, restoreCurrentReadingPosition,
+ * toggleStoryOnly, toggleSpoilers.
+ * Plus: lightbox, highlight, clipboard, scrollToStep.
  */
 window.Guide = window.Guide || {};
 
 window.Guide.UI = (function () {
   'use strict';
 
+  /* ---- private state ---- */
+
+  // Saved scroll position for "Вернуться к моему месту"
+  var _savedPositionStepId = null;
+  // Mobile breakpoint must match CSS @media
+  var MOBILE_BP = 768;
+
+  function _isMobile() {
+    return window.innerWidth <= MOBILE_BP;
+  }
+
+  function _fallbackCopy(text) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      return true;
+    } catch (e) {
+      return false;
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  }
+
+  /* ---- TOC overlay (mobile-only state) ---- */
+
+  var _tocEl = null;
+
+  function _openTocOverlay() {
+    if (!_tocEl) return;
+    _tocEl.classList.add('toc--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function _closeTocOverlay() {
+    if (!_tocEl) return;
+    _tocEl.classList.remove('toc--open');
+    document.body.style.overflow = '';
+  }
+
+  /* ---- public API ---- */
+
   return {
     /**
-     * Spoiler toggle: adds/removes body.spoilers-hidden,
-     * closes all open <details class="spoiler">.
+     * scrollToToc — desktop: smooth scroll to #toc; mobile: open overlay.
+     * The desktop button must NOT set overflow:hidden.
      */
-    initSpoilerToggle: function (btn, bodyEl) {
+    scrollToToc: function () {
+      var tocEl = document.getElementById('toc');
+      if (!tocEl) return;
+
+      if (_isMobile()) {
+        _openTocOverlay();
+      } else {
+        tocEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    },
+
+    /**
+     * Save the user's current reading position (step id) so they can
+     * navigate away (e.g. to TOC) and return.
+     * Source of truth: the topmost visible step tracked by IntersectionObserver
+     * and stored via Guide.Progress.setLastStep().
+     * This function snapshots that value into a session variable.
+     */
+    saveCurrentReadingPosition: function (guideId) {
+      if (!guideId) return;
+      var state = Guide.Progress.getState(guideId);
+      _savedPositionStepId = state.lastStepId || null;
+    },
+
+    /**
+     * Restore the saved reading position — scroll to the step that was
+     * active when saveCurrentReadingPosition was last called.
+     * Falls back to the lastStepId in localStorage if no explicit save
+     * was made this session.
+     */
+    restoreCurrentReadingPosition: function (guideId) {
+      var targetId = _savedPositionStepId;
+      if (!targetId && guideId) {
+        targetId = Guide.Progress.getState(guideId).lastStepId;
+      }
+      if (targetId) {
+        Guide.UI.scrollToStep(targetId);
+      }
+    },
+
+    /**
+     * Get whether we have a saved reading position.
+     */
+    hasSavedPosition: function (guideId) {
+      if (_savedPositionStepId) return true;
+      if (guideId) {
+        var state = Guide.Progress.getState(guideId);
+        return !!state.lastStepId;
+      }
+      return false;
+    },
+
+    /**
+     * toggleSpoilers — toggle body.spoilers-hidden,
+     * close all open <details class="spoiler">, update button state.
+     * Returns the new isHidden state.
+     */
+    toggleSpoilers: function (btn) {
+      var isHidden = document.body.classList.toggle('spoilers-hidden');
+      if (btn) {
+        btn.textContent = isHidden ? 'Показать спойлеры' : 'Скрыть спойлеры';
+        btn.classList.toggle('active', isHidden);
+      }
+      if (isHidden) {
+        var openSpoilers = document.querySelectorAll('details.spoiler[open]');
+        for (var i = 0; i < openSpoilers.length; i++) {
+          openSpoilers[i].removeAttribute('open');
+        }
+      }
+      return isHidden;
+    },
+
+    /**
+     * toggleStoryOnly — toggle body.story-only, update button state.
+     * Returns the new isStory state.
+     */
+    toggleStoryOnly: function (btn) {
+      var isStory = document.body.classList.toggle('story-only');
+      if (btn) {
+        btn.textContent = isStory ? 'Все шаги' : 'Только сюжет';
+        btn.classList.toggle('active', isStory);
+      }
+      return isStory;
+    },
+
+    /**
+     * Init spoiler button (convenience — wires click + persistence callback).
+     */
+    initSpoilerToggle: function (btn, onToggle) {
       if (!btn) return;
       btn.addEventListener('click', function () {
-        var isHidden = bodyEl.classList.toggle('spoilers-hidden');
-        btn.textContent = isHidden ? 'Показать спойлеры' : 'Скрыть спойлеры';
-        if (isHidden) {
-          var openSpoilers = document.querySelectorAll('details.spoiler[open]');
-          for (var i = 0; i < openSpoilers.length; i++) {
-            openSpoilers[i].removeAttribute('open');
-          }
-        }
-        btn.classList.toggle('active', isHidden);
+        var isHidden = Guide.UI.toggleSpoilers(btn);
+        if (typeof onToggle === 'function') onToggle(isHidden);
       });
     },
 
     /**
-     * Story-only mode: toggles body.story-only,
-     * hides optional and collectible steps.
+     * Init story mode button (convenience — wires click + persistence callback).
      */
-    initStoryMode: function (btn, bodyEl) {
+    initStoryMode: function (btn, onToggle) {
       if (!btn) return;
       btn.addEventListener('click', function () {
-        var isStory = bodyEl.classList.toggle('story-only');
-        btn.textContent = isStory ? 'Все шаги' : 'Только сюжет';
-        btn.classList.toggle('active', isStory);
+        var isStory = Guide.UI.toggleStoryOnly(btn);
+        if (typeof onToggle === 'function') onToggle(isStory);
       });
     },
 
@@ -86,38 +212,23 @@ window.Guide.UI = (function () {
     },
 
     /**
-     * TOC overlay (mobile): open/close fullscreen TOC.
+     * TOC overlay setup (mobile): close on link click or close button.
+     * Open buttons are handled by scrollToToc() which decides mode.
      */
-    initTocOverlay: function (tocEl, openBtnEls) {
+    initTocOverlay: function (tocEl) {
       if (!tocEl) return;
+      _tocEl = tocEl;
 
       var closeBtn = tocEl.querySelector('.toc__close');
 
-      function openToc() {
-        tocEl.classList.add('toc--open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeToc() {
-        tocEl.classList.remove('toc--open');
-        document.body.style.overflow = '';
-      }
-
-      // Multiple open buttons (desktop quick-actions + mobile action bar)
-      if (openBtnEls) {
-        for (var i = 0; i < openBtnEls.length; i++) {
-          openBtnEls[i].addEventListener('click', openToc);
-        }
-      }
-
       if (closeBtn) {
-        closeBtn.addEventListener('click', closeToc);
+        closeBtn.addEventListener('click', _closeTocOverlay);
       }
 
-      // Close on link click
+      // Close on link click inside overlay
       tocEl.addEventListener('click', function (e) {
         if (e.target.closest('.toc__link')) {
-          closeToc();
+          _closeTocOverlay();
         }
       });
     },
@@ -155,7 +266,7 @@ window.Guide.UI = (function () {
     },
 
     /**
-     * Smooth scroll to a step and highlight it.
+     * Smooth scroll to a step/element and highlight it.
      */
     scrollToStep: function (stepId) {
       var el = document.getElementById(stepId);
@@ -167,20 +278,4 @@ window.Guide.UI = (function () {
       }, 400);
     }
   };
-
-  function _fallbackCopy(text) {
-    var textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      document.execCommand('copy');
-      return true;
-    } catch (e) {
-      return false;
-    } finally {
-      document.body.removeChild(textarea);
-    }
-  }
 })();

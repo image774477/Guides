@@ -39,20 +39,12 @@ window.Guide = window.Guide || {};
       trophyEl.addEventListener('change', handleTrophyCheckbox);
     }
 
-    // UI modules
-    Guide.UI.initSpoilerToggle(
-      document.getElementById('btn-spoilers'),
-      document.body
-    );
-    Guide.UI.initStoryMode(
-      document.getElementById('btn-story-only'),
-      document.body
-    );
+    // --- Top controls ---
+    setupTopControls();
+
+    // --- UI modules ---
     Guide.UI.initLightbox(document.getElementById('lightbox'));
-    Guide.UI.initTocOverlay(
-      document.getElementById('toc'),
-      document.querySelectorAll('[data-action="open-toc"]')
-    );
+    Guide.UI.initTocOverlay(document.getElementById('toc'));
 
     // Mobile action bar
     setupMobileActionBar();
@@ -62,6 +54,51 @@ window.Guide = window.Guide || {};
 
     // Handle initial hash (deep link)
     handleInitialHash();
+  }
+
+  // --- Top Controls (all 4 quick-action buttons) ---
+
+  function setupTopControls() {
+    var btnToc = document.getElementById('btn-toc');
+    var btnResume = document.getElementById('btn-resume');
+    var btnStoryOnly = document.getElementById('btn-story-only');
+    var btnSpoilers = document.getElementById('btn-spoilers');
+
+    // 1. "Содержание" — desktop: scroll to #toc; mobile: open overlay
+    if (btnToc) {
+      btnToc.addEventListener('click', function () {
+        // Save current position before navigating to TOC
+        Guide.UI.saveCurrentReadingPosition(guideId);
+        Guide.UI.scrollToToc();
+        updateResumeButton(btnResume);
+      });
+    }
+
+    // 2. "Вернуться к моему месту" — scroll to last active step
+    if (btnResume) {
+      updateResumeButton(btnResume);
+      btnResume.addEventListener('click', function () {
+        Guide.UI.restoreCurrentReadingPosition(guideId);
+      });
+    }
+
+    // 3. "Только сюжет" — toggle with persistence
+    Guide.UI.initStoryMode(btnStoryOnly, function (isStory) {
+      Guide.Progress.setViewMode(guideId, isStory ? 'story' : 'all');
+    });
+
+    // 4. "Скрыть спойлеры" — toggle with persistence
+    Guide.UI.initSpoilerToggle(btnSpoilers, function (isHidden) {
+      Guide.Progress.setSpoilersHidden(guideId, isHidden);
+    });
+  }
+
+  function updateResumeButton(btn) {
+    if (!btn) return;
+    var hasPosition = Guide.UI.hasSavedPosition(guideId);
+    btn.disabled = !hasPosition;
+    btn.style.opacity = hasPosition ? '' : '0.4';
+    btn.style.cursor = hasPosition ? '' : 'default';
   }
 
   // --- Checkboxes ---
@@ -114,7 +151,7 @@ window.Guide = window.Guide || {};
     }, 1500);
   }
 
-  // --- View Mode & Spoilers ---
+  // --- View Mode & Spoilers (restore from saved state) ---
 
   function restoreViewMode() {
     if (state.viewMode === 'story') {
@@ -185,6 +222,9 @@ window.Guide = window.Guide || {};
     var lastSaveTime = 0;
     var pendingStepId = null;
 
+    var headerHeight = getComputedStyle(document.documentElement)
+      .getPropertyValue('--header-height').trim() || '56px';
+
     var observer = new IntersectionObserver(function (entries) {
       for (var i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
@@ -196,9 +236,13 @@ window.Guide = window.Guide || {};
       if (pendingStepId && now - lastSaveTime > 500) {
         Guide.Progress.setLastStep(guideId, pendingStepId);
         lastSaveTime = now;
+
+        // Update resume button availability
+        var btnResume = document.getElementById('btn-resume');
+        if (btnResume) updateResumeButton(btnResume);
       }
     }, {
-      rootMargin: '-' + getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim() + ' 0px -80% 0px',
+      rootMargin: '-' + headerHeight + ' 0px -80% 0px',
       threshold: 0
     });
 
@@ -215,15 +259,15 @@ window.Guide = window.Guide || {};
     var nextBtn = document.getElementById('mob-next');
 
     if (tocBtn) {
-      tocBtn.setAttribute('data-action', 'open-toc');
+      tocBtn.addEventListener('click', function () {
+        Guide.UI.saveCurrentReadingPosition(guideId);
+        Guide.UI.scrollToToc();
+      });
     }
 
     if (resumeBtn) {
       resumeBtn.addEventListener('click', function () {
-        var lastStep = Guide.Progress.getState(guideId).lastStepId;
-        if (lastStep) {
-          Guide.UI.scrollToStep(lastStep);
-        }
+        Guide.UI.restoreCurrentReadingPosition(guideId);
       });
     }
 
@@ -260,28 +304,7 @@ window.Guide = window.Guide || {};
     }, 150);
   }
 
-  // --- Spoiler/Story mode persistence ---
+  // --- Init on DOMContentLoaded ---
 
-  // Watch for class changes to persist
-  var spoilerBtn = document.getElementById('btn-spoilers');
-  var storyBtn = document.getElementById('btn-story-only');
-
-  document.addEventListener('DOMContentLoaded', function () {
-    init();
-
-    // Add persistence after init
-    if (spoilerBtn) {
-      spoilerBtn.addEventListener('click', function () {
-        var isHidden = document.body.classList.contains('spoilers-hidden');
-        Guide.Progress.setSpoilersHidden(guideId, isHidden);
-      });
-    }
-
-    if (storyBtn) {
-      storyBtn.addEventListener('click', function () {
-        var isStory = document.body.classList.contains('story-only');
-        Guide.Progress.setViewMode(guideId, isStory ? 'story' : 'all');
-      });
-    }
-  });
+  document.addEventListener('DOMContentLoaded', init);
 })();
