@@ -47,12 +47,13 @@
       <span class="badge badge--platform">PC</span>
       <span class="badge badge--spoiler">Умеренные спойлеры</span>
       <time class="badge badge--date" datetime="YYYY-MM-DD">Обновлено: ДД.ММ.ГГГГ</time>
+      <span class="badge badge--status" id="guide-status" data-status="not-started">Не начато</span>
     </div>
   </header>
 
   <!-- ===== RESUME BANNER (hidden, shown by JS if lastStepId exists) ===== -->
   <div class="resume-banner" id="resume-banner" hidden>
-    <p class="resume-banner__text">Вы остановились на шаге <span id="resume-step-name"></span></p>
+    <p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
     <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
     <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
   </div>

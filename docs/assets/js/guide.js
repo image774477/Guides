@@ -28,6 +28,7 @@ window.Guide = window.Guide || {};
     restoreSpoilers();
     showResumeBanner();
     updateProgressBar();
+    renderGuideStatus();
     setupAchievementModal();
 
     // Event delegation: route step checkboxes
@@ -95,6 +96,30 @@ window.Guide = window.Guide || {};
     if (text) {
       text.textContent = stats.completed + '/' + stats.total + ' \u00b7 ' + pct + '%';
     }
+  }
+
+  function getGuideStatus(stats) {
+    if (!stats) stats = getChecklistStats();
+    if (stats.completed === 0) return 'not-started';
+    if (stats.total > 0 && stats.completed === stats.total) return 'completed';
+    return 'in-progress';
+  }
+
+  function renderGuideStatus() {
+    var badge = document.getElementById('guide-status');
+    if (!badge) return;
+
+    var stats = getChecklistStats();
+    var status = getGuideStatus(stats);
+
+    var labels = {
+      'not-started': 'Не начато',
+      'in-progress': 'В процессе',
+      'completed': 'Закрыто'
+    };
+
+    badge.dataset.status = status;
+    badge.textContent = labels[status];
   }
 
   function isGuideCompleted() {
@@ -228,6 +253,7 @@ window.Guide = window.Guide || {};
     if (input.type !== 'checkbox' || !input.dataset.step) return;
     Guide.Progress.setChecked(guideId, input.dataset.step, input.checked);
     updateProgressBar();
+    renderGuideStatus();
     maybeShowCompletionAchievement();
   }
 
@@ -236,6 +262,7 @@ window.Guide = window.Guide || {};
     if (input.type !== 'checkbox' || !input.dataset.trophy) return;
     Guide.Progress.setTrophyChecked(guideId, input.dataset.trophy, input.checked);
     updateProgressBar();
+    renderGuideStatus();
     maybeShowCompletionAchievement();
   }
 
