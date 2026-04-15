@@ -1,0 +1,161 @@
+# Как добавить новый гайд
+
+## 1. Создайте папку
+
+В `docs/guides/` создайте папку с уникальным slug:
+
+```
+docs/guides/ваш-slug/
+```
+
+**Правила slug:**
+- Только латиница, строчные буквы, цифры и дефисы
+- Без пробелов, кириллицы, спецсимволов
+- Примеры: `re4-chapter-03`, `alan-wake-2-initiation-05`, `hades-2-platinum`
+
+## 2. Скопируйте шаблон
+
+Скопируйте `docs/templates/guide-template.html` в вашу папку как `index.html`:
+
+```
+docs/guides/ваш-slug/index.html
+```
+
+Создайте папку `media/` рядом для изображений:
+
+```
+docs/guides/ваш-slug/media/
+```
+
+## 3. Заполните контент
+
+Откройте `index.html` и замените все placeholder'ы. Каждый помечен комментарием `<!-- ЗАМЕНИТЬ -->`.
+
+### Обязательные замены
+
+| Что заменить | Где |
+|---|---|
+| `GAME_NAME` | Название игры |
+| `GUIDE_TITLE` | Название гайда |
+| `SUBTITLE_TEXT` | Подзаголовок |
+| `META_DESCRIPTION` | Описание для SEO (до 160 символов) |
+| `SLUG` | Ваш slug (в canonical, OG-тегах) |
+| `data-guide-id="SLUG"` | В теге `<main>`, тот же slug |
+| `data-total-steps="0"` | Общее число маршрутных шагов |
+| Meta summary | Время, missables, платформы, версия |
+| TOC | Ссылки на ваши секции |
+
+### Шаги
+
+Каждый шаг — один `<article class="step">`. Копируйте шаблон шага:
+
+```html
+<article class="step" id="step-N" data-step-type="ТИП" data-step-num="N">
+  <div class="step__header">
+    <span class="step__number">N</span>
+    <h3 class="step__title">Название шага</h3>
+    <div class="step__actions">
+      <label class="step__checkbox">
+        <input type="checkbox" data-step="step-N" aria-label="Отметить шаг N">
+      </label>
+      <button class="step__link-btn" type="button" data-link="step-N"
+              aria-label="Копировать ссылку на шаг N" title="Копировать ссылку">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="step__body">
+    <p>Текст шага.</p>
+  </div>
+</article>
+```
+
+**Типы шагов** (`data-step-type`):
+
+| Тип | Когда использовать | В story-only |
+|---|---|---|
+| `critical` | Основной сюжетный контент | Виден |
+| `boss` | Боссы, ключевые битвы | Виден |
+| `decision` | Развилки маршрута | Виден |
+| `optional` | Дополнительные действия | Скрыт |
+| `collectible` | Коллекционные предметы | Скрыт |
+
+### Контентные блоки внутри шагов
+
+```html
+<!-- Нейтральный совет -->
+<div class="note">
+  <p><strong>Совет:</strong> текст.</p>
+</div>
+
+<!-- Критическое предупреждение -->
+<div class="warning">
+  <p><strong>Важно:</strong> текст.</p>
+</div>
+
+<!-- Missable-элемент -->
+<div class="missable">
+  <p><strong>Missable:</strong> текст.</p>
+</div>
+
+<!-- Платформенная заметка -->
+<div class="platform-note">
+  <p><strong>PS5:</strong> текст.</p>
+</div>
+
+<!-- Спойлер -->
+<details class="spoiler">
+  <summary>Показать спойлер</summary>
+  <p>Скрытый текст.</p>
+</details>
+```
+
+### Изображения
+
+Помещайте в папку `media/`. Используйте WebP. Указывайте `width` и `height`:
+
+```html
+<figure class="step__media">
+  <img src="media/step-01.webp"
+       alt="Описание скриншота"
+       loading="lazy"
+       width="1280" height="720">
+  <figcaption>Подпись к изображению</figcaption>
+</figure>
+```
+
+### Trophy checklist (опционально)
+
+Если в гайде есть трофеи/ачивки, используйте секцию `<section class="trophy-checklist">` **после** `</main>`. Каждый трофей:
+
+```html
+<div class="trophy-checklist__item">
+  <label>
+    <input type="checkbox" data-trophy="trophy-slug">
+    <span>
+      <span class="trophy-checklist__name">Trophy Name</span>
+      <span class="trophy-checklist__desc"> — описание.</span>
+    </span>
+  </label>
+</div>
+```
+
+Trophy checklist не участвует в «Моё место», «Далее» и автосохранении позиции.
+
+## 4. Проверьте локально
+
+Откройте `index.html` в браузере или запустите локальный сервер:
+
+```bash
+python -m http.server 8080 --directory docs
+```
+
+Проверьте:
+- Все секции на месте
+- TOC-ссылки ведут к правильным якорям
+- Чекбоксы кликаются
+- На мобильном нет горизонтального скролла
