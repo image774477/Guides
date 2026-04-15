@@ -96,6 +96,26 @@ body {
   color: var(--color-muted);
 }
 
+/* Guide completion status */
+.badge--status {
+  font-weight: 600;
+}
+
+.badge--status[data-status="not-started"] {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.badge--status[data-status="in-progress"] {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.badge--status[data-status="completed"] {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
 /* --- Resume Banner --- */
 
 .resume-banner {
