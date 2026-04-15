@@ -27,6 +27,8 @@ window.Guide = window.Guide || {};
     restoreViewMode();
     restoreSpoilers();
     showResumeBanner();
+    updateProgressBar();
+    setupAchievementModal();
 
     // Event delegation: route step checkboxes
     contentEl.addEventListener('change', handleStepCheckbox);
@@ -54,6 +56,107 @@ window.Guide = window.Guide || {};
 
     // Handle initial hash (deep link)
     handleInitialHash();
+  }
+
+  // --- Progress Bar & Achievement ---
+
+  function getChecklistStats() {
+    var stepInputs = contentEl.querySelectorAll('input[data-step]');
+    var trophyInputs = trophyEl ? trophyEl.querySelectorAll('input[data-trophy]') : [];
+    var total = stepInputs.length + trophyInputs.length;
+    var completed = 0;
+
+    for (var i = 0; i < stepInputs.length; i++) {
+      if (stepInputs[i].checked) completed++;
+    }
+    for (var i = 0; i < trophyInputs.length; i++) {
+      if (trophyInputs[i].checked) completed++;
+    }
+
+    return { total: total, completed: completed };
+  }
+
+  function updateProgressBar() {
+    var stats = getChecklistStats();
+    var pct = stats.total > 0 ? Math.round(stats.completed / stats.total * 100) : 0;
+
+    var fill = document.getElementById('progress-fill');
+    var text = document.getElementById('progress-text');
+
+    if (fill) {
+      fill.style.width = pct + '%';
+      if (pct === 100) {
+        fill.classList.add('progress-bar__fill--complete');
+      } else {
+        fill.classList.remove('progress-bar__fill--complete');
+      }
+    }
+
+    if (text) {
+      text.textContent = stats.completed + '/' + stats.total + ' \u00b7 ' + pct + '%';
+    }
+  }
+
+  function isGuideCompleted() {
+    var stats = getChecklistStats();
+    return stats.total > 0 && stats.completed === stats.total;
+  }
+
+  function maybeShowCompletionAchievement() {
+    if (!isGuideCompleted()) return;
+
+    var currentState = Guide.Progress.getState(guideId);
+    if (currentState.achievementShown) return;
+
+    Guide.Progress.setAchievementShown(guideId, true);
+    openAchievementModal();
+  }
+
+  function openAchievementModal() {
+    var modal = document.getElementById('achievement-modal');
+    if (!modal) return;
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAchievementModal() {
+    var modal = document.getElementById('achievement-modal');
+    if (!modal) return;
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  function downloadAchievementCard() {
+    var img = document.getElementById('achievement-img');
+    if (!img || !img.src) return;
+
+    var link = document.createElement('a');
+    link.href = img.src;
+    link.download = '@achievement_hub.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  function setupAchievementModal() {
+    var modal = document.getElementById('achievement-modal');
+    if (!modal) return;
+
+    var closeBtn = document.getElementById('achievement-close');
+    var closeBtnAlt = document.getElementById('btn-close-achievement');
+    var downloadBtn = document.getElementById('btn-download-achievement');
+    var overlay = modal.querySelector('.achievement-modal__overlay');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeAchievementModal);
+    if (closeBtnAlt) closeBtnAlt.addEventListener('click', closeAchievementModal);
+    if (downloadBtn) downloadBtn.addEventListener('click', downloadAchievementCard);
+    if (overlay) overlay.addEventListener('click', closeAchievementModal);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+        closeAchievementModal();
+      }
+    });
   }
 
   // --- Top Controls (all 4 quick-action buttons) ---
@@ -124,12 +227,16 @@ window.Guide = window.Guide || {};
     var input = e.target;
     if (input.type !== 'checkbox' || !input.dataset.step) return;
     Guide.Progress.setChecked(guideId, input.dataset.step, input.checked);
+    updateProgressBar();
+    maybeShowCompletionAchievement();
   }
 
   function handleTrophyCheckbox(e) {
     var input = e.target;
     if (input.type !== 'checkbox' || !input.dataset.trophy) return;
     Guide.Progress.setTrophyChecked(guideId, input.dataset.trophy, input.checked);
+    updateProgressBar();
+    maybeShowCompletionAchievement();
   }
 
   // --- Copy Link ---

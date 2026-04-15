@@ -89,6 +89,16 @@
     <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
   </nav>
 
+  <!-- ===== PROGRESS BAR ===== -->
+  <div class="progress-bar" id="progress-bar">
+    <div class="progress-bar__inner">
+      <div class="progress-bar__track">
+        <div class="progress-bar__fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-bar__text" id="progress-text">0/0 · 0%</span>
+    </div>
+  </div>
+
   <!-- ===== TABLE OF CONTENTS ===== -->
   <nav class="toc" id="toc" aria-label="Оглавление">
     <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
@@ -827,6 +837,21 @@
     <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
     <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
   </nav>
+
+  <!-- ===== ACHIEVEMENT MODAL ===== -->
+  <div class="achievement-modal" id="achievement-modal" hidden aria-modal="true" role="dialog">
+    <div class="achievement-modal__overlay"></div>
+    <div class="achievement-modal__card">
+      <button class="achievement-modal__close" id="achievement-close" type="button" aria-label="Закрыть">&times;</button>
+      <h2 class="achievement-modal__title">Гайд пройден на 100%!</h2>
+      <p class="achievement-modal__desc">Поздравляем! Вы выполнили все шаги и собрали все трофеи.</p>
+      <img class="achievement-modal__img" id="achievement-img" src="../../assets/img/common/achievement_hub.png" alt="Карточка ачивки">
+      <div class="achievement-modal__actions">
+        <button class="achievement-modal__btn achievement-modal__btn--download" id="btn-download-achievement" type="button">Скачать ачивку</button>
+        <button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== LIGHTBOX ===== -->
   <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
