@@ -19,6 +19,8 @@ body {
 .toc,
 .quick-route,
 .guide-content,
+.version-platforms,
+.prophecy-check,
 .trophy-checklist,
 .mistakes,
 .next-guide,
@@ -36,6 +38,14 @@ body {
   padding-top: var(--space-2xl);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--color-border);
+}
+
+.guide-header__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-lg);
 }
 
 .guide-header__title {
@@ -263,6 +273,36 @@ body {
   font-size: var(--text-lg);
   font-weight: 700;
   margin-bottom: var(--space-md);
+}
+
+/* --- Version & Platforms / Prophecy Check --- */
+
+.version-platforms,
+.prophecy-check {
+  max-width: calc(var(--container-width) - 2 * var(--space-md));
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-warning);
+  border-radius: var(--radius);
+}
+
+.version-platforms .section-heading,
+.prophecy-check .section-heading {
+  padding-top: 0;
+}
+
+.version-platforms p,
+.prophecy-check p {
+  margin-bottom: var(--space-sm);
+}
+
+.version-platforms p:last-child,
+.prophecy-check p:last-child {
+  margin-bottom: 0;
 }
 
 /* --- Section Heading --- */
