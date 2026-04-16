@@ -279,6 +279,7 @@ body {
 
 .version-platforms,
 .prophecy-check {
+  max-width: calc(var(--container-width) - 2 * var(--space-md));
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
   margin-top: var(--space-md);
