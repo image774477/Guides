@@ -219,6 +219,17 @@ window.Guide = window.Guide || {};
     Guide.UI.initSpoilerToggle(btnSpoilers, function (isHidden) {
       Guide.Progress.setSpoilersHidden(guideId, isHidden);
     });
+
+    // 5. "Награда 100%" — open achievement modal if guide is complete
+    var btnAchievement = document.getElementById('btn-achievement');
+    if (btnAchievement) {
+      updateAchievementButton(btnAchievement);
+      btnAchievement.addEventListener('click', function () {
+        if (isGuideCompleted()) {
+          openAchievementModal();
+        }
+      });
+    }
   }
 
   function updateResumeButton(btn) {
@@ -227,6 +238,15 @@ window.Guide = window.Guide || {};
     btn.disabled = !hasPosition;
     btn.style.opacity = hasPosition ? '' : '0.4';
     btn.style.cursor = hasPosition ? '' : 'default';
+  }
+
+  function updateAchievementButton(btn) {
+    if (!btn) return;
+    var completed = isGuideCompleted();
+    btn.disabled = !completed;
+    btn.title = completed
+      ? 'Открыть награду за 100% прохождение гайда'
+      : 'Откроется после 100% прохождения гайда';
   }
 
   // --- Checkboxes ---
@@ -255,6 +275,7 @@ window.Guide = window.Guide || {};
     updateProgressBar();
     renderGuideStatus();
     maybeShowCompletionAchievement();
+    updateAchievementButton(document.getElementById('btn-achievement'));
   }
 
   function handleTrophyCheckbox(e) {
@@ -264,6 +285,7 @@ window.Guide = window.Guide || {};
     updateProgressBar();
     renderGuideStatus();
     maybeShowCompletionAchievement();
+    updateAchievementButton(document.getElementById('btn-achievement'));
   }
 
   // --- Copy Link ---

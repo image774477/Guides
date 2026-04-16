@@ -222,6 +222,18 @@ body {
   color: var(--color-bg);
 }
 
+.quick-actions__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--color-border);
+  color: var(--color-muted);
+}
+
+.quick-actions__btn:disabled:hover {
+  background-color: transparent;
+  color: var(--color-muted);
+}
+
 /* --- Table of Contents --- */
 
 .toc {
