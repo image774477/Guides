@@ -31,6 +31,103 @@
   <link rel="stylesheet" href="../../assets/css/reset.css">
   <link rel="stylesheet" href="../../assets/css/theme.css">
   <link rel="stylesheet" href="../../assets/css/guide.css">
+  <style>
+    /* ── Trophy Accordion (локально для этой страницы) ─────────────── */
+    .trophy-item {
+      border-bottom: 1px solid rgba(42,42,58,.5);
+    }
+    .trophy-item:last-child {
+      border-bottom: none;
+    }
+    .trophy-item__summary {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) 0;
+      cursor: pointer;
+      list-style: none;
+      min-height: 44px;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .trophy-item__summary::-webkit-details-marker { display: none; }
+    .trophy-item__summary::marker               { display: none; }
+
+    .trophy-item__cb {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color .15s, background-color .15s;
+      position: relative;
+    }
+    .trophy-item__cb:checked {
+      border-color: var(--color-success);
+      background-color: var(--color-success);
+    }
+    .trophy-item__cb:checked::after {
+      content: "";
+      position: absolute;
+      top: 2px; left: 5px;
+      width: 6px; height: 10px;
+      border: solid var(--color-bg);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .trophy-item__name {
+      font-weight: 600;
+      font-size: var(--text-base);
+      flex-shrink: 0;
+    }
+    .trophy-item__teaser {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      flex: 1;
+    }
+    .trophy-item__arrow {
+      flex-shrink: 0;
+      font-size: .7rem;
+      color: var(--color-muted);
+      transition: transform .2s;
+      line-height: 1;
+    }
+    .trophy-item[open] .trophy-item__arrow {
+      transform: rotate(180deg);
+    }
+
+    .trophy-item__body {
+      padding: 0 0 var(--space-md) calc(20px + var(--space-sm));
+    }
+    .trophy-item__body p {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: var(--space-sm);
+    }
+    .trophy-item__body p:last-child { margin-bottom: 0; }
+
+    .trophy-item__note,
+    .trophy-item__warning {
+      margin-top: var(--space-sm);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+    .trophy-item__note {
+      border-left: 3px solid #63b3ed;
+      background: rgba(99,179,237,.08);
+    }
+    .trophy-item__warning {
+      border-left: 3px solid var(--color-warning);
+      background: rgba(250,204,21,.08);
+    }
+  </style>
 </head>
 <body>
 
@@ -740,96 +837,717 @@
     <!-- A. Сюжет и зачистка маршрутов -->
     <div class="trophy-checklist__category" id="trophy-cat-a">
       <h3 class="trophy-checklist__category-title">A. Сюжет и зачистка маршрутов</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-woods"><span><span class="trophy-checklist__name">Witch of the Woods</span><span class="trophy-checklist__desc"> — очистить Erebus.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-depths"><span><span class="trophy-checklist__name">Witch of the Depths</span><span class="trophy-checklist__desc"> — очистить Oceanus.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-plains"><span><span class="trophy-checklist__name">Witch of the Plains</span><span class="trophy-checklist__desc"> — очистить Fields of Mourning.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-abyss"><span><span class="trophy-checklist__name">Witch of the Abyss</span><span class="trophy-checklist__desc"> — очистить Tartarus.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-outskirts"><span><span class="trophy-checklist__name">Witch of the Outskirts</span><span class="trophy-checklist__desc"> — очистить City of Ephyra.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-waters"><span><span class="trophy-checklist__name">Witch of the Waters</span><span class="trophy-checklist__desc"> — очистить Rift of Thessaly.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-mountains"><span><span class="trophy-checklist__name">Witch of the Mountains</span><span class="trophy-checklist__desc"> — очистить Mount Olympus.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="witch-clouds"><span><span class="trophy-checklist__name">Witch of the Clouds</span><span class="trophy-checklist__desc"> — очистить the Summit.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-woods">
+          <span class="trophy-item__name">Witch of the Woods</span>
+          <span class="trophy-item__teaser"> — Первый clear Erebus</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей падает после победы над Hecate и выхода из комнаты — естественный ранний checkpoint в начале Underworld-маршрута.</p>
+          <p>Закрывается в ходе нормального прохождения. Отдельного планирования не требует.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-depths">
+          <span class="trophy-item__name">Witch of the Depths</span>
+          <span class="trophy-item__teaser"> — Закройте Oceanus</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей выдаётся за первый clear Oceanus — следующий естественный шаг после стабилизации раннего билда.</p>
+          <p>Не стоит слишком долго фармить стартовый регион: как только билды начинают работать стабильно, двигайтесь вперёд.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-plains">
+          <span class="trophy-item__name">Witch of the Plains</span>
+          <span class="trophy-item__teaser"> — Закройте Fields of Mourning</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей падает после первого clear Fields of Mourning.</p>
+          <p>Это маркер того, что база аккаунта уже работает, а не отдельная «хитрая» задача.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-abyss">
+          <span class="trophy-item__name">Witch of the Abyss</span>
+          <span class="trophy-item__teaser"> — Закройте Tartarus</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Первый полный clear Underworld-маршрута с победой над Chronos.</p>
+          <p>Для старых early access-сейвов нужен именно релизный win на v1.0+.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-outskirts">
+          <span class="trophy-item__name">Witch of the Outskirts</span>
+          <span class="trophy-item__teaser"> — Первый clear City of Ephyra</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Первый surface-checkpoint. Откладывать Поверхность не стоит — это обязательная часть маршрута, а не бонусный контент.</p>
+          <p>Чем раньше открыт surface-маршрут, тем проще параллельно добирать relationship-цепочки.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-waters">
+          <span class="trophy-item__name">Witch of the Waters</span>
+          <span class="trophy-item__teaser"> — Закройте Rift of Thessaly</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей идёт как второй surface-clear.</p>
+          <p>Удобнее всего закрывается в параллель с Underworld, а не в отдельной поздней зачистке.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-mountains">
+          <span class="trophy-item__name">Witch of the Mountains</span>
+          <span class="trophy-item__teaser"> — Закройте Mount Olympus</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей за первый clear Mount Olympus.</p>
+          <p>Лучше идти на освоенном оружии — эта часть уже важна для поздних сюжетных и relationship-веток.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="witch-clouds">
+          <span class="trophy-item__name">Witch of the Clouds</span>
+          <span class="trophy-item__teaser"> — Закройте Summit</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей за победу над финальным стражем Surface-маршрута.</p>
+          <p>Финальный surface-checkpoint: после него логично добирать поздний сюжет и часть постгейма.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- B. Поздний сюжет и постгейм -->
     <div class="trophy-checklist__category" id="trophy-cat-b">
       <h3 class="trophy-checklist__category-title">B. Поздний сюжет и постгейм</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="death-chronos"><span><span class="trophy-checklist__name">Death to Chronos</span><span class="trophy-checklist__desc"> — завершить главную задачу Melinoë.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="golden-age"><span><span class="trophy-checklist__name">Golden Age</span><span class="trophy-checklist__desc"> — дойти до эпилога сюжета.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="elysian-glory"><span><span class="trophy-checklist__name">Elysian Glory</span><span class="trophy-checklist__desc"> — победить в Contest of Champions.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="death-chronos">
+          <span class="trophy-item__name">Death to Chronos</span>
+          <span class="trophy-item__teaser"> — Главная боевая цель Melinoë</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний сюжетный трофей — не конец игры, а переход к постгейму.</p>
+          <p>Рабочий маршрут: после победы над Chronos продолжать разговоры с Hecate. Через цепочку с Typhon и Entropy открывается <strong>Dissolution of Time</strong> — это маршрутная практика сообщества, не официальная формула.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="golden-age">
+          <span class="trophy-item__name">Golden Age</span>
+          <span class="trophy-item__teaser"> — Эпилог, а не True Ending</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p><strong>Golden Age</strong> — это «Reach the epilogue of the story». Patch 1 менял путь к True Ending, но сам Epilogue не трогал — это два разных сюжетных состояния.</p>
+          <p>Надёжный маршрут ведёт через позднюю prophecy-цепочку Fates и финальную сцену через Engraved Pin Мороса в Oceanus. Это рабочая маршрутная практика, а не опубликованная Supergiant формула.</p>
+          <div class="trophy-item__warning">Не путайте True Ending и Golden Age. Первое — часть prophecy-маршрута, второе — непосредственно эпилог. Это разные сюжетные состояния.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="elysian-glory">
+          <span class="trophy-item__name">Elysian Glory</span>
+          <span class="trophy-item__teaser"> — Победите Zagreus в Elysium</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний постгейм. После True Ending появляются пути к <strong>Infernal Contract</strong> — patch 1 добавил preview icon для выходов к нему.</p>
+          <p>Рабочий маршрут: взять контракт в магазине Харона и победить в Contest of Champions.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- C. Crossroads, отношения и памятные вещи -->
     <div class="trophy-checklist__category" id="trophy-cat-c">
       <h3 class="trophy-checklist__category-title">C. Crossroads, отношения и памятные вещи</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="so-mote"><span><span class="trophy-checklist__name">So Mote It Be</span><span class="trophy-checklist__desc"> — провести 50 инкантаций.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="soothing-soak"><span><span class="trophy-checklist__name">Soothing Soak</span><span class="trophy-checklist__desc"> — сводить союзника в Hot Springs.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="catch-night"><span><span class="trophy-checklist__name">Catch of the Night</span><span class="trophy-checklist__desc"> — сводить союзника к Fishing Pier.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="ambrosia-two"><span><span class="trophy-checklist__name">Ambrosia for Two</span><span class="trophy-checklist__desc"> — сводить союзника в Taverna.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="close-comrades"><span><span class="trophy-checklist__name">Close Comrades</span><span class="trophy-checklist__desc"> — сформировать 10 узов.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sentimental-value"><span><span class="trophy-checklist__name">Sentimental Value</span><span class="trophy-checklist__desc"> — собрать все памятные вещи.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="so-mote">
+          <span class="trophy-item__name">So Mote It Be</span>
+          <span class="trophy-item__teaser"> — 50 инкантаций в Cauldron</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Естественный трофей по мере игры.</p>
+          <p>Не копите реагенты «до идеального момента» — открывайте нужные инкантации по маршруту, и трофей придёт без отдельного гринда.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="soothing-soak">
+          <span class="trophy-item__name">Soothing Soak</span>
+          <span class="trophy-item__teaser"> — Сцена в Hot Springs</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>После <strong>Rite of Vapor-Cleansing</strong> Hot Springs открываются. Bath Salts запускает сцену и даёт трофей.</p>
+          <p>Patch 2 смягчил gifting-flow: персонажи в Crossroads принимают initial Bath Salts раньше, чем прежде.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="catch-night">
+          <span class="trophy-item__name">Catch of the Night</span>
+          <span class="trophy-item__teaser"> — Сцена на Fishing Pier</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>После <strong>Rite of River-Fording</strong> и доступа к Twin Lures можно звать союзника на Fishing Pier.</p>
+          <p>Убедитесь, что Rod of Fishing уже открыт — без него рыбалка как механика недоступна.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="ambrosia-two">
+          <span class="trophy-item__name">Ambrosia for Two</span>
+          <span class="trophy-item__teaser"> — Сцена в Taverna</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>После <strong>Rite of Social Solidarity</strong> трофей закрывается через сцену с Ambrosia.</p>
+          <p>Это часть нормального relationship-маршрута к bonds и keepsakes, а не побочный «ивент ради ивента».</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="close-comrades">
+          <span class="trophy-item__name">Close Comrades</span>
+          <span class="trophy-item__teaser"> — Соберите 10 bonds</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Bonds растут не только через Nectar, но и через Bath Salts, Twin Lures и Ambrosia на нужных этапах.</p>
+          <p>Patch 2 упростил поздний social-loop: большинство Crossroads-персонажей можно продолжать звать на сцены и после forging a bond.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="sentimental-value">
+          <span class="trophy-item__name">Sentimental Value</span>
+          <span class="trophy-item__teaser"> — Соберите все keepsakes</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Базовое правило: первый подарок NPC обычно даёт keepsake.</p>
+          <p>Три поздних keepsake добираются в постгейме — надёжный маршрут: <strong>Jeweled Pom</strong> от Hades/Persephone, <strong>Calling Card</strong> за вторую победу над Zagreus, <strong>Time Piece</strong> у Chronos после Hecate room.</p>
+          <div class="trophy-item__note">Не забывайте о поздних keepsakes — они не выдаются сами по себе и требуют целенаправленного добора в эндгейме.</div>
+        </div>
+      </details>
+
     </div>
 
     <!-- D. Arcana и Altar of Ashes -->
     <div class="trophy-checklist__category" id="trophy-cat-d">
       <h3 class="trophy-checklist__category-title">D. Arcana и Altar of Ashes</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="mind-magick"><span><span class="trophy-checklist__name">Mind for Magick</span><span class="trophy-checklist__desc"> — довести Grasp до 30.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="breadth-knowledge"><span><span class="trophy-checklist__name">Breadth of Knowledge</span><span class="trophy-checklist__desc"> — открыть все Arcana.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unassailable-insight"><span><span class="trophy-checklist__name">Unassailable Insight</span><span class="trophy-checklist__desc"> — полностью улучшить все Arcana.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="arcana-ages"><span><span class="trophy-checklist__name">Arcana of the Ages</span><span class="trophy-checklist__desc"> — prophecy: победы с каждой Arcana против Chronos.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="natural-talent"><span><span class="trophy-checklist__name">Natural Talent</span><span class="trophy-checklist__desc"> — победа над Hecate без активных Arcana.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="mind-magick">
+          <span class="trophy-item__name">Mind for Magick</span>
+          <span class="trophy-item__teaser"> — Поднимите Grasp до 30</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ранне-средний мета-прогресс. 30 — максимум Grasp.</p>
+          <p>Чем раньше достигнут максимум через Psyche/Altar, тем комфортнее идёт весь остальной маршрут.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="breadth-knowledge">
+          <span class="trophy-item__name">Breadth of Knowledge</span>
+          <span class="trophy-item__teaser"> — Откройте все Arcana</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей за открытие всех карт Altar of Ashes.</p>
+          <p>Не оставляйте Arcana на потом и открывайте их широко, а не только под один любимый билд — это ускорит весь маршрут.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="unassailable-insight">
+          <span class="trophy-item__name">Unassailable Insight</span>
+          <span class="trophy-item__teaser"> — Полностью прокачайте Arcana</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний трофей: на полную прокачку уйдут материалы, включая поздние boss mats.</p>
+          <p>Естественный добор в эндгейме параллельно аспектам и prophecy-трофеям, а не отдельный гринд.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="arcana-ages">
+          <span class="trophy-item__name">Arcana of the Ages</span>
+          <span class="trophy-item__teaser"> — Победы с каждой Arcana card</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей выполняется кумулятивно: одна победа над финальным боссом Underworld с каждой активной картой, а не за один забег.</p>
+          <p>Удобно отмечать по одной целевой карте за run, а не пытаться держать всё в голове сразу.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="natural-talent">
+          <span class="trophy-item__name">Natural Talent</span>
+          <span class="trophy-item__teaser"> — Победите Hecate без Arcana</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Победить Hecate, отключив Arcana на Altar. Patch 1 исправлял баг, из-за которого prophecy могла не появляться корректно.</p>
+          <p>Если prophecy не появилась раньше — это не обязательно ваша ошибка. После патча работает стабильно.</p>
+          <div class="trophy-item__note">Отключите Arcana на Altar перед забегом — не в самом бою.</div>
+        </div>
+      </details>
+
     </div>
 
     <!-- E. Оружие и боевые трофеи -->
     <div class="trophy-checklist__category" id="trophy-cat-e">
       <h3 class="trophy-checklist__category-title">E. Оружие и боевые трофеи</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="arms-night"><span><span class="trophy-checklist__name">The Arms of Night</span><span class="trophy-checklist__desc"> — открыть все Nocturnal Arms.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sword-night"><span><span class="trophy-checklist__name">Sword of the Night</span><span class="trophy-checklist__desc"> — победа на Вершине всеми 6 видами оружия.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unseen-sentinel"><span><span class="trophy-checklist__name">The Unseen Sentinel</span><span class="trophy-checklist__desc"> — все аспекты всех оружий.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="bearing-dark"><span><span class="trophy-checklist__name">Bearing Dark Gifts</span><span class="trophy-checklist__desc"> — победы всеми аспектами.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="breaking-band"><span><span class="trophy-checklist__name">Breaking Up the Band</span><span class="trophy-checklist__desc"> — поднять Siren через Night Bloom.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="sheeps-clothing"><span><span class="trophy-checklist__name">Sheep's Clothing</span><span class="trophy-checklist__desc"> — убить Sister of the Dead под Twilight Curse.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="dressed-kill"><span><span class="trophy-checklist__name">Dressed to Kill</span><span class="trophy-checklist__desc"> — финальное противостояние в наряде Arachne.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="fair-fight"><span><span class="trophy-checklist__name">Fair Fight</span><span class="trophy-checklist__desc"> — 1,000 Gold в состязаниях с Nemesis.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="arms-night">
+          <span class="trophy-item__name">The Arms of Night</span>
+          <span class="trophy-item__teaser"> — Откройте все 6 Nocturnal Arms</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>База всего оружейного блока.</p>
+          <p>Чем раньше открыт весь арсенал, тем раньше начинает копиться прогресс на Surface-wins, aspects и prophecy.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="sword-night">
+          <span class="trophy-item__name">Sword of the Night</span>
+          <span class="trophy-item__teaser"> — Победы на Surface всеми 6 оружиями</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Победа над финальным surface-боссом всеми шестью Nocturnal Arms. Рабочий маршрут сообщества.</p>
+          <p>Не смешивайте это с высоким Fear, пока не закрыта сама линейка оружий.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="unseen-sentinel">
+          <span class="trophy-item__name">The Unseen Sentinel</span>
+          <span class="trophy-item__teaser"> — Откройте все аспекты, включая скрытые</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Рабочий маршрут сообщества: для каждого оружия открыть обычные аспекты, поднять один не-Melinoë аспект до Rank V, затем поговорить с нужным NPC-носителем пробуждающей фразы — Circe / Artemis / Moros / Charon / Medea / Selene.</p>
+          <p>Patch 2 подтверждает, что Hecate получила больше реплик по скрытым аспектам — но это не равно опубликованной разработчиком строгой unlock-формуле.</p>
+          <div class="trophy-item__warning">Это рабочий маршрут сообщества, а не официальная формула Supergiant. Не подавайте его как точное техническое условие игры.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="bearing-dark">
+          <span class="trophy-item__name">Bearing Dark Gifts</span>
+          <span class="trophy-item__teaser"> — Победы каждым аспектом</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Prophecy требует хотя бы одного полного clear каждым аспектом каждого оружия. В качестве финального босса засчитываются Chronos или Typhon.</p>
+          <p>Беритесь за это только когда уже уверенно побеждаете финальных стражей.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="breaking-band">
+          <span class="trophy-item__name">Breaking Up the Band</span>
+          <span class="trophy-item__teaser"> — Поднимите Siren через Night Bloom</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поймать Hex <strong>Night Bloom</strong> от Selene и использовать его в бою со Scylla and the Sirens, подняв одну из Sirens уже после убийства.</p>
+          <p>Лучше посвятить этому отдельный целевой run, а не ждать случайного совпадения.</p>
+          <div class="trophy-item__note">Night Bloom должен быть активным hex в момент нужного убийства.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="sheeps-clothing">
+          <span class="trophy-item__name">Sheep's Clothing</span>
+          <span class="trophy-item__teaser"> — Убейте Sister под Twilight Curse</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей на бой с Hecate в Erebus. Дождаться Twilight Curse, превратиться, а затем добить одну из Sisters of the Dead; terrain kill или familiar kill также может засчитаться.</p>
+          <p>Удобнее идти за этим в отдельном целевом run.</p>
+          <div class="trophy-item__note">Hex kill тоже может засчитаться — точные условия в сообществе не зафиксированы как официальная формула.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="dressed-kill">
+          <span class="trophy-item__name">Dressed to Kill</span>
+          <span class="trophy-item__teaser"> — Дойдите до финала с нарядом Arachne</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Официальный текст — «Reach the final confrontation in an Arachne outfit». Arachne появляется в Erebus и даёт Outfits, которые работают, пока держится Armor.</p>
+          <p>Ищите Arachne рано, играйте от сохранения Armor и не смешивайте этот run с хаотичными побочными задачами.</p>
+          <div class="trophy-item__warning">Наряд действует только пока не сломан Armor. Потеряли Armor — трофей в этом забеге уже не закрыть.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="fair-fight">
+          <span class="trophy-item__name">Fair Fight</span>
+          <span class="trophy-item__teaser"> — Наберите 1000 Gold против Nemesis</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Прогресс кумулятивный. В состязаниях с Nemesis добивайте low-health врагов сами — не готовьте жирные цели под её one-shot.</p>
+          <p>Стабильный рост Gold идёт именно через собственные добивания, а не через «помощь» Nemesis.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- F. Фамильяры и рыбалка -->
     <div class="trophy-checklist__category" id="trophy-cat-f">
       <h3 class="trophy-checklist__category-title">F. Фамильяры и рыбалка</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="animal-whisperer"><span><span class="trophy-checklist__name">Animal Whisperer</span><span class="trophy-checklist__desc"> — завербовать всех фамильяров.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="beast-master"><span><span class="trophy-checklist__name">Beast Master</span><span class="trophy-checklist__desc"> — полностью прокачать всех фамильяров.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unfamiliar-forms"><span><span class="trophy-checklist__name">Unfamiliar Forms</span><span class="trophy-checklist__desc"> — изменить облик каждого фамильяра.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="familiar-confidant"><span><span class="trophy-checklist__name">Familiar Confidant</span><span class="trophy-checklist__desc"> — prophecy на Frinos.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="denizens-depths"><span><span class="trophy-checklist__name">Denizens of the Depths</span><span class="trophy-checklist__desc"> — поймать 20 разных видов рыбы.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="animal-whisperer">
+          <span class="trophy-item__name">Animal Whisperer</span>
+          <span class="trophy-item__teaser"> — Соберите всех 5 фамильяров</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>После <strong>Faith of Familiar Spirits</strong> и Witch's Delight становится доступен рекрут. Места: <strong>Frinos</strong> — в Crossroads, <strong>Toula</strong> — у доков перед Thessaly, <strong>Raki</strong> — в fountain room Erebus, <strong>Hecuba</strong> — в Fields of Mourning около Echo, <strong>Gale</strong> — в Olympus до Prometheus.</p>
+          <p>После релиза часть требований к рекруту была смягчена — не опирайтесь на старые early access-формулы.</p>
+          <div class="trophy-item__warning">Гайды раннего доступа описывают жёсткие prereqs для Gale и Hecuba, которые на релизной версии уже не актуальны.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="beast-master">
+          <span class="trophy-item__name">Beast Master</span>
+          <span class="trophy-item__teaser"> — Максимум прокачки всем фамильярам</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Каждому фамильяру нужно полностью докормить все bond-ветки через Witch's Delight в Training Grounds/Silver Pool.</p>
+          <p>Это длинный фоновый трофей — не откладывайте прокачку на конец маршрута.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="unfamiliar-forms">
+          <span class="trophy-item__name">Unfamiliar Forms</span>
+          <span class="trophy-item__teaser"> — Смените форму каждому фамильяру</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 официально добавил новый alternate form для каждого Animal Familiar. Circe открывает эту возможность после достаточной прокачки фамильяров.</p>
+          <p>Рабочая практика: сначала рекрут и апгрейды, потом добор форм.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="familiar-confidant">
+          <span class="trophy-item__name">Familiar Confidant</span>
+          <span class="trophy-item__teaser"> — Prophecy по Frinos</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Разговаривайте с Frinos в Crossroads после разных забегов, пока prophecy не закроется.</p>
+          <p>Обычно закрывается серией разговоров с Frinos между ночами — точное число не зафиксировано как официальный факт.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="denizens-depths">
+          <span class="trophy-item__name">Denizens of the Depths</span>
+          <span class="trophy-item__teaser"> — Поймайте 20 видов рыбы</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Prophecy-трофей. Не гриндите его отдельно: берите удочку рано и ловите по обоим маршрутам.</p>
+          <p>Toula как фамильяр естественно ускоряет рыболовный добор.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- G. Персональные цепочки пророчеств -->
     <div class="trophy-checklist__category" id="trophy-cat-g">
       <h3 class="trophy-checklist__category-title">G. Персональные цепочки пророчеств</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="born-win"><span><span class="trophy-checklist__name">Born to Win</span><span class="trophy-checklist__desc"> — prophecy Хаоса.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="haunted-past"><span><span class="trophy-checklist__name">Haunted by the Past</span><span class="trophy-checklist__desc"> — prophecy Dora.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="soundest-sleepers"><span><span class="trophy-checklist__name">Soundest of Sleepers</span><span class="trophy-checklist__desc"> — prophecy Hypnos.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="voice-vanity"><span><span class="trophy-checklist__name">Voice and Vanity</span><span class="trophy-checklist__desc"> — prophecy Narcissus и Echo.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unfinished-business"><span><span class="trophy-checklist__name">Unfinished Business</span><span class="trophy-checklist__desc"> — prophecy Odysseus.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="silk-spite"><span><span class="trophy-checklist__name">Silk and Spitefulness</span><span class="trophy-checklist__desc"> — prophecy Arachne/Athena.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="hand-fates"><span><span class="trophy-checklist__name">Hand of the Fates</span><span class="trophy-checklist__desc"> — выполнить 60 малых пророчеств.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="born-win">
+          <span class="trophy-item__name">Born to Win</span>
+          <span class="trophy-item__teaser"> — Цепочка Chaos + Embryo</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 повысил приоритет события, где Chaos вводит эту prophecy. Рабочий маршрут: прийти к Chaos с keepsake <strong>Transcendent Embryo</strong> не ниже 2-star и довести забег до конца без смены keepsake.</p>
+          <p>Если prophecy долго не появляется — помогает хотя бы один Chaos boon на Surface в целевых run'ах.</p>
+          <div class="trophy-item__warning">Это рабочая маршрутная практика, не официальная формула Supergiant.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="haunted-past">
+          <span class="trophy-item__name">Haunted by the Past</span>
+          <span class="trophy-item__teaser"> — Верните Dora воспоминания</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 повысил приоритет prophecy и добавил narrated conclusion. Надёжный маршрут: несколько раз победить Prometheus, после каждого прогрессирующего события говорить с Dora, затем сварить <strong>Return of Latent Memories</strong>.</p>
+          <p>Подавать как «надёжнее всего продвигается так», а не как официальную таблицу триггеров.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="soundest-sleepers">
+          <span class="trophy-item__name">Soundest of Sleepers</span>
+          <span class="trophy-item__teaser"> — Разбудите Hypnos</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 добавил narrated conclusion этой prophecy. Рабочий маршрут: много говорить с Hypnos, дать ему Nectar, дойти до Medea и по цепочке открыть инкантации, включая <strong>End to Dumbest Slumber</strong>. Для линии важны Hypnos, Medea, Poppy и позже Soot.</p>
+          <p>Поздняя пошаговая цепочка — не торопитесь и не пропускайте разговоры.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="voice-vanity">
+          <span class="trophy-item__name">Voice and Vanity</span>
+          <span class="trophy-item__teaser"> — Помогите Narcissus и Echo</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 повысил приоритет prophecy и дал narrated conclusion. Рабочий маршрут: регулярно говорить с Narcissus в Oceanus и Echo в Fields of Mourning, дать обоим Nectar, затем дойти до очищения пруда Narcissus через <strong>Purification of Crystal Clarity</strong>.</p>
+          <p>Prophecy продвигается только через живые разговоры, а не через пассивное прохождение.</p>
+          <div class="trophy-item__note">Не забывайте заходить к Echo в Fields of Mourning — без её прогресса цепочка застревает.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="unfinished-business">
+          <span class="trophy-item__name">Unfinished Business</span>
+          <span class="trophy-item__teaser"> — Поздняя цепочка Odysseus</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 повысил приоритет prophecy и добавил narrated conclusion. Рабочий маршрут: довести отношения с Odysseus до цепочки с <strong>Knuckle Bones</strong>, затем посетить с ним Polyphemus, Scylla и Circe, после чего продолжать вычерпывать сцены в Crossroads и Taverna.</p>
+          <p>Только рабочая маршрутная практика — не официальная таблица триггеров.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="silk-spite">
+          <span class="trophy-item__name">Silk and Spitefulness</span>
+          <span class="trophy-item__teaser"> — Развяжите линию Arachne и Athena</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Patch 2 повысил приоритет prophecy и дал narrated conclusion. Надёжный маршрут: развивать Arachne, потом ловить Athena на Olympus и вычерпывать связанные сцены с Hecate. Affinity Arachne завязана на Hecate и на то, чтобы Athena изменила отношение.</p>
+          <p>Не составляйте слишком жёсткий собственный чек-лист — цепочка продвигается органически через правильные разговоры.</p>
+          <div class="trophy-item__warning">Самодельные жёсткие чек-листы по этой цепочке часто неточны — ориентируйтесь на прогресс affinity, а не на конкретные шаги.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="hand-fates">
+          <span class="trophy-item__name">Hand of the Fates</span>
+          <span class="trophy-item__teaser"> — Выполните 60 Minor Prophecies</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Фоновый трофей, который закрывается по мере нормального 100%-маршрута.</p>
+          <p>Сначала откройте prophecy-систему через <strong>Fated Intervention</strong>, затем регулярно забирайте выполненные prophecy и не игнорируйте Fated List.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- H. Fear, Chaos и поздний эндгейм -->
     <div class="trophy-checklist__category" id="trophy-cat-h">
       <h3 class="trophy-checklist__category-title">H. Fear, Chaos и поздний эндгейм</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="behold-champion"><span><span class="trophy-checklist__name">Behold Night's Champion</span><span class="trophy-checklist__desc"> — первый Gift of the Veil.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="mercy-executioner"><span><span class="trophy-checklist__name">Mercy, Night's Executioner</span><span class="trophy-checklist__desc"> — второй Gift of the Veil.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="infinite-possibility"><span><span class="trophy-checklist__name">Infinite Possibility</span><span class="trophy-checklist__desc"> — пройти 20 Chaos Trials.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="improbable-outcomes"><span><span class="trophy-checklist__name">Improbable Outcomes</span><span class="trophy-checklist__desc"> — две подряд полностью случайные Chaos Trials.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="chaos-hell"><span><span class="trophy-checklist__name">Chaos in Hell</span><span class="trophy-checklist__desc"> — пройти Great Chaos Below.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="giving-back"><span><span class="trophy-checklist__name">Giving Back</span><span class="trophy-checklist__desc"> — заработать 10,000 Kudos.</span></span></label></div>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="unrivaled-prowess"><span><span class="trophy-checklist__name">Unrivaled Prowess</span><span class="trophy-checklist__desc"> — бои со стражами с клятвой Vow of Rivals на обоих маршрутах.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="behold-champion">
+          <span class="trophy-item__name">Behold Night's Champion</span>
+          <span class="trophy-item__teaser"> — Первый Gift of the Veil</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Рабочий порог: 8 Fear на Underworld и 6 Fear на Surface. До этого нужно получить <strong>Oath of the Unseen</strong>, осмотреть его, иметь как минимум пять Underworld-clears и один Surface-clear.</p>
+          <p>Пороги подтверждены community-гайдами и Oath wiki — можно ориентироваться на них.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="mercy-executioner">
+          <span class="trophy-item__name">Mercy, Night's Executioner</span>
+          <span class="trophy-item__teaser"> — Второй Gift of the Veil</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Рабочий порог: 16 Fear на Underworld и 12 Fear на Surface.</p>
+          <p>Удобно закрывать в паре с <strong>Unrivaled Prowess</strong>, если уже уверенно играете Vow of Rivals-бои.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="infinite-possibility">
+          <span class="trophy-item__name">Infinite Possibility</span>
+          <span class="trophy-item__teaser"> — Закройте 20 Chaos Trials</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Chaos Trials открываются после <strong>Abyssal Insight</strong> и идут как floor-challenges на заданных loadouts.</p>
+          <p>Закрывайте порциями, а не за одну длинную сессию.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="improbable-outcomes">
+          <span class="trophy-item__name">Improbable Outcomes</span>
+          <span class="trophy-item__teaser"> — Две подряд all-random Trials</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Две подряд победы в fully randomized Chaos trials. Это могут быть Chaos Below/Above trials с 0 Fear.</p>
+          <p>Оставьте на самый конец — посвятите отдельные runs только этому трофею.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="chaos-hell">
+          <span class="trophy-item__name">Chaos in Hell</span>
+          <span class="trophy-item__teaser"> — Пройдите Great Chaos Below</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Отдельный трофей за конкретный run: полный Underworld run с random weapon, random keepsake и 20 random Fear. Рабочий маршрут сообщества.</p>
+          <p>Не путайте с накопительными 20 Chaos Trials из <strong>Infinite Possibility</strong>.</p>
+          <div class="trophy-item__warning">Поздний эндгейм. Не беритесь за Great Chaos Below, пока не закрыты Veil- и Trial-трофеи.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="giving-back">
+          <span class="trophy-item__name">Giving Back</span>
+          <span class="trophy-item__teaser"> — Заработайте 10 000 Kudos</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Kudos привязаны к обменам у Wretched Broker / Recycling Service.</p>
+          <p>Это поздний ресурсный слив — не жертвуйте ранними нужными реагентами ради гринда Kudos.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="unrivaled-prowess">
+          <span class="trophy-item__name">Unrivaled Prowess</span>
+          <span class="trophy-item__teaser"> — Vow of Rivals на обоих маршрутах</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Prophecy требует закрыть всех Guardian-боссов под <strong>Vow of Rivals</strong> на Underworld и Surface. Для финальных боссов достаточно войти в бой — победа не обязательна.</p>
+          <p>Это проверенный маршрут — можно ориентироваться на него напрямую.</p>
+        </div>
+      </details>
+
     </div>
 
     <!-- I. Платина -->
     <div class="trophy-checklist__category" id="trophy-cat-i">
       <h3 class="trophy-checklist__category-title">I. Платина</h3>
-      <div class="trophy-checklist__item"><label><input type="checkbox" data-trophy="goddess-nightmares"><span><span class="trophy-checklist__name">Goddess of Nightmares</span><span class="trophy-checklist__desc"> — получить все остальные трофеи.</span></span></label></div>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="goddess-nightmares">
+          <span class="trophy-item__name">Goddess of Nightmares</span>
+          <span class="trophy-item__teaser"> — Соберите все остальные трофеи</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Финальная контрольная точка без отдельной маршрутной логики.</p>
+          <p>Падает автоматически после закрытия всех 49 остальных трофеев.</p>
+        </div>
+      </details>
+
     </div>
   </section>
 
@@ -888,5 +1606,12 @@
   <script src="../../assets/js/progress.js"></script>
   <script src="../../assets/js/ui.js"></script>
   <script src="../../assets/js/guide.js"></script>
+  <script>
+    /* Чекбоксы внутри <summary>: не даём клику по чекбоксу
+       одновременно переключать <details> */
+    document.querySelectorAll('.trophy-item__cb').forEach(function (cb) {
+      cb.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+  </script>
 </body>
 </html>
