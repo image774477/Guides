@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Полный гайд к платине и 100% — Pragmata | Guides</title>
+  <meta name="description" content="Pragmata: пошаговый маршрут к платине и 100% — сюжет по секторам, Неопознанный сигнал, Sweeper bot, Lunatic и весь постгейм.">
+  <link rel="canonical" href="https://image774477.github.io/Guides/guides/pragmata-platinum/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Полный гайд к платине и 100% — Pragmata">
+  <meta property="og:description" content="Pragmata: сюжетный маршрут по секторам, безопасный клинап через Неопознанный сигнал и отдельный свежий забег на Lunatic.">
+  <meta property="og:url" content="https://image774477.github.io/Guides/guides/pragmata-platinum/">
+  <meta property="og:image" content="https://image774477.github.io/Guides/guides/pragmata-platinum/media/cover.png">
+  <meta property="og:locale" content="ru_RU">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Полный гайд к платине и 100% — Pragmata">
+  <meta name="twitter:description" content="Pragmata: сюжетный маршрут по секторам, безопасная зачистка через Неопознанный сигнал и отдельный забег на Lunatic.">
+  <meta name="twitter:image" content="https://image774477.github.io/Guides/guides/pragmata-platinum/media/cover.png">
+
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/guide.css">
+  <style>
+    .guide-header__cover--pragmata {
+      max-height: 34rem;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .trophy-item {
+      border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+    }
+
+    .trophy-item:last-child {
+      border-bottom: none;
+    }
+
+    .trophy-item__summary {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) 0;
+      cursor: pointer;
+      list-style: none;
+      min-height: 44px;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .trophy-item__summary::-webkit-details-marker { display: none; }
+    .trophy-item__summary::marker { display: none; }
+
+    .trophy-item__cb {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color 0.15s, background-color 0.15s;
+      position: relative;
+    }
+
+    .trophy-item__cb:checked {
+      border-color: var(--color-success);
+      background-color: var(--color-success);
+    }
+
+    .trophy-item__cb:checked::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 10px;
+      border: solid var(--color-bg);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .trophy-item__name {
+      font-weight: 600;
+      font-size: var(--text-base);
+      flex-shrink: 0;
+    }
+
+    .trophy-item__teaser {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      flex: 1;
+    }
+
+    .trophy-item__arrow {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
+    .trophy-item[open] .trophy-item__arrow {
+      transform: rotate(180deg);
+    }
+
+    .trophy-item__body {
+      padding: 0 0 var(--space-md) calc(20px + var(--space-sm));
+    }
+
+    .trophy-item__body p {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: var(--space-sm);
+    }
+
+    .trophy-item__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .trophy-item__note,
+    .trophy-item__warning {
+      margin-top: var(--space-sm);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
+    .trophy-item__note {
+      border-left: 3px solid #63b3ed;
+      background: rgba(99, 179, 237, 0.08);
+    }
+
+    .trophy-item__warning {
+      border-left: 3px solid var(--color-warning);
+      background: rgba(250, 204, 21, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <header class="guide-header" id="top">
+    <img
+      class="guide-header__cover guide-header__cover--pragmata"
+      src="media/cover.png"
+      alt="Pragmata — гайд к платине и 100%"
+      width="1448"
+      height="1086">
+    <h1 class="guide-header__title">Pragmata</h1>
+    <p class="guide-header__subtitle">Полный гайд к платине и 100%</p>
+    <p class="guide-header__description">Рабочий маршрут по секторам с безопасной зачисткой через Неопознанный сигнал и отдельным забегом на Lunatic</p>
+    <div class="guide-header__meta-badges">
+      <span class="badge badge--platform">PS5</span>
+      <span class="badge badge--platform">Xbox Series X|S</span>
+      <span class="badge badge--platform">PC</span>
+      <span class="badge badge--platform">Switch 2</span>
+      <span class="badge badge--spoiler">Умеренные спойлеры</span>
+      <span class="badge badge--missable">1 легко пропустить</span>
+      <time class="badge badge--date" datetime="2026-04-23">Проверено: 23.04.2026</time>
+      <span class="badge badge--status" id="guide-status" data-status="not-started">Не начато</span>
+    </div>
+  </header>
+
+  <section class="version-platforms" id="section-version" aria-labelledby="section-version-heading">
+    <h2 id="section-version-heading" class="section-heading">Версия и платформы</h2>
+    <p>Для практического маршрута лучше считать Pragmata релизом от 17 апреля 2026 года: часть цифровых витрин показывала 16 апреля, но основная коммуникация вокруг релиза шла на 17 апреля. Этот гайд собран под стартовую релизную версию апреля 2026 года, без привязки к несуществующему выбору глав.</p>
+    <p>Подтверждённый набор платформ для этого маршрута: PlayStation 5, Xbox Series X|S, PC и Switch 2. На PS5 страница ведёт именно к платине; на Xbox, PC и Switch 2 тот же порядок действий закрывает те же достижения и 100% контент.</p>
+    <p>Структура Pragmata строится вокруг убежища Shelter, пяти основных секторов — Solar Power Plant, Mass Production Array, Terra Dome, Lunum Mines и Central Port — затем позднего сюжетного сегмента Experimental Pragmatics и постгейма «Неопознанный сигнал». Поэтому страница собрана по секторам и возвратам, а не по условным главам.</p>
+  </section>
+
+  <div class="resume-banner" id="resume-banner" hidden>
+    <p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
+    <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+    <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
+  </div>
+
+  <section class="meta-summary" aria-label="Сводка">
+    <dl class="meta-summary__list">
+      <div class="meta-summary__item">
+        <dt>Оценка маршрута</dt>
+        <dd>25–35 часов</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>По маршруту гайда</dt>
+        <dd>Рискован только Sweeper bot</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Точка невозврата</dt>
+        <dd>Условная: Experimental Pragmatics → Central Port</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Платформы</dt>
+        <dd>PS5 / Xbox / PC / Switch 2</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Версия</dt>
+        <dd>Релизная версия, апрель 2026</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="quick-actions" aria-label="Быстрые действия">
+    <button class="quick-actions__btn" id="btn-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+    <button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+    <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+    <button class="quick-actions__btn" id="btn-achievement" type="button" disabled title="Откроется после 100% прохождения гайда">Награда 100%</button>
+  </nav>
+
+  <div class="progress-bar" id="progress-bar">
+    <div class="progress-bar__inner">
+      <div class="progress-bar__track">
+        <div class="progress-bar__fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-bar__text" id="progress-text">0/0 · 0%</span>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
+    <h2 class="toc__heading">Оглавление</h2>
+    <ol class="toc__list">
+      <li class="toc__item"><a class="toc__link" href="#section-version">Версия и платформы</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-before-start">1. Перед стартом</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-story">2. Основной сюжетный проход</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-unknown-signal">3. Неопознанный сигнал и 100%</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-lunatic">4. Отдельный забег на Lunatic</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-route-check">Что перепроверить перед постгеймом и Lunatic</a></li>
+      <li class="toc__item"><a class="toc__link" href="#trophy-checklist">Чеклист трофеев</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-next">Что дальше</a></li>
+    </ol>
+  </nav>
+
+  <section class="quick-route" id="quick-route">
+    <h2 class="quick-route__heading">Краткий маршрут</h2>
+    <p>Casual или Standard → цикл Diana + REM в убежище → обязательный Sweeper bot → Solar Power Plant → Mass Production Array и Lim Eraser → быстрый возврат за синими воротами → Terra Dome → Lunum Mines → всё доступное до Experimental Pragmatics → Awakening и Cleansing → Central Port → первое испытание в Неопознанном сигнале → глобальная зачистка на 100% → 10 испытаний и The Right Man for the Job → отдельный свежий New Game на Lunatic.</p>
+  </section>
+
+  <main class="guide-content" id="guide-content" data-guide-id="pragmata-platinum" data-total-steps="16">
+    <section id="section-before-start" aria-labelledby="section-before-start-heading">
+      <h2 id="section-before-start-heading" class="section-heading">1. Перед стартом</h2>
+
+      <article class="step" id="step-1" data-step-type="critical" data-step-num="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <h3 class="step__title">Основной сейв делай на Casual или Standard</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-1" aria-label="Отметить шаг 1">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-1" aria-label="Копировать ссылку на шаг 1" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Первый файл нужен не для вызова, а для открытия систем, сюжетного финиша и чистой постгейм-зачистки. Почти весь маршрут к 100% закрывается в одном основном сейве, а Lunatic безопаснее оставлять на отдельный свежий запуск в самом конце.</p>
+          <div class="platform-note">
+            <p><strong>Платформы:</strong> На PS5 этот маршрут ведёт к платине, на Xbox Series X|S и PC — к тем же достижениям, а на Switch 2 — к тому же 100% контенту без платинового трофея.</p>
+          </div>
+          <div class="warning">
+            <p><strong>Важно:</strong> Не смешивай файл после финала с NG+. Гораздо удобнее держать один чистый сейв под Неопознанный сигнал и второй — под Lunatic.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-2" data-step-type="critical" data-step-num="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <h3 class="step__title">В убежище сразу раскручивай цикл Diana, REM и доску штампов</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-2" aria-label="Отметить шаг 2">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-2" aria-label="Копировать ссылку на шаг 2" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После каждого крупного сектора возвращайся в убежище, говори с Diana и не копи REM-модули до конца игры. В названиях трофеев они идут как НЗИ, но по факту это твой главный цикл для картинок, пряток, серий REM и комфортного закрытия всего контента в убежище.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Монеты из сундуков, наград Diana и тренажёра лучше сразу вкладывать в Stamp Board — доску штампов в убежище. Так «Бинго!» и смежные трофеи убежища закроются по дороге, а не отдельным гриндом.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-3" data-step-type="critical" data-step-num="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <h3 class="step__title">Первого Sweeper bot убивай сразу и держи отдельный сейв</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-3" aria-label="Отметить шаг 3">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-3" aria-label="Копировать ссылку на шаг 3" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>«От меня не уйдёшь!» — единственный трофей, который реально может слететь, если пропустить редкий спавн. Как только увидел Sweeper bot — редкого служебного бота в боевой зоне, — не беги мимо и не рассчитывай, что такой же гарантированно появится позже во время зачистки.</p>
+          <div class="missable">
+            <p><strong>Легко пропустить:</strong> Самые надёжные окна — Mass Production Array 03/04 и Lunum Mines 02/03. Если враг появился, это приоритет номер один.</p>
+          </div>
+          <div class="warning">
+            <p><strong>Важно:</strong> Перед редким спавном лучше держать ручной слот. Самый безопасный вариант — замедлить врага через Stasis Net или быстро забрать окно через Overdrive Protocol.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-4" data-step-type="collectible" data-step-num="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <h3 class="step__title">Помечай тайники, закрытые способностями, а не пытайся вскрыть их раньше времени</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-4" aria-label="Отметить шаг 4">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-4" aria-label="Копировать ссылку на шаг 4" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Синие преграды оставляй до получения <strong>Lim Eraser</strong>, а красные кристаллы — до <strong>Cleansing</strong>. Обычные коллекционные предметы не считаются безвозвратно пропускаемыми: основная глобальная зачистка идёт после сюжета в «Неопознанном сигнале».</p>
+          <div class="note">
+            <p><strong>Совет:</strong> В Pragmata это 184 отслеживаемых коллекционных предмета, включая миникубики, аварийные люки, сундуки, чистый лунит, REM и данные тренажёра. Сразу бери только то, что лежит на линии сюжета.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-story" aria-labelledby="section-story-heading">
+      <h2 id="section-story-heading" class="section-heading">2. Основной сюжетный проход</h2>
+
+      <article class="step" id="step-5" data-step-type="boss" data-step-num="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <h3 class="step__title">Solar Power Plant: включи питание и не превращай стартовый сектор в полную зачистку</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-5" aria-label="Отметить шаг 5">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-5" aria-label="Копировать ссылку на шаг 5" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Стартовый сектор нужен для темпа, питания и знакомства с базовой связкой Hugh + Diana. Бери видимые сундуки, голографические стены и миникубики, если они на прямой траектории, но не задерживайся ради лишней зачистки до первых апгрейдов.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Первый сектор удобен как эталон ритма: сюжет вперёд, бесплатные коллектаблы по пути, всё закрытое способностями — в пометки на потом.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-6" data-step-type="critical" data-step-num="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <h3 class="step__title">Mass Production Array: сперва гаси глушители, потом забирай Lim Eraser</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-6" aria-label="Отметить шаг 6">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-6" aria-label="Копировать ссылку на шаг 6" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В MPA бои чаще всего ломают именно Jammers — глушители взлома, поэтому у них всегда должен быть первый приоритет. Твоя реальная цель здесь — добраться до башни связи Comms Tower и открыть <strong>Lim Eraser</strong>, потому что именно он запускает первый полезный маршрут возврата, а не очередной час локальной чистки.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Если к этому моменту трофей Sweeper bot ещё не взят, следи за редкими спавнами в MPA 03/04 особенно внимательно.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-7" data-step-type="collectible" data-step-num="7">
+        <div class="step__header">
+          <span class="step__number">7</span>
+          <h3 class="step__title">Сделай короткий возврат за синими воротами до Terra Dome</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-7" aria-label="Отметить шаг 7">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-7" aria-label="Копировать ссылку на шаг 7" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Как только получил Lim Eraser, вернись в ранние зоны Solar Power Plant и Mass Production Array и сними всё, что раньше упиралось в синие преграды. Это быстрый и дешёвый круг: он поднимает секторный прогресс и сокращает объём постгейм-зачистки, не затягивая сюжетный темп.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Помни, что миникубики и аварийные люки не входят в секторный процент напрямую. Их стоит снимать параллельно, иначе при 100% карты всё равно останутся хвосты.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-8" data-step-type="critical" data-step-num="8">
+        <div class="step__header">
+          <span class="step__number">8</span>
+          <h3 class="step__title">Terra Dome: бери доступное, но не зависай на красных кристаллах</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-8" aria-label="Отметить шаг 8">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-8" aria-label="Копировать ссылку на шаг 8" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Terra Dome очень плотный по скрытым нишам и веткам, поэтому здесь особенно легко перепутать «необязательное сейчас» с «потеряно навсегда». Иди по сюжету, собирай бесплатные сундуки, REM и данные тренажёра, а всё, что требует Cleansing, просто отмечай как поздний возврат.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Красные барьеры в Terra Dome не пропускаются навсегда. Они просто закрыты до позднего сюжетного апгрейда.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-9" data-step-type="boss" data-step-num="9">
+        <div class="step__header">
+          <span class="step__number">9</span>
+          <h3 class="step__title">Lunum Mines: отбей LunaDigger и не упусти Defender bot</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-9" aria-label="Отметить шаг 9">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-9" aria-label="Копировать ссылку на шаг 9" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В шахтах держи фокус на двух одноразовых окнах. Первое — пережить погоню LunaDigger по сюжету для «Отчаянной храбрости». Второе — на первой встрече с Defender bot в Lunum Mines 03 снять «Не одолжишь на минутку?» через Confuse node, пока враг ещё не умер по привычке от обычного урона.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Если трофей за Sweeper bot ещё не взят, Lunum Mines остаются последним надёжным окном высокой уверенности для этого спавна.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-10" data-step-type="decision" data-step-num="10">
+        <div class="step__header">
+          <span class="step__number">10</span>
+          <h3 class="step__title">Перед Experimental Pragmatics закрой всё, что доступно без Cleansing</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-10" aria-label="Отметить шаг 10">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-10" aria-label="Копировать ссылку на шаг 10" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Вход в Experimental Pragmatics — рабочая точка невозврата для обычного цикла по секторам. После неё игра ведёт к финалу, а нормальный свободный ритм вернётся уже только через постгейм, поэтому это лучший момент проверить синие возвраты, редкие спавны, доступные красные зоны и всё, что не требует Cleansing.</p>
+          <div class="decision">
+            <h4 class="decision__heading">Что делать перед входом</h4>
+            <div class="decision__option">
+              <h4>Ещё не взят Sweeper bot или висят синие ворота</h4>
+              <p>Возвращайся прямо сейчас. Позже это окно станет менее удобным, а выгода от ранней зачистки уже никуда не денется.</p>
+            </div>
+            <div class="decision__option">
+              <h4>Всё доступное до Cleansing уже закрыто</h4>
+              <p>Иди в Experimental Pragmatics и не оглядывайся на красные барьеры. Они всё равно откроются только после Awakening.</p>
+            </div>
+          </div>
+          <div class="warning">
+            <p><strong>Важно:</strong> Перед поздним сюжетным отрезком держи отдельный ручной слот. Он удобен и как страховка, и как чистая точка для последующих сравнений маршрута.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-11" data-step-type="critical" data-step-num="11">
+        <div class="step__header">
+          <span class="step__number">11</span>
+          <h3 class="step__title">После Awakening и Cleansing пробеги позднюю зачистку, затем дожми Central Port</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-11" aria-label="Отметить шаг 11">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-11" aria-label="Копировать ссылку на шаг 11" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Почини Diana, открой Cleansing и сразу сделай один поздний круг по секторам, где висели красные кристаллы и заражённые узлы. Этот момент лучше всего подходит для поздних ресурсов вроде чистого лунита, апгрейда под «Совершенное оружие» и спокойной дороги к финальному штурму Central Port.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> После окончания сюжета не продолжай без отдельного сейва после финала. Он нужен как база для всего постгейма, истинной концовки и безопасного трофейного клинапа.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-unknown-signal" aria-labelledby="section-postgame-heading">
+      <h2 id="section-postgame-heading" class="section-heading">3. Неопознанный сигнал и 100%</h2>
+
+      <article class="step" id="step-12" data-step-type="critical" data-step-num="12">
+        <div class="step__header">
+          <span class="step__number">12</span>
+          <h3 class="step__title">В Неопознанном сигнале сперва закрой первое испытание</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-12" aria-label="Отметить шаг 12">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-12" aria-label="Копировать ссылку на шаг 12" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Неопознанный сигнал — это не выбор глав, а постгейм-фаза с собственным входным ключом. Сначала проходишь первое открытое испытание, забираешь «Лунное испытание» и только потом получаешь нормальный повторный доступ к старым зонам для большой зачистки.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Если влететь в постгейм без этого шага, легко решить, будто свободный возврат уже работает, хотя часть маршрута ещё не открыта.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-13" data-step-type="collectible" data-step-num="13">
+        <div class="step__header">
+          <span class="step__number">13</span>
+          <h3 class="step__title">Секторами добей 100%: сундуки, миникубики, люки, REM и данные тренажёра</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-13" aria-label="Отметить шаг 13">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-13" aria-label="Копировать ссылку на шаг 13" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Лучший порядок — идти секторами, а не отдельными типами предметов. Сначала доводи до конца сундуки, красные зоны, чистый лунит и всё, что даёт секторный процент, а затем добирай то, что не входит в него напрямую: 15 миникубиков, 27 аварийных люков, REM и все данные тренажёра.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Для Pragmata критично помнить, что 100% сектора не означает 100% всего сектора. Миникубики и люки нужно проверять отдельно даже на уже закрытой карте.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-14" data-step-type="optional" data-step-num="14">
+        <div class="step__header">
+          <span class="step__number">14</span>
+          <h3 class="step__title">Дожми убежище, тренажёр и боевые трофеи в безопасных местах</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-14" aria-label="Отметить шаг 14">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-14" aria-label="Копировать ссылку на шаг 14" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Оставшиеся точечные задачи быстрее всего закрывать вне обычного сюжетного ритма. «Одним махом» удобнее делать в десятом испытании тренажёра, «БОЛЬШЕ 6000!» — в седьмой миссии тренажёра Project Pierce, «Пушки — для слабаков!» — через атакующую сборку взлома или финальный сюжетный взлом, а «Генеральную уборку» — уже после Cleansing, когда рядом три заражённых врага.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Для «Повелителя симулятора» нужны все 30 миссий тренажёра, но побочные цели можно игнорировать: счёт идёт только по основной цели.</p>
+          </div>
+          <details class="spoiler">
+            <summary>Показать спойлер по позднему этапу The Right Man for the Job</summary>
+            <p>Когда закроешь 100% прогресс по секторам, все 10 испытаний и усиленный маршрут в Неопознанном сигнале, сейв после финала доводится до The Right Man for the Job и связанного варианта финала с Black Box. Делай это в том же файле, где уже закрыта основная зачистка.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-lunatic" aria-labelledby="section-lunatic-heading">
+      <h2 id="section-lunatic-heading" class="section-heading">4. Отдельный забег на Lunatic</h2>
+
+      <article class="step" id="step-15" data-step-type="decision" data-step-num="15">
+        <div class="step__header">
+          <span class="step__number">15</span>
+          <h3 class="step__title">Отделяй Lunatic от сейва после финала</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-15" aria-label="Отметить шаг 15">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-15" aria-label="Копировать ссылку на шаг 15" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Когда сейв после финала уже закрыл Неопознанный сигнал и все постгейм-хвосты, не продолжай ковырять его ради Lunatic. Самый безопасный маршрут — оставить этот файл как архивный 100% сейв и начать отдельный свежий New Game только под «Превосходство на Луне».</p>
+          <div class="decision">
+            <h4 class="decision__heading">Как решить без потерь</h4>
+            <div class="decision__option">
+              <h4>Ещё не закрыт The Right Man for the Job</h4>
+              <p>Не распыляйся. Сначала дочищай сейв после финала и только потом переходи к Lunatic.</p>
+            </div>
+            <div class="decision__option">
+              <h4>Постгейм уже чистый</h4>
+              <p>Создавай новый ручной слот и держи Lunatic как отдельную задачу без привязки к старому файлу.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-16" data-step-type="boss" data-step-num="16">
+        <div class="step__header">
+          <span class="step__number">16</span>
+          <h3 class="step__title">Свежий New Game на Lunatic — и только потом последняя галочка</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-16" aria-label="Отметить шаг 16">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-16" aria-label="Копировать ссылку на шаг 16" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>На Lunatic ты уже не изучаешь игру, а повторяешь выученную траекторию: быстрый сюжет, минимум лишних боёв, уважение к окнам взлома Diana и печати всего полезного по дороге. После закрытия Lunatic падает «Превосходство на Луне», а на PS5 следом закрывается и сама платина Pragmata.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Если есть проблемы с конкретным боем, сначала репетируй механику в тренажёре. Для чистого Lunatic-сейва это выгоднее, чем ломать ритм в середине забега.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="prophecy-check" id="section-route-check" aria-labelledby="section-route-check-heading">
+    <h2 id="section-route-check-heading" class="section-heading">Что перепроверить перед постгеймом и Lunatic</h2>
+    <p><strong>1.</strong> Трофей «От меня не уйдёшь!» уже взят. Если нет, не уходи в поздний сюжетный отрезок без ручного слота рядом с возможным спавном Sweeper bot.</p>
+    <p><strong>2.</strong> После Lim Eraser уже сняты синие ворота и весь ранний добор, который реально экономит время. Если это не сделано, postgame-чистка раздуется без пользы.</p>
+    <p><strong>3.</strong> После Cleansing сделан один поздний круг по красным барьерам, чистому луниту и апгрейдам под «Совершенное оружие».</p>
+    <p><strong>4.</strong> Есть отдельный сейв после финала. Он нужен для The Right Man for the Job, связанного варианта финала с Black Box и общего 100% файла.</p>
+    <p><strong>5.</strong> В «Неопознанном сигнале» сначала закрыто первое испытание, и только потом начат глобальный возврат по старым зонам.</p>
+    <p><strong>6.</strong> Lunatic оставлен на отдельный свежий New Game, а не смешан с NG+ и сейвом после финала.</p>
+  </section>
+
+  <section class="trophy-checklist" id="trophy-checklist">
+    <h2 class="trophy-checklist__heading">Все трофеи по категориям</h2>
+
+    <div class="trophy-checklist__category">
+      <h3 class="trophy-checklist__category-title">A. Сюжет, поздний финал и платина</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="rendezvous">
+          <span class="trophy-item__name">Встреча</span>
+          <span class="trophy-item__teaser"> — добраться до убежища</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Первый сюжетный трофей. Падает автоматически после пролога и выхода к убежищу Shelter, отдельного маршрута не требует.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="power-trip">
+          <span class="trophy-item__name">Восстановление питания</span>
+          <span class="trophy-item__teaser"> — включить питание в Solar Power Plant</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Чистый сюжетный трофей первого сектора. Его удобно использовать как маркер того, что стартовый ритм уже собран и можно не задерживаться в начале игры.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="purr-fect-guide">
+          <span class="trophy-item__name">Замурчательный проводник</span>
+          <span class="trophy-item__teaser"> — дойти до башни связи Comms Tower</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Падает в Mass Production Array по основной линии. Главный смысл участка — дойти до Comms Tower и забрать Lim Eraser, а не превращать сектор в ранний 100% добор.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="another-pragmata">
+          <span class="trophy-item__name">Ещё одна прагмата</span>
+          <span class="trophy-item__teaser"> — встретить запертую девочку</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Сюжетный трофей без отдельного риска. Закрывается сам, если не сворачивать с основной дороги по Terra Dome раньше времени ради поздних барьеров.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="entrusted-memory">
+          <span class="trophy-item__name">Ценные данные памяти</span>
+          <span class="trophy-item__teaser"> — получить код остановки</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ещё одна жёсткая сюжетная отметка. Полезна как внутренний чекпоинт перед заходом в позднюю часть игры и переходом к шахтам.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="mission-unveiled">
+          <span class="trophy-item__name">Миссия раскрыта</span>
+          <span class="trophy-item__teaser"> — добраться до Nexus Tower</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Сюжетный трофей Lunum Mines. Падает по дороге к позднему сюжетному стыку и не требует отдельной зачистки сектора.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="awakening">
+          <span class="trophy-item__name">Пробуждение</span>
+          <span class="trophy-item__teaser"> — починить Diana и открыть Cleansing</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Один из главных сюжетных трофеев маршрута. Именно после него открывается Cleansing и полноценный поздний возврат за красными барьерами.</p>
+          <div class="trophy-item__note">Не беги сразу в финал: сначала используй новый апгрейд для позднего круга по секторам.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="sentinel-breach">
+          <span class="trophy-item__name">Атака часового</span>
+          <span class="trophy-item__teaser"> — победить Sentinel</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний сюжетный трофей. После него основной сюжет уже фактически закрыт и маршрут логично переводится в постгейм.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="our-promise">
+          <span class="trophy-item__name">Наша клятва</span>
+          <span class="trophy-item__teaser"> — завершить игру на любой сложности</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Базовое завершение основного сюжета. Для маршрута к 100% его удобнее брать на Casual или Standard, не усложняя первый проход лишними вызовами.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="right-man-job">
+          <span class="trophy-item__name">Идеальный кандидат</span>
+          <span class="trophy-item__teaser"> — полностью закрыть Неопознанный сигнал</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Это не просто один финальный бой. Трофей завязан на 100% прогресс по секторам, 10 испытаний в Unknown Signal и поздний повторный маршрут к варианту финала с Black Box.</p>
+          <div class="trophy-item__warning">Не начинай глобальную зачистку старых зон, пока в Неопознанном сигнале не закрыто первое испытание и не открыт полноценный возврат.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="lunar-supremacy">
+          <span class="trophy-item__name">Превосходство на Луне</span>
+          <span class="trophy-item__teaser"> — закончить отдельный свежий New Game на Lunatic</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний трофей второго прохождения. Самая безопасная практика — не мешать его с сейвом после финала и не пытаться тащить через NG+.</p>
+          <div class="trophy-item__warning">Держи Lunatic отдельным свежим файлом. Так ты не рискуешь 100% сейвом и не путаешь постгейм с вторым прохождением.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="pragmata-platinum">
+          <span class="trophy-item__name">Pragmata</span>
+          <span class="trophy-item__teaser"> — собрать все остальные трофеи на PS5</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Контрольная отметка маршрута. На PlayStation 5 падает автоматически после закрытия всех остальных трофеев страницы.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category">
+      <h3 class="trophy-checklist__category-title">B. Убежище, REM и тренажёр</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="small-talk">
+          <span class="trophy-item__name">Лёгкая беседа</span>
+          <span class="trophy-item__teaser"> — первый разговор с Diana в убежище</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ранний freebie-трофей. Падает сразу после стабилизации цикла убежища, если не пробегать мимо Diana между секторами.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="thanks-for-everything">
+          <span class="trophy-item__name">Спасибо за всё!</span>
+          <span class="trophy-item__teaser"> — получить рисунок от Diana</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Закрывается через регулярный цикл разговоров и подарков. Не копи REM-модули до финала: этому трофею нужен именно живой, а не отложенный прогресс убежища.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="peekaboo">
+          <span class="trophy-item__name">Кто не спрятался, я не виноват!</span>
+          <span class="trophy-item__teaser"> — выиграть в прятки</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей тоже идёт из ритма убежища и разговоров с Diana. Чем раньше ты раскручиваешь её цикл, тем меньше шанс оставить прятки на самый конец.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="for-me">
+          <span class="trophy-item__name">Это мне?</span>
+          <span class="trophy-item__teaser"> — подарить первый REM или НЗИ</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Практически бесплатный ранний трофей. Как только начал возвращаться в убежище после крупных секторов, дари первый REM, а не откладывай его до конца страницы.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="replicating-extraordinaire">
+          <span class="trophy-item__name">Непревзойдённый репликатор</span>
+          <span class="trophy-item__teaser"> — закрыть одну полную серию REM</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Системный трофей по нормальному сбору REM. Он удобно закрывается параллельно сюжетному клинапу, если не забывать отдавать серии Diana по мере накопления.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="blackout">
+          <span class="trophy-item__name">Бинго!</span>
+          <span class="trophy-item__teaser"> — закрыть один Stamp Board</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Закрывается через нормальную трату монет убежища. Самая частая ошибка — копить их «на потом», вместо того чтобы уже по ходу маршрута раскачивать доску штампов.</p>
+          <div class="trophy-item__note">Монеты убежища удобно добираются из сундуков, наград Diana и тренажёра, поэтому специально фармить их обычно не нужно.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="cant-stop-wont-stop">
+          <span class="trophy-item__name">Вошёл во вкус</span>
+          <span class="trophy-item__teaser"> — напечатать всё доступное во время основного сюжета</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Завязан именно на основном сюжете, поэтому тянуть его до позднего постгейма не стоит. Проверь печать оружия, узлов взлома и способностей ещё до входа в финальный сюжетный отрезок.</p>
+          <div class="trophy-item__warning">Формулировка «во время основного сюжета» здесь важнее, чем кажется. Не оставляй этот трофей на второй файл или позднюю зачистку.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category">
+      <h3 class="trophy-checklist__category-title">C. Исследование, сектора и возвраты</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="mister-simulator">
+          <span class="trophy-item__name">Знакомство с симулятором</span>
+          <span class="trophy-item__teaser"> — закрыть основную цель в одном испытании тренажёра</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ранний трофей на знакомство с системой. Как только тренажёр уже открыт и есть первое нужное задание, проходи его сразу — это бесплатно поднимает уверенность в механике.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="master-simulator">
+          <span class="trophy-item__name">Повелитель симулятора</span>
+          <span class="trophy-item__teaser"> — закрыть основную цель во всех 30 испытаниях тренажёра</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Поздний системный трофей, но не отдельный гринд “в вакууме”. Его удобнее добивать уже на 100% файле, когда собраны все данные тренажёра.</p>
+          <div class="trophy-item__note">Побочные задачи не обязательны: счёт идёт только по основной цели каждого испытания.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="red-zoned-loving-it">
+          <span class="trophy-item__name">Любитель красных зон</span>
+          <span class="trophy-item__teaser"> — зачистить любую красную зону</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Практически идёт сам по себе, потому что красные зоны всё равно нужны для 100% сектора и позднего ресурсного добора. Не делай отдельный маршрут только ради него.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="wall-what-wall">
+          <span class="trophy-item__name">Какая ещё стена?</span>
+          <span class="trophy-item__teaser"> — найти голографическую стену</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ранний исследовательский трофей. Обычно падает сам, если не бежать по сектору с туннельным зрением и проверять очевидные скрытые стены.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="well-spotted">
+          <span class="trophy-item__name">Глаз-алмаз</span>
+          <span class="trophy-item__teaser"> — подстрелить один миникубик</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Бесплатная первая отметка по миникубикам. Срабатывает естественно ещё на раннем сборе, если ты не игнорируешь заметные цели на карте.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="mini-hunter-supreme">
+          <span class="trophy-item__name">Величайший миниохотник</span>
+          <span class="trophy-item__teaser"> — сбить все 15 миникубиков</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Полный трофей по миникубикам. Их легко забыть, потому что они не входят в процент сектора напрямую, поэтому добирай параллельно обычной зачистке, а не после неё.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="cradle-surveyor">
+          <span class="trophy-item__name">Исследователь Колыбели</span>
+          <span class="trophy-item__teaser"> — довести до 100% любой отслеживаемый сектор</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Первый полноценный трофей за 100% карты. Лучше всего приходит естественно после Unknown Signal, когда уже доступны все нужные возвраты.</p>
+          <div class="trophy-item__note">Миникубики и аварийные люки в секторный процент не входят. Если карта показывает 100%, это ещё не всегда весь сектор.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="escape-artist">
+          <span class="trophy-item__name">Искусство побега</span>
+          <span class="trophy-item__teaser"> — открыть все 27 аварийных люков</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Ещё один трофей, который не подтягивается одним только секторным процентом. Его удобнее вести рядом с обычным исследованием, а не оставлять на финальную слепую проверку.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="a-lunar-challenge">
+          <span class="trophy-item__name">Лунное испытание</span>
+          <span class="trophy-item__teaser"> — пройти первое испытание в Неопознанном сигнале</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Это не поздняя редкость, а первый обязательный шаг постгейма. Именно с него начинается правильный возврат к старым зонам и вся дальнейшая 100% зачистка.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category">
+      <h3 class="trophy-checklist__category-title">D. Бой, прокачка и точечные задачи</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="top-shelf-item">
+          <span class="trophy-item__name">Совершенное оружие</span>
+          <span class="trophy-item__teaser"> — улучшить оружие за чистый лунит</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей приходит не по сложности, а по порядку ресурсов. Делай его уже после позднего круга с Cleansing, когда чистый лунит и нужные апгрейды идут без натяжки.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="sweeper-bot">
+          <span class="trophy-item__name">От меня не уйдёшь!</span>
+          <span class="trophy-item__teaser"> — убить Sweeper bot при первом надёжном окне</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Единственный по-настоящему рискованный трофей страницы. Если видишь Sweeper bot в MPA 03/04 или Lunum Mines 02/03, выключай всё остальное и забирай его сразу.</p>
+          <div class="trophy-item__warning">Не рассчитывай на гарантированный поздний добор. Этот трофей нужно считать реально легко пропускаемым в практическом смысле.</div>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="round-em-up">
+          <span class="trophy-item__name">Одним махом</span>
+          <span class="trophy-item__teaser"> — убрать троих врагов через Lim Recycler</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Самый удобный безопасный фарм — десятое испытание тренажёра. Там проще всего поймать нужную плотность врагов без нервов и без лишнего риска для сюжетного файла.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="courage-in-desperation">
+          <span class="trophy-item__name">Отчаянная храбрость</span>
+          <span class="trophy-item__teaser"> — отбиться от LunaDigger в Lunum Mines</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Пугает сильнее, чем реально наказывает. Тебе нужен не идеальный бой, а просто уверенное прохождение сценарного участка в шахтах.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="borrow-that">
+          <span class="trophy-item__name">Не одолжишь на минутку?</span>
+          <span class="trophy-item__teaser"> — запутать Defender bot и забрать его щит</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Лучшее окно — первая встреча с Defender bot в Lunum Mines 03. Не убивай врага на автомате, пока не провёл нужный взлом через Confuse node.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="clean-up-aisle-three">
+          <span class="trophy-item__name">Генеральная уборка</span>
+          <span class="trophy-item__teaser"> — очистить сразу трёх заражённых врагов</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Трофей уже под позднюю фазу с Cleansing. Легче всего делается там, где рядом стоят сразу три заражённых врага, а не в случайном бою по дороге.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="its-over-6000">
+          <span class="trophy-item__name">БОЛЬШЕ 6000!</span>
+          <span class="trophy-item__teaser"> — нанести 6000 урона из огнестрела за секунду</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Самый удобный спот — Training Mission 07 Project Pierce. Там проще собрать правильную секунду, чем надеяться на красивый случай в обычном секторе.</p>
+        </div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary">
+          <input type="checkbox" class="trophy-item__cb" data-trophy="who-needs-guns">
+          <span class="trophy-item__name">Пушки — для слабаков!</span>
+          <span class="trophy-item__teaser"> — нанести 3000 урона взломом за один заход</span>
+          <span class="trophy-item__arrow" aria-hidden="true">▾</span>
+        </summary>
+        <div class="trophy-item__body">
+          <p>Лучше всего закрывается через атакующую сборку взлома или в одном из сюжетных хаков, где игра даёт достаточно плотный урон. Важно не путать порог: нужен именно один сильный заход, а не серия мелких.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="mistakes" id="section-mistakes" aria-labelledby="mistakes-heading">
+    <h2 id="mistakes-heading" class="section-heading">Частые ошибки</h2>
+    <ul class="mistakes__list">
+      <li>Играть в Pragmata как в обычный TPS и игнорировать окна Diana: взлом здесь открывает урон, а не просто украшает бой.</li>
+      <li>Копить REM и диалоги в убежище до конца игры вместо того, чтобы закрывать цикл Diana по дороге.</li>
+      <li>Пропустить первого Sweeper bot и потом рассчитывать, что такой же спавн гарантированно вернётся в постгейме.</li>
+      <li>Тратить время на синие и красные преграды до получения Lim Eraser и Cleansing, будто это настоящие безвозвратно пропускаемые вещи.</li>
+      <li>Заходить в Experimental Pragmatics с недособранными синими возвратами и незакрытым окном по редкому трофею.</li>
+      <li>Считать Неопознанный сигнал мгновенным свободным режимом. Сначала закрывается первое испытание, и только потом открывается нормальный возврат в старые зоны.</li>
+      <li>Пытаться брать Lunatic в том же ритме, что и основной сейв, вместо отдельного свежего New Game с уже выученным маршрутом.</li>
+    </ul>
+  </section>
+
+  <section class="next-guide" id="section-next" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-heading">Что дальше</h2>
+    <p>После этой страницы у тебя остаются две дороги: сейв после финала под 100% и «Неопознанный сигнал», а затем отдельный свежий файл под Lunatic. Не смешивай их, даже если очень хочется сэкономить время одним проходом.</p>
+    <ul class="next-guide__list">
+      <li><a href="#section-route-check">Сначала перепроверить контрольный блок перед постгеймом и Lunatic</a></li>
+      <li><a href="#trophy-checklist">Потом добить трофеи Pragmata по категориям</a></li>
+      <li><a href="../hades-2-platinum/">Открыть Hades II как референс по другой платине</a></li>
+    </ul>
+  </section>
+
+  <footer class="guide-footer">
+    <p>&copy; 2026 by Achiever. Все данные собраны из открытых источников и приведены к рабочему маршруту для игрока.</p>
+  </footer>
+
+  <nav class="action-bar" id="action-bar" aria-label="Мобильные действия">
+    <button class="action-bar__btn" id="mob-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+    <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+  </nav>
+
+  <div class="achievement-modal" id="achievement-modal" hidden aria-modal="true" role="dialog">
+    <div class="achievement-modal__overlay"></div>
+    <div class="achievement-modal__card">
+      <button class="achievement-modal__close" id="achievement-close" type="button" aria-label="Закрыть">&times;</button>
+      <h2 class="achievement-modal__title">Гайд закрыт на 100%!</h2>
+      <p class="achievement-modal__desc">Поздравляем! Ты прошёл маршрут, закрыл шаги и можешь спокойно дожимать только то, что сам оставил напоследок.</p>
+      <img class="achievement-modal__img" id="achievement-img" src="media/achievement-card.png" alt="Карточка награды Pragmata" width="941" height="1672">
+      <div class="achievement-modal__actions">
+        <button class="achievement-modal__btn achievement-modal__btn--download" id="btn-download-achievement" type="button">Скачать карточку</button>
+        <button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="../../assets/js/progress.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <script src="../../assets/js/guide.js"></script>
+  <script>
+    document.querySelectorAll('.trophy-item__cb').forEach(function (cb) {
+      cb.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+</body>
+</html>
