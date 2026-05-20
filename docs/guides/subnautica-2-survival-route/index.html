@@ -504,5 +504,39 @@
   <script src="../../assets/js/progress.js"></script>
   <script src="../../assets/js/ui.js"></script>
   <script src="../../assets/js/guide.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var steps = document.querySelectorAll('.step');
+      function updateStepNumbers() {
+        var isStoryOnly = document.body.classList.contains('story-only');
+        var currentNumber = 1;
+        steps.forEach(function (step) {
+          var isHidden = false;
+          if (isStoryOnly) {
+            var type = step.getAttribute('data-step-type');
+            if (type === 'optional' || type === 'collectible') {
+              isHidden = true;
+            }
+          }
+          if (!isHidden) {
+            var numSpan = step.querySelector('.step__number');
+            if (numSpan) {
+              numSpan.textContent = currentNumber;
+            }
+            currentNumber++;
+          }
+        });
+      }
+      updateStepNumbers();
+      var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.attributeName === 'class') {
+            updateStepNumbers();
+          }
+        });
+      });
+      observer.observe(document.body, { attributes: true });
+    });
+  </script>
 </body>
 </html>
