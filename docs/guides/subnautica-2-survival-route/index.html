@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Маршрут раннего доступа — Subnautica 2 | Guides</title>
+  <meta name="description" content="Subnautica 2: рабочий маршрут раннего доступа — старт на Proteus, сигналы Blackbox, адаптации ДНК, биомоды, базы, техника, кооператив и финал текущей версии.">
+  <link rel="canonical" href="https://image774477.github.io/Guides/guides/subnautica-2-survival-route/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Маршрут раннего доступа — Subnautica 2">
+  <meta property="og:description" content="Пошаговый маршрут по Subnautica 2: от первых сигналов Blackbox и базы до адаптаций ДНК, биомодов, техники и текущего финала раннего доступа.">
+  <meta property="og:url" content="https://image774477.github.io/Guides/guides/subnautica-2-survival-route/">
+  <meta property="og:image" content="https://image774477.github.io/Guides/assets/icons/icon-512.png">
+  <meta property="og:locale" content="ru_RU">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Маршрут раннего доступа — Subnautica 2">
+  <meta name="twitter:description" content="Практичный маршрут по Subnautica 2: сюжет раннего доступа, выживание, базы, ДНК-адаптации, техника и кооператив.">
+  <meta name="twitter:image" content="https://image774477.github.io/Guides/assets/icons/icon-512.png">
+
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/guide.css">
+</head>
+<body>
+  <header class="guide-header" id="top">
+    <h1 class="guide-header__title">Subnautica 2</h1>
+    <p class="guide-header__subtitle">Маршрут раннего доступа</p>
+    <p class="guide-header__description">Пошаговый маршрут по Proteus: сюжетные сигналы, ДНК-адаптации, биомоды, база, техника и свободное исследование после финала текущей версии</p>
+    <div class="guide-header__meta-badges">
+      <span class="badge badge--platform">PC</span>
+      <span class="badge badge--platform">Xbox Series X|S</span>
+      <span class="badge badge--platform">Game Pass</span>
+      <span class="badge badge--spoiler">Умеренные спойлеры раннего доступа</span>
+      <span class="badge badge--missable">Жёстких пропусков нет</span>
+      <time class="badge badge--date" datetime="2026-05-20">Проверено: 20.05.2026</time>
+      <span class="badge badge--status" id="guide-status" data-status="not-started">Не начато</span>
+    </div>
+  </header>
+
+  <div class="resume-banner" id="resume-banner" hidden>
+    <p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
+    <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+    <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
+  </div>
+
+  <section class="meta-summary" aria-label="Сводка">
+    <dl class="meta-summary__list">
+      <div class="meta-summary__item">
+        <dt>Время</dt>
+        <dd>10–18 часов до финала раннего доступа</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Missables</dt>
+        <dd>Нет жёстких, но веди ручные сохранения</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Точка невозврата</dt>
+        <dd>Нет, после титров можно продолжить</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Платформы</dt>
+        <dd>PC / Xbox Series X|S</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Версия</dt>
+        <dd>Early Access + Hotfix 1</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="quick-actions" aria-label="Быстрые действия">
+    <button class="quick-actions__btn" id="btn-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+    <button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+    <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+    <button class="quick-actions__btn" id="btn-achievement" type="button" disabled title="Откроется после 100% прохождения гайда">Награда 100%</button>
+  </nav>
+
+  <div class="progress-bar" id="progress-bar">
+    <div class="progress-bar__inner">
+      <div class="progress-bar__track">
+        <div class="progress-bar__fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-bar__text" id="progress-text">0/0 · 0%</span>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
+    <h2 class="toc__heading">Оглавление</h2>
+    <ol class="toc__list">
+      <li class="toc__item"><a class="toc__link" href="#section-before-start">1. Перед стартом</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-early-route">2. Первый безопасный маршрут</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-midgame">3. Глубина, база и техника</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-final-ea">4. Финал раннего доступа</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-coop-cleanup">5. Кооператив и зачистка</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-next">Что дальше</a></li>
+    </ol>
+  </nav>
+
+  <section class="quick-route" id="quick-route">
+    <h2 class="quick-route__heading">Краткий маршрут</h2>
+    <p>Капсула и NOA → Welcome Center → первая база и инструменты → сигналы Blackbox Chap, Iso и Old Habitat → Bioscanner и первые Biomods → Angel Comb и адаптации ДНК → Tadpole и глубокие вылазки → Hot Caves, Wander и Zip → Sonic Resonator и Heat Tolerance → Feedback Resonator и Axum Vision → Karakorum и Axum Observatory → свободное исследование после титров.</p>
+  </section>
+
+  <main class="guide-content" id="guide-content" data-guide-id="subnautica-2-survival-route" data-total-steps="15">
+    <section id="section-before-start" aria-labelledby="section-before-start-heading">
+      <h2 id="section-before-start-heading" class="section-heading">1. Перед стартом</h2>
+
+      <article class="step" id="step-1" data-step-type="critical" data-step-num="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <h3 class="step__title">Прими рамку раннего доступа</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-1" aria-label="Отметить шаг 1">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-1" aria-label="Копировать ссылку на шаг 1" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Subnautica 2 сейчас находится в раннем доступе. В игре уже есть одиночное прохождение, кооператив до четырёх игроков, несколько биомов, техника, базы и сюжетная линия с текущим финалом, но будущие обновления будут добавлять новые зоны, существ, предметы и продолжение истории.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Не строй маршрут вокруг списков достижений из поисковой выдачи. В сети много материалов, где в Subnautica 2 ошибочно подмешаны достижения из Subnautica и Below Zero.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-2" data-step-type="critical" data-step-num="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <h3 class="step__title">Сразу включи ручные сохранения в привычку</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-2" aria-label="Отметить шаг 2">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-2" aria-label="Копировать ссылку на шаг 2" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Жёсткой точки невозврата в маршруте нет, но ранний доступ лучше проходить с несколькими ручными слотами: перед глубокими вылазками, перед входом в новые крупные комплексы и перед экспериментами с базой или кооперативным миром.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Держи один слот «перед выходом из базы», один — «перед сюжетной точкой» и один — «после успешного возвращения». Это спасает больше времени, чем любой идеальный маршрут ресурсов.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-early-route" aria-labelledby="section-early-route-heading">
+      <h2 id="section-early-route-heading" class="section-heading">2. Первый безопасный маршрут</h2>
+
+      <article class="step" id="step-3" data-step-type="critical" data-step-num="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <h3 class="step__title">Доберись до Welcome Center и активируй NOA</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-3" aria-label="Отметить шаг 3">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-3" aria-label="Копировать ссылку на шаг 3" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После старта на Proteus не расплывайся по карте. Первая цель — Welcome Center рядом со спасательной капсулой. Там запускается NOA — терминал и навигационный ИИ, который ведёт тебя по сигналам и открывает базовый темп прохождения.</p>
+          <div class="platform-note">
+            <p><strong>Платформы:</strong> В раннем доступе маршрут рассчитан на PC и Xbox Series X|S. На Xbox игра доступна как Game Preview и входит в Game Pass.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-4" data-step-type="critical" data-step-num="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <h3 class="step__title">Собери базовые инструменты до дальних заплывов</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-4" aria-label="Отметить шаг 4">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-4" aria-label="Копировать ссылку на шаг 4" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>До первого серьёзного погружения доведи до рабочего состояния Scanner, Habitat Builder и стабильный запас батарей. Old Habitat и ближайшие обломки нужны не для «полного сбора всего», а чтобы открыть инструменты, без которых ты будешь постоянно возвращаться ни с чем.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Первую маленькую базу ставь не ради красоты, а ради хранения, питания, крафта и понятной точки возврата. Украшения и большая архитектура подождут.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-5" data-step-type="collectible" data-step-num="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <h3 class="step__title">Иди по ближайшим сигналам Blackbox</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-5" aria-label="Отметить шаг 5">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-5" aria-label="Копировать ссылку на шаг 5" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Blackbox — это чёрный ящик с памятью пропавшего колониста. Сначала закрывай ближние и неглубокие сигналы: Chap, Old Habitat и Camp One. Они расширяют карту, дают чертежи и постепенно переводят тебя от стартового выживания к нормальной экспедиции.</p>
+          <div class="missable">
+            <p><strong>Не откладывай:</strong> Если видишь новый чертёж, фрагмент инструмента или модуль базы, сканируй сразу. Сами объекты можно добрать позже, но потерянный маршрут до них часто стоит лишнего часа.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-6" data-step-type="critical" data-step-num="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <h3 class="step__title">Почини Bioscanner и открой Biomods</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-6" aria-label="Отметить шаг 6">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-6" aria-label="Копировать ссылку на шаг 6" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После сигнала Iso у обломков CICADA доберись до сломанного Bioscanner — прибора для сканирования генетических свойств флоры и фауны. Починка Bioscanner открывает нормальную работу с Biomods, то есть сменяемыми активными и пассивными улучшениями персонажа.</p>
+          <div class="decision">
+            <p><strong>Выбор:</strong> Для спокойного исследования сначала ставь Biomods на выживаемость и навигацию. Боевые варианты полезнее позже, когда ты уже понимаешь поведение местных хищников.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-midgame" aria-labelledby="section-midgame-heading">
+      <h2 id="section-midgame-heading" class="section-heading">3. Глубина, база и техника</h2>
+
+      <article class="step" id="step-7" data-step-type="critical" data-step-num="7">
+        <div class="step__header">
+          <span class="step__number">7</span>
+          <h3 class="step__title">Получай адаптации через Angel Comb</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-7" aria-label="Отметить шаг 7">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-7" aria-label="Копировать ссылку на шаг 7" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Angel Comb — крупная органическая структура, через которую открываются постоянные ДНК-адаптации. Pressure Tolerance помогает переживать давление, Digestion делает местную пищу безопаснее, а поздние адаптации позволяют двигаться в зоны, где обычной экипировки уже не хватает.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Не путай адаптации и Biomods. Адаптации постоянные и двигают сюжетный доступ, Biomods — сменяемые навыки для стиля игры.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-8" data-step-type="optional" data-step-num="8">
+        <div class="step__header">
+          <span class="step__number">8</span>
+          <h3 class="step__title">Собери экономику базы до больших глубин</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-8" aria-label="Отметить шаг 8">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-8" aria-label="Копировать ссылку на шаг 8" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Перед Hot Caves и дальними сигналами Blackbox база должна кормить маршрут: питание, вода, зарядка, склад редких минералов, понятная зона для крафта и место под расширение. Не строй один огромный красивый комплекс раньше, чем появится стабильный поток ресурсов.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Тайм-гейтинг переплавки металлов проще переживается через параллельные задачи: пока плавятся материалы, сканируй ближайшие чертежи, расширяй хранилище и готовь следующий выезд.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-9" data-step-type="critical" data-step-num="9">
+        <div class="step__header">
+          <span class="step__number">9</span>
+          <h3 class="step__title">Собери Tadpole для дальних маршрутов</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-9" aria-label="Отметить шаг 9">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-9" aria-label="Копировать ссылку на шаг 9" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Tadpole — ключевая личная субмарина для дальних вылазок. Как только появляются нужные чертежи и ресурсы, переключай маршрут с «плаваю от капсулы» на «планирую экспедицию»: запас еды, воды, батарей, ремонтного инструмента и место под добычу.</p>
+          <details class="spoiler">
+            <summary>Показать сюжетный ориентир</summary>
+            <p>Сигнал Zip в Hot Caves ведёт к коду Tadpole Pens и помогает связать продвижение по технике с глубокими биомами.</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="step" id="step-10" data-step-type="decision" data-step-num="10">
+        <div class="step__header">
+          <span class="step__number">10</span>
+          <h3 class="step__title">Зачищай Bloom Cankers только с нужным резонатором</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-10" aria-label="Отметить шаг 10">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-10" aria-label="Копировать ссылку на шаг 10" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Bloom Cankers — паразитические наросты на Angel Comb. Для Heat Tolerance нужен Sonic Resonator: уничтожь синие наросты на щупальцах, дождись доступа к центральной луковице и только потом забирай адаптацию. Если у нароста есть защита, не трать заряды и возвращайся позже.</p>
+          <div class="decision">
+            <p><strong>Маршрут:</strong> Sonic Resonator — для обычных заражённых структур. Feedback Resonator — для защищённых поздних точек и подготовки к Axum Vision.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-final-ea" aria-labelledby="section-final-ea-heading">
+      <h2 id="section-final-ea-heading" class="section-heading">4. Финал раннего доступа</h2>
+
+      <article class="step" id="step-11" data-step-type="critical" data-step-num="11">
+        <div class="step__header">
+          <span class="step__number">11</span>
+          <h3 class="step__title">Открой Axum Vision перед Karakorum</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-11" aria-label="Отметить шаг 11">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-11" aria-label="Копировать ссылку на шаг 11" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Axum Vision — поздняя адаптация, которая позволяет видеть и использовать технологии Аксум. Перед походом к Karakorum проверь, что у тебя есть Feedback Resonator, запас кислорода, транспорт и понятный путь назад.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Если игра явно показывает, что технология Аксум недоступна, это не загадка на внимательность. Значит, ты пришёл раньше нужной адаптации.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-12" data-step-type="boss" data-step-num="12">
+        <div class="step__header">
+          <span class="step__number">12</span>
+          <h3 class="step__title">Подготовься к Axum Observatory как к длинной экспедиции</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-12" aria-label="Отметить шаг 12">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-12" aria-label="Копировать ссылку на шаг 12" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Axum Observatory — текущая кульминация раннего доступа. Перед входом восстанови питание, проверь маршруты отхода, разгрузи лишние ресурсы и не заходи внутрь с полным инвентарём случайного мусора.</p>
+          <details class="spoiler">
+            <summary>Показать, где заканчивается текущая история</summary>
+            <p>После сюжетного раскрытия в Observatory ранний доступ обрывает кампанию на клиффхэнгере вокруг World Tree — Мирового Древа. После титров можно продолжать исследование океана, базы и оставшихся чертежей.</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="step" id="step-13" data-step-type="critical" data-step-num="13">
+        <div class="step__header">
+          <span class="step__number">13</span>
+          <h3 class="step__title">После титров переходи в свободное исследование</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-13" aria-label="Отметить шаг 13">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-13" aria-label="Копировать ссылку на шаг 13" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Финал раннего доступа не закрывает мир. После титров возвращайся к базе, добирай чертежи, сканируй оставшуюся фауну, улучшай Tadpole и Hauler, достраивай хранилища и готовь мир к будущим обновлениям.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Веди отдельный список недосканированных существ, недостроенных модулей и непосещённых биомов. В Subnautica 2 легко помнить сюжет, но забыть один важный фрагмент чертежа.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-coop-cleanup" aria-labelledby="section-coop-cleanup-heading">
+      <h2 id="section-coop-cleanup-heading" class="section-heading">5. Кооператив и зачистка</h2>
+
+      <article class="step" id="step-14" data-step-type="optional" data-step-num="14">
+        <div class="step__header">
+          <span class="step__number">14</span>
+          <h3 class="step__title">В кооперативе разделяйте роли, а не ресурсы наугад</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-14" aria-label="Отметить шаг 14">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-14" aria-label="Копировать ссылку на шаг 14" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Subnautica 2 можно проходить одному или в кооперативе до четырёх игроков. В группе лучше заранее разделить роли: один ведёт базу и питание, второй отвечает за сканирование, третий собирает редкие материалы, четвёртый страхует глубокие вылазки и транспорт.</p>
+          <div class="platform-note">
+            <p><strong>Кооператив:</strong> Мир можно передавать через Cloud ID. Перед передачей сделай ручной сейв и убедись, что все вернулись на базу или хотя бы не находятся посреди опасной глубины.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-15" data-step-type="collectible" data-step-num="15">
+        <div class="step__header">
+          <span class="step__number">15</span>
+          <h3 class="step__title">Закрывай 100% как список систем, а не как один забег</h3>
+          <div class="step__actions">
+            <label class="step__checkbox">
+              <input type="checkbox" data-step="step-15" aria-label="Отметить шаг 15">
+            </label>
+            <button class="step__link-btn" type="button" data-link="step-15" aria-label="Копировать ссылку на шаг 15" title="Копировать ссылку">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После финала текущей версии разбей зачистку на понятные списки: все сигналы Blackbox, все адаптации, все Biomods, техника и модули, ключевые чертежи базы, опасная фауна, глубокие биомы и крупные ресурсы. Так ты не превратишь свободное исследование в хаотичный заплыв по памяти.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Всё, что связано с достижениями, веди отдельно от маршрута. Пока ранний доступ меняется, надёжнее закрывать реальные игровые системы, а не гоняться за шумными списками из сети.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="mistakes" id="section-mistakes" aria-labelledby="mistakes-heading">
+    <h2 id="mistakes-heading" class="section-heading">Частые ошибки</h2>
+    <ul class="mistakes__list">
+      <li>Играть как в первую Subnautica и ждать радиосообщений вместо того, чтобы идти по NOA и сигналам Blackbox.</li>
+      <li>Плыть на глубину без базы, запасов и плана возврата.</li>
+      <li>Считать Biomods заменой ДНК-адаптаций. Для сюжетного доступа нужны именно адаптации.</li>
+      <li>Откладывать Bioscanner: без него ты теряешь половину прогрессии персонажа.</li>
+      <li>Слишком рано строить огромную базу и сжигать редкие ресурсы на декор вместо техники и инструментов.</li>
+      <li>Путать текущий финал раннего доступа с полноценной концовкой версии 1.0.</li>
+      <li>Доверять трофейным спискам, где встречаются Aurora, Primary Containment Facility или другие цели из старых игр серии.</li>
+    </ul>
+  </section>
+
+  <section class="next-guide" id="section-next" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-heading">Что дальше</h2>
+    <p>После закрытия текущего маршрута удобнее всего продолжить в одном из трёх направлений:</p>
+    <ul class="next-guide__list">
+      <li>добрать все Biomods и собрать собственный набор для глубоких биомов;</li>
+      <li>расширить базу под крафт, хранилище и кооперативные вылазки;</li>
+      <li>оставить ручной сейв перед финалом раннего доступа и отдельный сейв после титров для будущих обновлений.</li>
+    </ul>
+  </section>
+
+  <footer class="guide-footer">
+    <p>&copy; 2026 by Achiever. Гайд собран под ранний доступ Subnautica 2 и рассчитан на практическое прохождение, а не на финальный 1.0-чеклист.</p>
+  </footer>
+
+  <nav class="action-bar" id="action-bar" aria-label="Мобильные действия">
+    <button class="action-bar__btn" id="mob-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+    <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+  </nav>
+
+  <div class="achievement-modal" id="achievement-modal" hidden aria-modal="true" role="dialog">
+    <div class="achievement-modal__overlay"></div>
+    <div class="achievement-modal__card">
+      <button class="achievement-modal__close" id="achievement-close" type="button" aria-label="Закрыть">&times;</button>
+      <h2 class="achievement-modal__title">Маршрут закрыт!</h2>
+      <p class="achievement-modal__desc">Ты прошёл текущий маршрут раннего доступа и можешь спокойно переходить к свободному исследованию Proteus.</p>
+      <img class="achievement-modal__img" id="achievement-img" src="../../assets/img/common/achievement_hub.png" alt="Карточка награды" width="1024" height="1024">
+      <div class="achievement-modal__actions">
+        <button class="achievement-modal__btn achievement-modal__btn--download" id="btn-download-achievement" type="button">Скачать карточку</button>
+        <button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="../../assets/js/progress.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <script src="../../assets/js/guide.js"></script>
+</body>
+</html>
