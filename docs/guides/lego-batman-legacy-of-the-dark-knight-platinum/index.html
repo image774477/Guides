@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Маршрут к платине — LEGO Batman: Legacy of the Dark Knight | Guides</title>
+  <meta name="description" content="Пошаговый маршрут к платине и 100% в LEGO Batman: Legacy of the Dark Knight: сюжет, Free Play, коллекционки, Готэм, трофеи и финальная зачистка.">
+  <link rel="canonical" href="https://image774477.github.io/Guides/guides/lego-batman-legacy-of-the-dark-knight-platinum/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Маршрут к платине — LEGO Batman: Legacy of the Dark Knight">
+  <meta property="og:description" content="Маршрут к платине и 100%: сюжет, Free Play, коллекционки, Готэм, трофеи и финальная зачистка.">
+  <meta property="og:url" content="https://image774477.github.io/Guides/guides/lego-batman-legacy-of-the-dark-knight-platinum/">
+  <meta property="og:image" content="https://image774477.github.io/Guides/guides/lego-batman-legacy-of-the-dark-knight-platinum/cover-banner.png">
+  <meta property="og:locale" content="ru_RU">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Маршрут к платине — LEGO Batman: Legacy of the Dark Knight">
+  <meta name="twitter:description" content="Маршрут к платине и 100%: сюжет, Free Play, коллекционки, Готэм, трофеи и финальная зачистка.">
+  <meta name="twitter:image" content="https://image774477.github.io/Guides/guides/lego-batman-legacy-of-the-dark-knight-platinum/cover-banner.png">
+
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icons/favicon.png">
+
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/guide.css">
+  <style>
+    .trophy-item {
+      border-bottom: 1px solid rgba(42,42,58,.5);
+    }
+    .trophy-item:last-child {
+      border-bottom: none;
+    }
+    .trophy-item__summary {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) 0;
+      cursor: pointer;
+      list-style: none;
+      min-height: 44px;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .trophy-item__summary::-webkit-details-marker { display: none; }
+    .trophy-item__summary::marker { display: none; }
+    .trophy-item__cb {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: border-color .15s, background-color .15s;
+      position: relative;
+    }
+    .trophy-item__cb:checked {
+      border-color: var(--color-success);
+      background-color: var(--color-success);
+    }
+    .trophy-item__cb:checked::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 10px;
+      border: solid var(--color-bg);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .trophy-item__name {
+      font-weight: 600;
+      font-size: var(--text-base);
+      flex-shrink: 0;
+    }
+    .trophy-item__teaser {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      flex: 1;
+    }
+    .trophy-item__arrow {
+      flex-shrink: 0;
+      font-size: .7rem;
+      color: var(--color-muted);
+      transition: transform .2s;
+      line-height: 1;
+    }
+    .trophy-item[open] .trophy-item__arrow {
+      transform: rotate(180deg);
+    }
+    .trophy-item__body {
+      padding: 0 0 var(--space-md) calc(20px + var(--space-sm));
+    }
+    .trophy-item__body p {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: var(--space-sm);
+    }
+    .trophy-item__body p:last-child { margin-bottom: 0; }
+    .trophy-item__note,
+    .trophy-item__warning {
+      margin-top: var(--space-sm);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+    .trophy-item__note {
+      border-left: 3px solid #63b3ed;
+      background: rgba(99,179,237,.08);
+    }
+    .trophy-item__warning {
+      border-left: 3px solid var(--color-warning);
+      background: rgba(250,204,21,.08);
+    }
+    .guide-media-banner {
+      max-width: var(--container-width);
+      margin: var(--space-md) auto var(--space-lg);
+      padding: 0 var(--space-md);
+    }
+    .guide-media-banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+    }
+    .must-read {
+      max-width: var(--container-width);
+      margin: var(--space-md) auto var(--space-lg);
+      padding: 0 var(--space-md);
+    }
+    .must-read__inner {
+      border: 1px solid rgba(250,204,21,.38);
+      border-radius: var(--radius-md, 8px);
+      background: linear-gradient(180deg, rgba(250,204,21,.08), rgba(255,255,255,.02));
+      overflow: hidden;
+    }
+    .must-read__ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid rgba(250,204,21,.28);
+      background: rgba(250,204,21,.08);
+      font-size: var(--text-sm);
+    }
+    .must-read__badge {
+      color: var(--color-warning);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+    .must-read__updated {
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+    .must-read__body {
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-md);
+    }
+    .must-read__title {
+      margin: 0 0 var(--space-xs);
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+    .must-read__lead {
+      margin: 0;
+      color: var(--color-muted);
+      line-height: 1.55;
+    }
+    .must-read__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+    .must-read__panel {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+      background: rgba(0,0,0,.12);
+    }
+    .must-read__panel h3 {
+      margin: 0 0 var(--space-sm);
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .must-read__panel ul,
+    .must-read__panel ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: var(--space-xs);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+    .must-read__panel li::marker {
+      color: var(--color-warning);
+      font-weight: 700;
+    }
+    .must-read__panel a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--color-accent);
+    }
+    .must-read__panel a:hover {
+      color: var(--color-accent-hover);
+    }
+    .must-read__details {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: rgba(0,0,0,.12);
+    }
+    .must-read__details summary {
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+    }
+    .must-read__details summary::-webkit-details-marker { display: none; }
+    .must-read__details[open] summary {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .must-read__details ul {
+      margin: 0;
+      padding: var(--space-sm) var(--space-md) var(--space-md) calc(var(--space-md) + 1rem);
+      display: grid;
+      gap: var(--space-xs);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+    .bug-list {
+      margin: 0;
+      padding: var(--space-sm) var(--space-md) var(--space-md);
+      display: grid;
+      gap: var(--space-sm);
+      font-size: var(--text-sm);
+      line-height: 1.55;
+    }
+    .bug-list__item {
+      display: grid;
+      gap: 2px;
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .bug-list__item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .bug-list__title {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .bug-list__text {
+      color: var(--color-muted);
+    }
+    .bug-list__status {
+      display: inline-flex;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 2px;
+      padding: 1px 8px;
+      border-radius: 999px;
+      font-size: .72rem;
+      line-height: 1.4;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      white-space: normal;
+    }
+    .bug-list__status--watch {
+      color: var(--color-warning);
+      border: 1px solid rgba(250,204,21,.45);
+      background: rgba(250,204,21,.1);
+    }
+    .bug-list__status--community {
+      color: #63b3ed;
+      border: 1px solid rgba(99,179,237,.45);
+      background: rgba(99,179,237,.1);
+    }
+    .bug-list__status--platform {
+      color: var(--color-success);
+      border: 1px solid rgba(74,222,128,.45);
+      background: rgba(74,222,128,.1);
+    }
+    .must-read__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .must-read__actions a {
+      flex: 1 1 170px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: var(--text-sm);
+    }
+    .must-read__actions a:first-child {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #140b02;
+    }
+    .must-read__actions a:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+    .must-read__actions a:first-child:hover {
+      color: #140b02;
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+    @media (max-width: 640px) {
+      .trophy-item__summary {
+        flex-wrap: wrap;
+      }
+      .trophy-item__name {
+        flex: 1 1 0;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .trophy-item__teaser {
+        order: 3;
+        flex: 1 1 100%;
+        min-width: 0;
+        margin-left: calc(20px + var(--space-sm));
+        overflow-wrap: anywhere;
+      }
+      .trophy-item__arrow {
+        order: 2;
+        margin-left: auto;
+      }
+      .trophy-item__body {
+        padding-left: 0;
+      }
+      .must-read__grid {
+        grid-template-columns: 1fr;
+      }
+      .must-read,
+      .guide-media-banner {
+        padding: 0 var(--space-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="guide-header" id="top">
+    <h1 class="guide-header__title">LEGO Batman: Legacy of the Dark Knight</h1>
+    <p class="guide-header__subtitle">Маршрут к платине и 100%</p>
+    <p class="guide-header__description">Рабочий маршрут: сюжет, Free Play, коллекционки, Готэм, трофеи и финальная зачистка</p>
+    <div class="guide-header__meta-badges">
+      <span class="badge badge--platform">PS5</span>
+      <span class="badge badge--platform">Xbox Series X|S</span>
+      <span class="badge badge--platform">PC</span>
+      <span class="badge badge--spoiler">Умеренные спойлеры</span>
+      <time class="badge badge--date" datetime="2026-05-26">Проверено: 26.05.2026</time>
+      <span class="badge badge--status" id="guide-status" data-status="not-started">Не начато</span>
+    </div>
+
+    <nav class="quick-actions" aria-label="Быстрые действия">
+      <button class="quick-actions__btn" id="btn-toc" type="button" data-action="open-toc">Содержание</button>
+      <button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+      <button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+      <button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+      <button class="quick-actions__btn" id="btn-achievement" type="button" disabled title="Откроется после 100% прохождения гайда">Награда 100%</button>
+    </nav>
+  </header>
+
+  <figure class="guide-media-banner">
+    <img class="guide-header__cover" src="cover-banner.png" alt="LEGO Batman: Legacy of the Dark Knight — полное руководство к платине" loading="eager" width="1200" height="675">
+  </figure>
+
+  <section class="must-read" id="must-read" aria-labelledby="must-read-heading">
+    <div class="must-read__inner">
+      <div class="must-read__ribbon">
+        <span class="must-read__badge">Прочитай до старта</span>
+        <span class="must-read__updated">Обновлено: 26.05.2026 · релизная версия · сверены платформы и трофеи</span>
+      </div>
+      <div class="must-read__body">
+        <div>
+          <h2 class="must-read__title" id="must-read-heading">Что важно знать до первого захода</h2>
+          <p class="must-read__lead">Эти пункты не заменяют маршрут, но экономят время: игра свежая, карта большая, а часть задач удобнее вести с самого начала.</p>
+        </div>
+
+        <div class="must-read__grid">
+          <div class="must-read__panel">
+            <h3>Не потеряешь платину</h3>
+            <ol>
+              <li>Безвозвратных пропусков для маршрута нет: миссии переигрываются, а зачистка доступна после финала.</li>
+              <li>Не делай 100% в первом заходе миссий. Дождись полного состава героев и Free Play.</li>
+              <li>Расширения Бэткейва важнее ранней косметики: они открывают доступ к части зачистки.</li>
+              <li>Типы преступлений лучше отмечать с начала открытого мира, потому что в финале их неудобно вспоминать.</li>
+            </ol>
+          </div>
+
+          <div class="must-read__panel">
+            <h3>Проблемы и нюансы релиза</h3>
+            <ul>
+              <li>Онлайн-коопа нет: только одиночная игра и локальный кооп на двух игроков.</li>
+              <li>Интернет не нужен для игры, но нужен для загрузки обновлений.</li>
+              <li>На PC игра использует Denuvo Anti-Tamper и Unreal Engine; при просадках сначала проверь драйверы, файлы игры и настройки графики.</li>
+              <li>Если маркер активности, счётчик или коллекционка не обновились сразу, смени район или перезапусти миссию перед тем, как считать трофей сломанным.</li>
+            </ul>
+          </div>
+        </div>
+
+        <details class="must-read__details">
+          <summary>Известные баги и обходные решения</summary>
+          <div class="bug-list">
+            <div class="bug-list__item">
+              <span class="bug-list__title">Сохранение может ругаться на недостающий контент после бонусов, Survey или Twitch Drops.</span>
+              <span class="bug-list__text">Перед долгой сессией обнови игру до актуальной версии. Если появляется ошибка missing content или вылет при загрузке сейва, не удаляй сейв вручную: сначала проверь установленные бонусы/DLC, перезапусти игру и проверь файлы.</span>
+              <span class="bug-list__status bug-list__status--community">сообщается игроками</span>
+            </div>
+            <div class="bug-list__item">
+              <span class="bug-list__title">Уличные события и побочные активности иногда ведут себя нестабильно.</span>
+              <span class="bug-list__text">Если счётчик преступления, маркер активности или награда не обновились сразу, выйди из района, вернись через карту или перезапусти миссию. Не считай трофей сломанным после одного несработавшего события.</span>
+              <span class="bug-list__status bug-list__status--watch">под наблюдением</span>
+            </div>
+            <div class="bug-list__item">
+              <span class="bug-list__title">В скрытных миссиях враги могут заметить героя странно: через расстояние или после смены позиции.</span>
+              <span class="bug-list__text">Если стелс-секция явно поехала, перезапусти контрольную точку или всю миссию через Бэткомпьютер. Для платины это неприятно, но не создаёт безвозвратный пропуск.</span>
+              <span class="bug-list__status bug-list__status--community">сообщается игроками</span>
+            </div>
+            <div class="bug-list__item">
+              <span class="bug-list__title">На PC возможны просадки, вылеты или проблемы запуска на отдельных конфигурациях.</span>
+              <span class="bug-list__text">Обнови драйвер видеокарты, проверь файлы игры, снизь тяжёлые графические настройки и не запускай игру с модифицированными файлами. Игра использует Unreal Engine и Denuvo Anti-Tamper.</span>
+              <span class="bug-list__status bug-list__status--watch">под наблюдением</span>
+            </div>
+            <div class="bug-list__item">
+              <span class="bug-list__title">Steam Deck и внешние контроллеры могут требовать ручного выбора активного контроллера.</span>
+              <span class="bug-list__text">Если игра не подхватила Bluetooth или USB-контроллер, переключи активный контроллер через Quick Access Menu Steam Deck.</span>
+              <span class="bug-list__status bug-list__status--platform">известный нюанс Steam</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="must-read__details">
+          <summary>Что отслеживать после обновлений</summary>
+          <ul>
+            <li>Стабильность счётчиков костюмов, транспорта, Batcave Trophies и WayneTech Caches.</li>
+            <li>Поведение случайных преступлений для трофея Things have improved.</li>
+            <li>Патчи, которые меняют карту, маркеры активностей, сохранения или требования к 100%.</li>
+            <li>Отдельные отличия версии Nintendo Switch 2 после её выхода.</li>
+          </ul>
+        </details>
+
+        <details class="must-read__details">
+          <summary>История обновлений гайда</summary>
+          <ul>
+            <li><strong>26.05.2026:</strong> сверены платформы, статус Nintendo Switch 2 и актуальный список трофеев; исправлены требования A Watchful Collector и You have a name to maintain.</li>
+            <li><strong>22.05.2026:</strong> собран базовый маршрут к платине и 100%, добавлены трофейные аккордеоны, блок проблем релиза и верхние быстрые действия.</li>
+          </ul>
+        </details>
+
+        <nav class="must-read__actions" aria-label="Быстрый старт">
+          <a href="#section-before-start">Начать с шага 1</a>
+          <a href="#section-mistakes">Частые ошибки</a>
+          <a href="#trophy-checklist">Все трофеи</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="version-platforms" id="section-version" aria-labelledby="section-version-heading">
+    <h2 id="section-version-heading" class="section-heading">Версия и платформы</h2>
+    <p>LEGO Batman: Legacy of the Dark Knight вышла 22 мая 2026 года на PS5, Xbox Series X|S и PC. Версия Nintendo Switch 2 заявлена отдельно на 2026 год, поэтому этот маршрут не использует особенности Switch-версии.</p>
+    <p>В базовой игре есть локальный кооп на двух игроков, но нет онлайн-коопа. Для трофеев и 100% удобнее считать основным соло-прохождение: в Free Play проще переключать персонажей и методично закрывать коллекционные задачи.</p>
+    <p>На PlayStation список состоит из 52 трофеев: Platinum, 3 Gold, 4 Silver и 44 Bronze. На Xbox и PC логика маршрута та же, но финальный мета-трофей PlayStation заменяется обычным закрытием списка достижений.</p>
+  </section>
+
+  <div class="resume-banner" id="resume-banner" hidden>
+    <p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
+    <button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+    <button class="resume-banner__close" id="resume-close" type="button" aria-label="Закрыть">&times;</button>
+  </div>
+
+  <section class="meta-summary" aria-label="Сводка">
+    <dl class="meta-summary__list">
+      <div class="meta-summary__item">
+        <dt>Время</dt>
+        <dd>30-50+ часов</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Безвозвратные пропуски</dt>
+        <dd>Безвозвратных нет</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Точка невозврата</dt>
+        <dd>Нет</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Платформы</dt>
+        <dd>PS5 / Xbox / PC</dd>
+      </div>
+      <div class="meta-summary__item">
+        <dt>Версия</dt>
+        <dd>Релиз 22.05.2026</dd>
+      </div>
+    </dl>
+  </section>
+
+  <div class="progress-bar" id="progress-bar">
+    <div class="progress-bar__inner">
+      <div class="progress-bar__track">
+        <div class="progress-bar__fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-bar__text" id="progress-text">0/0 · 0%</span>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Оглавление">
+    <button class="toc__close" type="button" aria-label="Закрыть оглавление">&times;</button>
+    <h2 class="toc__heading">Оглавление</h2>
+    <ol class="toc__list">
+      <li class="toc__item"><a class="toc__link" href="#section-version">Версия и платформы</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-before-start">1. Перед стартом</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-story">2. Сюжетный проход</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-upgrades">3. Экономика и Бэткейв</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-free-play">4. Free Play и коллекционки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-gotham">5. Зачистка Готэма</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-combat-cleanup">6. Боевые и misc-трофеи</a></li>
+      <li class="toc__item"><a class="toc__link" href="#trophy-checklist">Все 52 трофея</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li>
+      <li class="toc__item"><a class="toc__link" href="#section-next">Что дальше</a></li>
+    </ol>
+  </nav>
+
+  <section class="quick-route" id="quick-route">
+    <h2 class="quick-route__heading">Краткий маршрут</h2>
+    <p>Сюжет на любой сложности → ранняя прокачка экономики → все расширения Бэткейва → Free Play после открытия полного набора героев → Red Bricks, WayneTech Caches, Bat-Symbols и Batcave Trophies → все активности Готэма → боевые и misc-трофеи → финальная сверка списка.</p>
+  </section>
+
+  <main class="guide-content" id="guide-content"
+        data-guide-id="lego-batman-legacy-of-the-dark-knight-platinum"
+        data-total-steps="38">
+
+    <section id="section-before-start" aria-labelledby="section-before-start-heading">
+      <h2 id="section-before-start-heading" class="section-heading">1. Перед стартом</h2>
+
+      <article class="step" id="step-1" data-step-type="critical" data-step-num="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <h3 class="step__title">Выберите комфортную сложность</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-1" aria-label="Отметить шаг 1"></label>
+            <button class="step__link-btn" type="button" data-link="step-1" aria-label="Копировать ссылку на шаг 1" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Достижений за конкретную сложность нет, поэтому можно играть на удобном уровне и менять его по ходу прохождения. Для платины важны не испытания сложности, а полный маршрут: сюжет, коллекционки, активности, покупки и боевые условия.</p>
+          <div class="note">
+            <p><strong>Совет:</strong> Если цель — платина без лишнего раздражения, не стесняйтесь снижать сложность на длинных зачистках и возвращать её выше для удовольствия от боя.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-2" data-step-type="critical" data-step-num="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <h3 class="step__title">Не пытайтесь закрыть 100% в первом заходе миссий</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-2" aria-label="Отметить шаг 2"></label>
+            <button class="step__link-btn" type="button" data-link="step-2" aria-label="Копировать ссылку на шаг 2" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>LEGO Batman строит 100% вокруг повторного прохождения. В первом заходе берите очевидные предметы по пути, но не ломайте темп сюжета ради дверей, гаджетов и зон, для которых ещё не открыт нужный персонаж.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Главная ошибка на старте — читать недоступную коллекционку как пропуск. Если проход закрыт способностью другого героя, вернитесь позже через Free Play.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-3" data-step-type="critical" data-step-num="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <h3 class="step__title">Держите один сейв и не бойтесь возврата</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-3" aria-label="Отметить шаг 3"></label>
+            <button class="step__link-btn" type="button" data-link="step-3" aria-label="Копировать ссылку на шаг 3" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В игре нет жёсткой точки невозврата для платины. Завершённые миссии доступны для повторного прохождения, а зачистка Готэма спокойно делается после финала. Маршрут рассчитан на один основной сейв.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-story" aria-labelledby="section-story-heading">
+      <h2 id="section-story-heading" class="section-heading">2. Сюжетный проход</h2>
+
+      <article class="step" id="step-4" data-step-type="critical" data-step-num="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <h3 class="step__title">Пройдите пролог и первую главу в нормальном темпе</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-4" aria-label="Отметить шаг 4"></label>
+            <button class="step__link-btn" type="button" data-link="step-4" aria-label="Копировать ссылку на шаг 4" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>На раннем отрезке ваша задача — освоить боёвку, гаджеты, управление транспортом и базовую экономику деталей. Не задерживайтесь на сборе всего подряд: пока открыта только часть способностей, чистая зачистка будет медленной.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-5" data-step-type="critical" data-step-num="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <h3 class="step__title">Открывайте героев через сюжет, не через зачистку</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-5" aria-label="Отметить шаг 5"></label>
+            <button class="step__link-btn" type="button" data-link="step-5" aria-label="Копировать ссылку на шаг 5" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Для 100% нужны способности разных персонажей. По сюжету постепенно открываются Gordon, Catwoman, Robin, Batgirl, Nightwing и Talia. До полного набора героев не превращайте прохождение в охоту за каждой дверью и каждым тайником.</p>
+          <div class="note">
+            <p><strong>Запомните:</strong> Batgirl особенно важна для открытия радиовышек, а Catwoman, Robin, Nightwing, Gordon и Talia закрывают разные типы препятствий в Free Play.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-6" data-step-type="critical" data-step-num="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <h3 class="step__title">После открытия Workbench вкладывайтесь в практичные улучшения</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-6" aria-label="Отметить шаг 6"></label>
+            <button class="step__link-btn" type="button" data-link="step-6" aria-label="Копировать ссылку на шаг 6" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Workbench — верстак для улучшений WayneTech. Первые WayneTech Chips лучше тратить на боевую стабильность, скорость набора деталей и удобство поиска. Косметические покупки подождут: платиновый маршрут ускоряют именно улучшения, а не ранние костюмы.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-7" data-step-type="critical" data-step-num="7">
+        <div class="step__header">
+          <span class="step__number">7</span>
+          <h3 class="step__title">Доведите сюжет до финала</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-7" aria-label="Отметить шаг 7"></label>
+            <button class="step__link-btn" type="button" data-link="step-7" aria-label="Копировать ссылку на шаг 7" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Главная сюжетная цель — пройти пролог и все шесть глав. После финала у вас будет полный доступ к постсюжетной зачистке, а маршрут станет намного прямее: можно спокойно работать по районам, миссиям и трофейному списку.</p>
+          <details class="spoiler">
+            <summary>Показать сюжетный каркас</summary>
+            <p>Основной каркас маршрута: пролог, главы One Bad Day, Do I look like I'm joking?, The Dynamic Duo, An Endless Winter, Knightfall и финальная глава с завершением основной истории.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-upgrades" aria-labelledby="section-upgrades-heading">
+      <h2 id="section-upgrades-heading" class="section-heading">3. Экономика и Бэткейв</h2>
+
+      <article class="step" id="step-8" data-step-type="critical" data-step-num="8">
+        <div class="step__header">
+          <span class="step__number">8</span>
+          <h3 class="step__title">Прокачайте сбор деталей до больших покупок</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-8" aria-label="Отметить шаг 8"></label>
+            <button class="step__link-btn" type="button" data-link="step-8" aria-label="Копировать ссылку на шаг 8" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Детали нужны для покупок, улучшений и части трофеев, поэтому сначала ускорьте их набор. Приоритет — улучшения, которые помогают держать комбо, притягивать детали и получать больше деталей за активную игру.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-9" data-step-type="optional" data-step-num="9">
+        <div class="step__header">
+          <span class="step__number">9</span>
+          <h3 class="step__title">Заберите бесплатный бонус деталей, если он доступен</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-9" aria-label="Отметить шаг 9"></label>
+            <button class="step__link-btn" type="button" data-link="step-9" aria-label="Копировать ссылку на шаг 9" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В игре есть официальный бонус Free Stud Cache — бесплатный набор деталей, привязанный к LEGO Group Online Survey. Он не нужен для платины как обязательное условие, но заметно сокращает раннюю экономическую яму.</p>
+          <div class="note">
+            <p><strong>Как использовать:</strong> Считайте это ускорителем, а не заменой нормального фарма. Основной миллион деталей всё равно удобнее добирать через улучшенный сбор и активную зачистку.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-10" data-step-type="critical" data-step-num="10">
+        <div class="step__header">
+          <span class="step__number">10</span>
+          <h3 class="step__title">Покупайте расширения Бэткейва раньше косметики</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-10" aria-label="Отметить шаг 10"></label>
+            <button class="step__link-btn" type="button" data-link="step-10" aria-label="Копировать ссылку на шаг 10" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Бэткейв — не просто хаб. Расширения открывают доступ к дополнительным объектам, трофеям Бэткейва и маршрутам для зачистки. До покупки всех расширений не сливайте большую часть деталей на дорогую косметику.</p>
+          <div class="warning">
+            <p><strong>Приоритет:</strong> Сначала расширения Бэткейва и полезные улучшения, затем костюмы, транспорт и декоративные предметы.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-11" data-step-type="critical" data-step-num="11">
+        <div class="step__header">
+          <span class="step__number">11</span>
+          <h3 class="step__title">Накопите миллион деталей без отдельного марафона</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-11" aria-label="Отметить шаг 11"></label>
+            <button class="step__link-btn" type="button" data-link="step-11" aria-label="Копировать ссылку на шаг 11" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Трофей за 1 000 000 деталей лучше делать фоном: проходите миссии, ломайте окружение, держите комбо и не тратьте всё сразу после каждой крупной зачистки. Если миллион не пришёл естественно, добейте его в плотных районах Готэма с большим количеством разрушаемых объектов.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-free-play" aria-labelledby="section-free-play-heading">
+      <h2 id="section-free-play-heading" class="section-heading">4. Free Play и коллекционки</h2>
+
+      <article class="step" id="step-12" data-step-type="decision" data-step-num="12">
+        <div class="step__header">
+          <span class="step__number">12</span>
+          <h3 class="step__title">Переходите в Free Play после открытия полного состава</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-12" aria-label="Отметить шаг 12"></label>
+            <button class="step__link-btn" type="button" data-link="step-12" aria-label="Копировать ссылку на шаг 12" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Free Play — режим повторного прохождения с доступом к нужным героям. Если цель — быстро закрыть 100%, не начинайте полный Free Play до открытия всех ключевых персонажей: иначе придётся возвращаться в одни и те же миссии повторно.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-13" data-step-type="collectible" data-step-num="13">
+        <div class="step__header">
+          <span class="step__number">13</span>
+          <h3 class="step__title">Закройте Red Bricks в миссиях и магазине</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-13" aria-label="Отметить шаг 13"></label>
+            <button class="step__link-btn" type="button" data-link="step-13" aria-label="Копировать ссылку на шаг 13" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Red Bricks — красные кирпичи с косметическими эффектами. Для трофея нужно собрать и активировать их; большая часть находится в коллекционных миссиях, остальные покупаются в магазине Bat-Mite.</p>
+          <div class="note">
+            <p><strong>Порядок:</strong> Сначала собирайте Red Bricks в миссиях через Бэткомпьютер, затем докупайте магазинные варианты после основных расходов на Бэткейв и улучшения.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-14" data-step-type="collectible" data-step-num="14">
+        <div class="step__header">
+          <span class="step__number">14</span>
+          <h3 class="step__title">Соберите тематические коллекционки в миссиях</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-14" aria-label="Отметить шаг 14"></label>
+            <button class="step__link-btn" type="button" data-link="step-14" aria-label="Копировать ссылку на шаг 14" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В коллекционных миссиях лежат тематические предметы для Бэткейва. Проходите миссии списком, не прыгайте хаотично: так проще понимать, какие наборы уже закрыты и какие способности ещё нужны.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-15" data-step-type="collectible" data-step-num="15">
+        <div class="step__header">
+          <span class="step__number">15</span>
+          <h3 class="step__title">Соберите все WayneTech Caches</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-15" aria-label="Отметить шаг 15"></label>
+            <button class="step__link-btn" type="button" data-link="step-15" aria-label="Копировать ссылку на шаг 15" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>WayneTech Caches — тайники WayneTech, связанные с улучшениями и прогрессом 100%. Они есть в миссиях, Бэткейве и открытом мире. После открытия радиовышек и полного набора героев добирайте их методично по карте и через повтор миссий.</p>
+          <div class="warning">
+            <p><strong>Важно:</strong> Для трофеев не достаточно «почти всех» тайников. Трофей You have a name to maintain. требует открыть все WayneTech Caches, поэтому сверяйтесь со счётчиками игры.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-16" data-step-type="collectible" data-step-num="16">
+        <div class="step__header">
+          <span class="step__number">16</span>
+          <h3 class="step__title">Доберите Bat-Symbols и Batcave Trophies</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-16" aria-label="Отметить шаг 16"></label>
+            <button class="step__link-btn" type="button" data-link="step-16" aria-label="Копировать ссылку на шаг 16" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Bat-Symbols нужны отдельным трофеем, а Batcave Trophies закрывают большой коллекционный блок. Не оставляйте Бэткейв на самый конец: часть прогресса удобнее делать параллельно с покупкой расширений и повтором миссий.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-gotham" aria-labelledby="section-gotham-heading">
+      <h2 id="section-gotham-heading" class="section-heading">5. Зачистка Готэма</h2>
+
+      <article class="step" id="step-17" data-step-type="collectible" data-step-num="17">
+        <div class="step__header">
+          <span class="step__number">17</span>
+          <h3 class="step__title">Откройте радиовышки и точки быстрого перемещения</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-17" aria-label="Отметить шаг 17"></label>
+            <button class="step__link-btn" type="button" data-link="step-17" aria-label="Копировать ссылку на шаг 17" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>После открытия Batgirl сначала активируйте радиовышки. Они раскрывают карту, упрощают сбор и экономят часы на поиске. Затем откройте все SubWayne Stations — точки быстрого перемещения.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-18" data-step-type="collectible" data-step-num="18">
+        <div class="step__header">
+          <span class="step__number">18</span>
+          <h3 class="step__title">Проходите районы Готэма по одному</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-18" aria-label="Отметить шаг 18"></label>
+            <button class="step__link-btn" type="button" data-link="step-18" aria-label="Копировать ссылку на шаг 18" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Готэм большой, поэтому не чистите карту случайными рывками. Выбирайте район, закрывайте маркеры, тайники, события, активности и только потом переходите к следующему. Так легче не потерять один последний символ или комнату Загадочника.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-19" data-step-type="collectible" data-step-num="19">
+        <div class="step__header">
+          <span class="step__number">19</span>
+          <h3 class="step__title">Закройте Puzzle Rooms Загадочника</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-19" aria-label="Отметить шаг 19"></label>
+            <button class="step__link-btn" type="button" data-link="step-19" aria-label="Копировать ссылку на шаг 19" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Puzzle Rooms — комнаты-головоломки Загадочника. Оставляйте их на период, когда открыты все ключевые герои и улучшения: тогда вы не будете упираться в закрытые механики и сможете закрыть трофей Too Many Questions одним блоком.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-20" data-step-type="collectible" data-step-num="20">
+        <div class="step__header">
+          <span class="step__number">20</span>
+          <h3 class="step__title">Закройте все большие активности открытого мира</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-20" aria-label="Отметить шаг 20"></label>
+            <button class="step__link-btn" type="button" data-link="step-20" aria-label="Копировать ссылку на шаг 20" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>В этот блок входят спасение сбежавших животных из зоопарка, Wanted Posters, заражённые растения, дела Falcone и Waylon Jones, а также остальные крупные активности карты. Их удобно закрывать после радиовышек и быстрого перемещения.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-21" data-step-type="optional" data-step-num="21">
+        <div class="step__header">
+          <span class="step__number">21</span>
+          <h3 class="step__title">Отследите преступления по типам</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-21" aria-label="Отметить шаг 21"></label>
+            <button class="step__link-btn" type="button" data-link="step-21" aria-label="Копировать ссылку на шаг 21" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Для Gotham can feel a little safer. нужно предотвратить 30 преступлений, а для Things have improved. — каждый тип преступления. Отмечайте редкие типы отдельно, чтобы в конце не кататься по городу без понимания, чего не хватает.</p>
+          <details class="spoiler">
+            <summary>Показать типы преступлений</summary>
+            <p>Следите за Break-In, Citizens in Peril, Vandalism, Mugging, Scuffle, Getaway Vehicle, GCPD Backup, Ambush!, Snatch and Run и Joyriders.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-combat-cleanup" aria-labelledby="section-combat-cleanup-heading">
+      <h2 id="section-combat-cleanup-heading" class="section-heading">6. Боевые и misc-трофеи</h2>
+
+      <article class="step" id="step-22" data-step-type="boss" data-step-num="22">
+        <div class="step__header">
+          <span class="step__number">22</span>
+          <h3 class="step__title">Добейте боевые накопительные условия</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-22" aria-label="Отметить шаг 22"></label>
+            <button class="step__link-btn" type="button" data-link="step-22" aria-label="Копировать ссылку на шаг 22" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>К финалу естественно набираются контратаки и победы над разными типами врагов. Если счётчик не закрыт, добивайте его в плотных боях и активностях Готэма, а не в случайных сюжетных повторах.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-23" data-step-type="optional" data-step-num="23">
+        <div class="step__header">
+          <span class="step__number">23</span>
+          <h3 class="step__title">Закройте скрытные добивания отдельно</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-23" aria-label="Отметить шаг 23"></label>
+            <button class="step__link-btn" type="button" data-link="step-23" aria-label="Копировать ссылку на шаг 23" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Если трофей на скрытные добивания не выпал по сюжету, переиграйте короткую миссию или активность с удобным патрулём. Работайте через укрытия, перезапускайте контрольную точку после срыва и не тратьте на это длинные сюжетные главы.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-24" data-step-type="optional" data-step-num="24">
+        <div class="step__header">
+          <span class="step__number">24</span>
+          <h3 class="step__title">Наберите комбо x99</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-24" aria-label="Отметить шаг 24"></label>
+            <button class="step__link-btn" type="button" data-link="step-24" aria-label="Копировать ссылку на шаг 24" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>The Strength to Fight требует комбо x99. Делайте его после прокачки боевых улучшений: выбирайте бой с плотной пачкой врагов, играйте осторожно, чаще уклоняйтесь и не добивайте последнего противника раньше времени.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-25" data-step-type="optional" data-step-num="25">
+        <div class="step__header">
+          <span class="step__number">25</span>
+          <h3 class="step__title">Удержите максимальный множитель деталей</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-25" aria-label="Отметить шаг 25"></label>
+            <button class="step__link-btn" type="button" data-link="step-25" aria-label="Копировать ссылку на шаг 25" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>I'm good with calculation. удобнее закрывать не на старте, а после улучшений экономики. Держите серию без лишних ударов по воздуху, собирайте детали по маршруту и не рискуйте длинным комбо, если арена уже почти закончилась.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-26" data-step-type="optional" data-step-num="26">
+        <div class="step__header">
+          <span class="step__number">26</span>
+          <h3 class="step__title">Получите крупную выплату деталей за одно комбо</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-26" aria-label="Отметить шаг 26"></label>
+            <button class="step__link-btn" type="button" data-link="step-26" aria-label="Копировать ссылку на шаг 26" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Never do it for free. лучше совмещать с шагами на множитель. Выберите длинный бой, заранее подберите улучшения на сбор деталей и завершайте серию только после заметной выплаты, чтобы не повторять условие несколько раз.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-27" data-step-type="optional" data-step-num="27">
+        <div class="step__header">
+          <span class="step__number">27</span>
+          <h3 class="step__title">Пройдите испытание Бэткейва</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-27" aria-label="Отметить шаг 27"></label>
+            <button class="step__link-btn" type="button" data-link="step-27" aria-label="Копировать ссылку на шаг 27" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Когда терминал Бэткейва доступен, сдайте испытание через него и закройте Rebuilding Gotham. Это короткая системная задача, её удобно сделать вместе с другими пунктами Бэткейва.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-28" data-step-type="optional" data-step-num="28">
+        <div class="step__header">
+          <span class="step__number">28</span>
+          <h3 class="step__title">Закройте Photo Mode</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-28" aria-label="Отметить шаг 28"></label>
+            <button class="step__link-btn" type="button" data-link="step-28" aria-label="Копировать ссылку на шаг 28" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Откройте Photo Mode и выполните связанное условие, когда уже свободно перемещаетесь по Готэму. Это короткая отметка, поэтому не оставляйте её единственным пунктом после большой зачистки.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-29" data-step-type="optional" data-step-num="29">
+        <div class="step__header">
+          <span class="step__number">29</span>
+          <h3 class="step__title">Поставьте маркер на карте</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-29" aria-label="Отметить шаг 29"></label>
+            <button class="step__link-btn" type="button" data-link="step-29" aria-label="Копировать ссылку на шаг 29" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Откройте карту и поставьте пользовательский маркер. Условие именно про отметку на карте, поэтому не превращайте его в отдельную активность с лишним маршрутом.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-30" data-step-type="optional" data-step-num="30">
+        <div class="step__header">
+          <span class="step__number">30</span>
+          <h3 class="step__title">Смените заставку Бэткомпьютера</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-30" aria-label="Отметить шаг 30"></label>
+            <button class="step__link-btn" type="button" data-link="step-30" aria-label="Копировать ссылку на шаг 30" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Зайдите в Бэткомпьютер и смените его заставку или экран оформления, если пункт уже открыт. Делайте вместе с другими задачами Бэткейва, чтобы не возвращаться в хаб ради одного клика.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-31" data-step-type="optional" data-step-num="31">
+        <div class="step__header">
+          <span class="step__number">31</span>
+          <h3 class="step__title">Пролетите через воздушные потоки</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-31" aria-label="Отметить шаг 31"></label>
+            <button class="step__link-btn" type="button" data-link="step-31" aria-label="Копировать ссылку на шаг 31" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Воздушные потоки wind tunnels используются для отдельной короткой задачи. Когда карта открыта, проложите маршрут через разные потоки и закрывайте условие за одну прогулку по городу.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-32" data-step-type="optional" data-step-num="32">
+        <div class="step__header">
+          <span class="step__number">32</span>
+          <h3 class="step__title">Купите три транспорта в гараже Бэткейва</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-32" aria-label="Отметить шаг 32"></label>
+            <button class="step__link-btn" type="button" data-link="step-32" aria-label="Копировать ссылку на шаг 32" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>No, sir. The OTHER car. требует купить 3 транспорта в гараже Бэткейва. Это отдельная короткая покупка; полный список транспорта сверяется позже отдельным шагом.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-33" data-step-type="collectible" data-step-num="33">
+        <div class="step__header">
+          <span class="step__number">33</span>
+          <h3 class="step__title">Сверьте костюмы базовой игры</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-33" aria-label="Отметить шаг 33"></label>
+            <button class="step__link-btn" type="button" data-link="step-33" aria-label="Копировать ссылку на шаг 33" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Откройте меню персонажей и проверьте, что костюмы базовой игры закрыты. Внешние бонусы и промо-косметику не смешивайте с обязательным списком платины, чтобы не гоняться за лишним.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-34" data-step-type="collectible" data-step-num="34">
+        <div class="step__header">
+          <span class="step__number">34</span>
+          <h3 class="step__title">Сверьте транспорт базовой игры</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-34" aria-label="Отметить шаг 34"></label>
+            <button class="step__link-btn" type="button" data-link="step-34" aria-label="Копировать ссылку на шаг 34" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Проверьте гараж и список доступного транспорта. Если не хватает одной позиции, сначала смотрите незакрытые активности и покупки, а уже потом возвращайтесь к миссиям.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-35" data-step-type="collectible" data-step-num="35">
+        <div class="step__header">
+          <span class="step__number">35</span>
+          <h3 class="step__title">Сверьте трофеи и предметы Бэткейва</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-35" aria-label="Отметить шаг 35"></label>
+            <button class="step__link-btn" type="button" data-link="step-35" aria-label="Копировать ссылку на шаг 35" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Вернитесь в Бэткейв и проверьте Batcave Trophies, props и открытые зоны. Если счётчик не полный, пройдитесь по незакрытым миссиям и районным активностям, потому что часть предметов приходит именно оттуда.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-36" data-step-type="decision" data-step-num="36">
+        <div class="step__header">
+          <span class="step__number">36</span>
+          <h3 class="step__title">Сверьте карту Готэма по районам</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-36" aria-label="Отметить шаг 36"></label>
+            <button class="step__link-btn" type="button" data-link="step-36" aria-label="Копировать ссылку на шаг 36" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Перед финальным трофейным списком откройте карту и проверьте каждый район: маркеры, преступления, тайники, комнаты Загадочника, активности и быстрые перемещения. Не переходите к финальной сверке, пока на карте видны незакрытые хвосты.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-37" data-step-type="decision" data-step-num="37">
+        <div class="step__header">
+          <span class="step__number">37</span>
+          <h3 class="step__title">Пройдитесь по списку трофеев ниже</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-37" aria-label="Отметить шаг 37"></label>
+            <button class="step__link-btn" type="button" data-link="step-37" aria-label="Копировать ссылку на шаг 37" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Теперь используйте трофейные аккордеоны как контрольный лист. Отмечайте каждый трофей после сверки с системным списком на платформе, а не только по ощущению, что соответствующая задача уже выполнена.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-38" data-step-type="decision" data-step-num="38">
+        <div class="step__header">
+          <span class="step__number">38</span>
+          <h3 class="step__title">Заберите платину или 100%</h3>
+          <div class="step__actions">
+            <label class="step__checkbox"><input type="checkbox" data-step="step-38" aria-label="Отметить шаг 38"></label>
+            <button class="step__link-btn" type="button" data-link="step-38" aria-label="Копировать ссылку на шаг 38" title="Копировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </div>
+        </div>
+        <div class="step__body">
+          <p>Финальная проверка: все сюжетные главы, все герои, все WayneTech Caches, нужные Bat-Symbols, все Batcave Trophies, все костюмы и транспорт базовой игры, все типы преступлений, все крупные активности и все боевые условия.</p>
+          <div class="note">
+            <p><strong>Финиш:</strong> На PS5 после закрытия остальных 51 трофея падает I am Batman. На Xbox и PC финальная отметка — полный список достижений без платинового трофея.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="trophy-checklist" id="trophy-checklist">
+    <h2 class="trophy-checklist__heading" id="trophy-heading">Все 52 трофея по категориям</h2>
+
+    <div class="trophy-checklist__category" id="trophy-cat-story">
+      <h3 class="trophy-checklist__category-title">A. Сюжет, главы и персонажи</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="hero-anyone"><span class="trophy-item__name">A hero can be anyone.</span><span class="trophy-item__teaser"> — Пройти основную историю</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Сюжетный трофей за завершение основной кампании. Идите по главам на любой сложности и не пытайтесь закрыть 100% до финала.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="friend-on-force"><span class="trophy-item__name">A Friend</span><span class="trophy-item__teaser"> — Открыть Gordon</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Выдаётся за сюжетное открытие Gordon. Его пенный распылитель понадобится для части препятствий и зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="hear-me-roar"><span class="trophy-item__name">Hear me roar.</span><span class="trophy-item__teaser"> — Открыть Catwoman</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Catwoman открывается по сюжету и нужна для лазания, стекла, узких проходов и ряда Free Play-секретов.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="boy-wonder"><span class="trophy-item__name">The Boy Wonder</span><span class="trophy-item__teaser"> — Открыть Robin</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Robin нужен для специальных дверей и маршрутов Free Play. После его открытия возвращаться в старые миссии становится заметно выгоднее.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="batgirl"><span class="trophy-item__name">Let's see what Batgirl can do!</span><span class="trophy-item__teaser"> — Открыть Batgirl</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Batgirl — ключ к радиовышкам и удобной карте Готэма. После её открытия сначала занимайтесь вышками и быстрым перемещением.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="grayson"><span class="trophy-item__name">A Grayson Graduation</span><span class="trophy-item__teaser"> — Открыть Nightwing</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Nightwing открывается по сюжету и закрывает препятствия, связанные с электричеством и зарядкой механизмов.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="talia"><span class="trophy-item__name">Out of the Shadows</span><span class="trophy-item__teaser"> — Открыть Talia</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Talia закрывает поздние препятствия Free Play. После её открытия состав героев становится пригодным для полноценной зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="gray-ghost"><span class="trophy-item__name">Beware the Gray Ghost!</span><span class="trophy-item__teaser"> — Собрать костюм Gray Ghost</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Костюм связан с прогрессом в главе One Bad Day. Закрывается в ходе сюжетного маршрута и не требует отдельной зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="legend-wayne"><span class="trophy-item__name">A legend, Mr. Wayne.</span><span class="trophy-item__teaser"> — Завершить пролог</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Сюжетная отметка за пролог. Используйте его как обучение, а не как полноценную зачистку.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="one-bad-day"><span class="trophy-item__name">One Bad Day</span><span class="trophy-item__teaser"> — Завершить главу 1</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Сюжетный трофей за первую главу. После неё постепенно открываются ранние системы прогресса.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="do-i-look"><span class="trophy-item__name">Do I look like I'm joking?</span><span class="trophy-item__teaser"> — Завершить главу 2</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Сюжетная глава, после которой маршрут становится шире за счёт новых возможностей и повторного прохождения.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="dynamic-duo"><span class="trophy-item__name">The Dynamic Duo</span><span class="trophy-item__teaser"> — Завершить главу 3</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Сюжетная отметка середины кампании. Продолжайте двигаться к полному составу героев.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="endless-winter"><span class="trophy-item__name">An Endless Winter</span><span class="trophy-item__teaser"> — Завершить главу 4</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>После этой части особенно важно заняться картой: Batgirl и Nightwing дают доступ к важным элементам зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="knightfall"><span class="trophy-item__name">Knightfall</span><span class="trophy-item__teaser"> — Завершить главу 5</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Поздняя сюжетная глава. После неё вы близки к финалу и полной постсюжетной зачистке.</p></div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category" id="trophy-cat-collectibles">
+      <h3 class="trophy-checklist__category-title">B. Коллекционки, Готэм и 100%</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="watchful-collector"><span class="trophy-item__name">A Watchful Collector</span><span class="trophy-item__teaser"> — Все коллекционные предметы</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Самый важный коллекционный трофей. Закрывайте коллекционки после радиовышек, полного набора героев и расширений Бэткейва, чтобы не делать лишние круги.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="wearing-hockey-pads"><span class="trophy-item__name">I'm not wearing hockey pads.</span><span class="trophy-item__teaser"> — Все костюмы</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Нужно открыть все костюмы базовой игры. Косметику из внешних бонусов не ставьте в центр маршрута: платину закрывает базовый игровой прогресс.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="cars"><span class="trophy-item__name">Wanna know how I got these cars?</span><span class="trophy-item__teaser"> — Весь транспорт</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Открывайте транспорт через сюжет, покупки, коллекционный прогресс и активности. Дорогие покупки оставляйте после Бэткейва и базовой экономики.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="too-much-power"><span class="trophy-item__name">This is too much power for one person.</span><span class="trophy-item__teaser"> — Все Red Bricks</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Соберите Red Bricks в миссиях и купите магазинные варианты у Bat-Mite. После этого активируйте один Red Brick для отдельного трофея Does it come in black?.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="name-maintain"><span class="trophy-item__name">You have a name to maintain.</span><span class="trophy-item__teaser"> — Все WayneTech Caches</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Откройте каждый тайник WayneTech. Этот трофей лучше закрывать после радиовышек и полного набора героев, когда карта и способности уже помогают не пропустить последний тайник.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="hopefully-busy"><span class="trophy-item__name">Hopefully, because he's busy.</span><span class="trophy-item__teaser"> — Все side activities</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Закройте все основные побочные активности Готэма: тайники, комнаты Загадочника, животных, постеры, городские дела и остальные маркеры, которые относятся к полной зачистке карты.</p><div class="trophy-item__warning">Не путайте этот трофей с обычными случайными преступлениями. Преступления тоже нужны, но side activities — это отдельный слой открытого мира.</div></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="symbol"><span class="trophy-item__name">The idea was to be a symbol.</span><span class="trophy-item__teaser"> — 25 Bat-Symbols</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Нужно собрать 25 Bat-Symbols. Делайте вместе с районной зачисткой, чтобы не возвращаться к тем же крышам и переулкам.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="collection-master"><span class="trophy-item__name">Quite the collection, Master Bruce.</span><span class="trophy-item__teaser"> — Все Batcave Trophies</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Batcave Trophies собираются через миссии, Бэткейв и открытый мир. Это длинный коллекционный слой, который лучше вести параллельно с Free Play.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="too-many-questions"><span class="trophy-item__name">Too Many Questions</span><span class="trophy-item__teaser"> — Все Puzzle Rooms</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Закройте все комнаты-головоломки Загадочника. Лучше делать после полного набора героев и открытия карты.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="fast-travel"><span class="trophy-item__name">It's a big city. I can't be everywhere.</span><span class="trophy-item__teaser"> — Все fast travel points</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Откройте все SubWayne Stations. Это и трофей, и экономия времени на остальной зачистке.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="normal-world"><span class="trophy-item__name">It's not exactly a normal world.</span><span class="trophy-item__teaser"> — Посетить все районы</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Откройте все районы Готэма. Обычно падает естественно во время радиовышек, быстрого перемещения и районной зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="celebrity"><span class="trophy-item__name">You're becoming quite a celebrity.</span><span class="trophy-item__teaser"> — 100 событий открытого мира</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Фоновый трофей за обнаружение событий в открытом мире. Идите через карту и радиовышки, а не через случайное катание.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="safer"><span class="trophy-item__name">Gotham can feel a little safer.</span><span class="trophy-item__teaser"> — 30 преступлений</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Предотвратите 30 преступлений любого типа. Обычно закрывается во время открытого мира, если не игнорировать случайные события.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="things-improved"><span class="trophy-item__name">Things have improved.</span><span class="trophy-item__teaser"> — Каждый тип преступления</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Отдельно следите за типами преступлений. Это один из трофеев, где легко остаться с одним недостающим типом, если не вести список.</p><div class="trophy-item__note">Типы: Break-In, Citizens in Peril, Vandalism, Mugging, Scuffle, Getaway Vehicle, GCPD Backup, Ambush!, Snatch and Run, Joyriders.</div></div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category" id="trophy-cat-upgrades">
+      <h3 class="trophy-checklist__category-title">C. Улучшения, покупки и Бэткейв</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="holy-skill"><span class="trophy-item__name">Holy Skill Upgrades, Batman!</span><span class="trophy-item__teaser"> — Все Skill Upgrades</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Купите все улучшения навыков. Для ускорения сначала берите экономику и удобные боевые улучшения, а финальные дорогие покупки оставляйте на постсюжетную зачистку.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="lighter-faster"><span class="trophy-item__name">Lighter, faster, more agile.</span><span class="trophy-item__teaser"> — По одному навыку из каждой ветки</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Купите хотя бы по одному улучшению в каждой ветке. Это ранний ориентир, который помогает не перекосить прокачку в одну сторону.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="wonderful-toys"><span class="trophy-item__name">Wonderful Toys</span><span class="trophy-item__teaser"> — Полностью прокачать гаджеты одного героя</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Выберите основного персонажа, которым часто играете, и доведите его гаджеты до полного улучшения. Обычно проще начинать с Batman.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="theatricality"><span class="trophy-item__name">Theatricality and Deception</span><span class="trophy-item__teaser"> — 3 Gadget Upgrades</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Ранний трофей за три улучшения гаджетов. Берите то, что реально используете в бою и исследовании.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="own-place"><span class="trophy-item__name">I own the place.</span><span class="trophy-item__teaser"> — Все Batcave Expansions</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Купите все расширения Бэткейва. Это приоритетная трата, потому что расширения открывают дополнительные объекты для зачистки.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="not-just-cave"><span class="trophy-item__name">Not Just a Cave</span><span class="trophy-item__teaser"> — Разместить 5 Props или Trophies</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Поставьте пять объектов или трофеев в Бэткейве. Это короткий трофей после открытия декора.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="other-car"><span class="trophy-item__name">No, sir. The OTHER car.</span><span class="trophy-item__teaser"> — Купить 3 транспорта</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Купите три транспорта в гараже Бэткейва. Не делайте это раньше расширений, если детали ограничены.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="buy-hero"><span class="trophy-item__name">You either buy a hero…</span><span class="trophy-item__teaser"> — 5 покупок в магазинах</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Купите пять предметов в магазинах. Закрывается естественно, когда начинаете добирать костюмы, транспорт и Red Bricks.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="come-in-black"><span class="trophy-item__name">Does it come in black?</span><span class="trophy-item__teaser"> — Активировать Red Brick</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>После получения любого Red Brick зайдите в соответствующее меню и активируйте его. Это отдельная короткая отметка.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="rebuilding-gotham"><span class="trophy-item__name">Rebuilding Gotham</span><span class="trophy-item__teaser"> — Испытание на терминале Бэткейва</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Выполните испытание через терминал Бэткейва. Удобно сделать, когда уже возвращаетесь в Бэткейв за расширениями и настройками.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="lifes-good"><span class="trophy-item__name">Life's been good to me.</span><span class="trophy-item__teaser"> — 1 000 000 деталей</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Накопите миллион деталей. Не превращайте это в ранний гринд: после прокачки экономики и активной зачистки сумма набирается намного проще.</p></div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category" id="trophy-cat-combat">
+      <h3 class="trophy-checklist__category-title">D. Бой, испытания и misc</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="up-challenge"><span class="trophy-item__name">Up for the Challenge</span><span class="trophy-item__teaser"> — 20 испытаний</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Выполните 20 испытаний. Часть закроется по ходу открытого мира; остатки добирайте после основной карты.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="gold-medals"><span class="trophy-item__name">Wouldn't wanna make things too easy.</span><span class="trophy-item__teaser"> — 5 Gold Medals в AR Trials</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Получите пять золотых медалей в AR Trials. Для платины не нужно золото во всех испытаниях, поэтому выбирайте те, которые даются стабильнее.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="collecting-evidence"><span class="trophy-item__name">Collecting Evidence</span><span class="trophy-item__teaser"> — Photo Mode</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Короткий трофей Photo Mode: поверните камеру в нужном режиме. Сделайте сразу, чтобы не держать в голове до финала.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="computer-privileges"><span class="trophy-item__name">Computer Privileges</span><span class="trophy-item__teaser"> — Сменить заставку Бэткомпьютера</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Зайдите в настройки Бэткомпьютера и смените заставку. Это короткая системная задача.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="city"><span class="trophy-item__name">This is my city.</span><span class="trophy-item__teaser"> — Поставить маркер на карте</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Откройте карту и поставьте маркер. Лучше сделать в начале открытого мира, чтобы не забыть.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="caped-defender"><span class="trophy-item__name">Caped Defender</span><span class="trophy-item__teaser"> — 100 Counters</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Накопительный трофей за успешные контратаки. Если не упал естественно, добивайте в уличных боях и crime-событиях.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="never-free"><span class="trophy-item__name">Never do it for free.</span><span class="trophy-item__teaser"> — 30 000 деталей за одно combo</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Делайте после экономических улучшений. Нужен длинный сбор деталей одним комбо, поэтому выбирайте плотный район с большим количеством разрушаемых объектов.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="calculation"><span class="trophy-item__name">I'm good with calculation.</span><span class="trophy-item__teaser"> — Max stud combo 60 секунд</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Удерживайте максимальный множитель деталей в течение минуты. Удобнее делать после улучшений, увеличивающих длительность и стабильность комбо.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="strength-fight"><span class="trophy-item__name">The Strength to Fight</span><span class="trophy-item__teaser"> — Combo x99</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Нужна длинная серия ударов. Ищите бой с достаточным числом врагов и не добивайте волну слишком быстро мощными приёмами.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="shadows"><span class="trophy-item__name">I am the shadows.</span><span class="trophy-item__teaser"> — 100 Stealth Takedowns</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Накопительный трофей за скрытные добивания. Если любите прямой бой, специально добейте его в подходящих миссиях и активностях.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="cowardly"><span class="trophy-item__name">Cowardly and Superstitious Lot</span><span class="trophy-item__teaser"> — Каждый тип врага</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Победите каждый тип врага хотя бы один раз. Обычно закрывается при нормальном прохождении сюжета и открытого мира.</p></div>
+      </details>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="parachuting"><span class="trophy-item__name">Is that like parachuting?</span><span class="trophy-item__teaser"> — 10 воздушных потоков</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Пролетите через 10 разных воздушных потоков wind tunnels. Делайте во время районной зачистки, когда карта уже раскрыта.</p></div>
+      </details>
+    </div>
+
+    <div class="trophy-checklist__category" id="trophy-cat-platinum">
+      <h3 class="trophy-checklist__category-title">E. Платина</h3>
+
+      <details class="trophy-item">
+        <summary class="trophy-item__summary"><input type="checkbox" class="trophy-item__cb" data-trophy="i-am-batman"><span class="trophy-item__name">I am Batman.</span><span class="trophy-item__teaser"> — Получить все остальные трофеи</span><span class="trophy-item__arrow" aria-hidden="true">▾</span></summary>
+        <div class="trophy-item__body"><p>Платиновый трофей PS5. Он падает после закрытия остальных 51 трофея. На Xbox и PC считайте аналогом полный список достижений без отдельной Platinum-награды.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="mistakes" id="section-mistakes" aria-labelledby="mistakes-heading">
+    <h2 id="mistakes-heading" class="section-heading">Частые ошибки</h2>
+    <ul class="mistakes__list">
+      <li>Пытаться собрать 100% в первом сюжетном заходе, когда ещё не открыты нужные герои.</li>
+      <li>Покупать дорогую косметику до расширений Бэткейва и полезных улучшений.</li>
+      <li>Оставлять радиовышки Batgirl на конец и вручную искать коллекционки по закрытой карте.</li>
+      <li>Не вести список типов преступлений для Things have improved.</li>
+      <li>Игнорировать Бэткейв как отдельную зону зачистки.</li>
+      <li>Делать трофеи на комбо до прокачки экономики и длительности множителя.</li>
+      <li>Считать внешние бонусы и DLC-косметику обязательными для платины базовой игры.</li>
+    </ul>
+  </section>
+
+  <section class="next-guide" id="section-next" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-heading">Что дальше</h2>
+    <p>Если после маршрута остались незакрытые пункты, сверяйтесь с трофейным списком ниже, а не катайтесь по карте наугад: сначала коллекционки и 100%, затем покупки, улучшения и Бэткейв, потом преступления и боевые накопительные условия, в самом конце короткие системные трофеи.</p>
+  </section>
+
+  <footer class="guide-footer">
+    <p>&copy; 2026 by Achiever. Все данные собраны из открытых источников.</p>
+  </footer>
+
+  <nav class="action-bar" id="action-bar" aria-label="Мобильные действия">
+    <button class="action-bar__btn" id="mob-toc" type="button" data-action="open-toc">Содержание</button>
+    <button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+    <button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+  </nav>
+
+  <div class="achievement-modal" id="achievement-modal" hidden aria-modal="true" role="dialog">
+    <div class="achievement-modal__overlay"></div>
+    <div class="achievement-modal__card">
+      <button class="achievement-modal__close" id="achievement-close" type="button" aria-label="Закрыть">&times;</button>
+      <h2 class="achievement-modal__title">Гайд пройден на 100%!</h2>
+      <p class="achievement-modal__desc">Поздравляем! Вы выполнили все шаги и закрыли весь чек-лист трофеев.</p>
+      <img class="achievement-modal__img" id="achievement-img" src="../../assets/img/common/achievement_hub.png" alt="Карточка ачивки">
+      <div class="achievement-modal__actions">
+        <button class="achievement-modal__btn achievement-modal__btn--download" id="btn-download-achievement" type="button">Скачать ачивку</button>
+        <button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="../../assets/js/progress.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <script src="../../assets/js/guide.js"></script>
+  <script>
+    document.querySelectorAll('.trophy-item__cb').forEach(function (cb) {
+      cb.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+  </script>
+</body>
+</html>
