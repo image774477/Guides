@@ -12,9 +12,11 @@ window.Guide.Progress = (function () {
   var DEFAULT_STATE = {
     checkedSteps: [],
     checkedTrophies: [],
+    checkedRewards: [],
     lastStepId: null,
     viewMode: 'all',
     spoilersHidden: false,
+    spoilersRevealed: false,
     achievementShown: false
   };
 
@@ -31,9 +33,11 @@ window.Guide.Progress = (function () {
       return {
         checkedSteps: Array.isArray(parsed.checkedSteps) ? parsed.checkedSteps : [],
         checkedTrophies: Array.isArray(parsed.checkedTrophies) ? parsed.checkedTrophies : [],
+        checkedRewards: Array.isArray(parsed.checkedRewards) ? parsed.checkedRewards : [],
         lastStepId: parsed.lastStepId || null,
         viewMode: parsed.viewMode === 'story' ? 'story' : 'all',
         spoilersHidden: !!parsed.spoilersHidden,
+        spoilersRevealed: !parsed.spoilersHidden && parsed.spoilersRevealed === true,
         achievementShown: !!parsed.achievementShown
       };
     } catch (e) {
@@ -80,6 +84,17 @@ window.Guide.Progress = (function () {
       _save(guideId, state);
     },
 
+    setRewardChecked: function (guideId, rewardId, checked) {
+      var state = _load(guideId);
+      var idx = state.checkedRewards.indexOf(rewardId);
+      if (checked && idx === -1) {
+        state.checkedRewards.push(rewardId);
+      } else if (!checked && idx !== -1) {
+        state.checkedRewards.splice(idx, 1);
+      }
+      _save(guideId, state);
+    },
+
     setLastStep: function (guideId, stepId) {
       var state = _load(guideId);
       state.lastStepId = stepId;
@@ -95,6 +110,7 @@ window.Guide.Progress = (function () {
     setSpoilersHidden: function (guideId, hidden) {
       var state = _load(guideId);
       state.spoilersHidden = !!hidden;
+      state.spoilersRevealed = !hidden;
       _save(guideId, state);
     },
 

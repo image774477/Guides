@@ -11,6 +11,8 @@ window.Guide = window.Guide || {};
   var contentEl;
   var trophyEl;
   var state;
+  var achievementReturnFocus;
+  var achievementBodyOverflow;
 
   function init() {
     contentEl = document.getElementById('guide-content');
@@ -44,6 +46,7 @@ window.Guide = window.Guide || {};
 
     // --- Top controls ---
     setupTopControls();
+    setupBackToTop();
 
     // --- UI modules ---
     Guide.UI.initLightbox(document.getElementById('lightbox'));
@@ -80,6 +83,7 @@ window.Guide = window.Guide || {};
   function updateProgressBar() {
     var stats = getChecklistStats();
     var pct = stats.total > 0 ? Math.round(stats.completed / stats.total * 100) : 0;
+    if (stats.completed !== stats.total) pct = Math.min(pct, 99);
 
     var fill = document.getElementById('progress-fill');
     var text = document.getElementById('progress-text');
@@ -140,15 +144,65 @@ window.Guide = window.Guide || {};
   function openAchievementModal() {
     var modal = document.getElementById('achievement-modal');
     if (!modal) return;
+    renderRewardsGallery();
+    if (!modal.hasAttribute('hidden')) return;
+    achievementReturnFocus = document.activeElement;
+    achievementBodyOverflow = document.body.style.overflow;
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
+    var closeBtn = document.getElementById('achievement-close');
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
 
   function closeAchievementModal() {
     var modal = document.getElementById('achievement-modal');
-    if (!modal) return;
+    if (!modal || modal.hasAttribute('hidden')) return;
     modal.setAttribute('hidden', '');
-    document.body.style.overflow = '';
+    document.body.style.overflow = achievementBodyOverflow || '';
+    if (achievementReturnFocus && achievementReturnFocus.isConnected) {
+      achievementReturnFocus.focus({ preventScroll: true });
+    }
+  }
+
+  function hasRewardsGallery() {
+    var modal = document.getElementById('achievement-modal');
+    return !!modal && modal.hasAttribute('data-rewards-gallery');
+  }
+
+  function renderRewardsGallery() {
+    if (!hasRewardsGallery()) return;
+    var modal = document.getElementById('achievement-modal');
+    var checked = Guide.Progress.getState(guideId).checkedRewards;
+    var cards = modal.querySelectorAll('[data-custom-reward]');
+    var count = 0;
+    for (var i = 0; i < cards.length; i++) {
+      var earned = checked.indexOf(cards[i].dataset.customReward) !== -1;
+      cards[i].classList.toggle('is-earned', earned);
+      var button = cards[i].querySelector('[data-reward-toggle]');
+      var status = cards[i].querySelector('.reward-card__status');
+      if (button) {
+        button.textContent = earned ? 'Отменить' : 'Выполнено';
+        button.setAttribute('aria-pressed', String(earned));
+      }
+      if (status) status.textContent = earned ? 'Получена' : 'Не получена';
+      if (earned) count++;
+    }
+    var counter = modal.querySelector('[data-rewards-count]');
+    if (counter) counter.textContent = 'Выполнено ' + count + ' из ' + cards.length;
+    var completionCard = modal.querySelector('[data-completion-reward]');
+    if (completionCard) {
+      var completed = isGuideCompleted();
+      completionCard.classList.toggle('is-earned', completed);
+      var completionStatus = completionCard.querySelector('.reward-card__status');
+      if (completionStatus) completionStatus.textContent = completed ? 'Получена' : 'Не получена';
+      var completionProgress = completionCard.querySelector('[data-completion-progress]');
+      var stats = getChecklistStats();
+      if (completionProgress) {
+        completionProgress.textContent = completed
+          ? 'Все шаги и трофеи отмечены'
+          : 'Шаги и трофеи: ' + stats.completed + ' из ' + stats.total;
+      }
+    }
   }
 
   function downloadAchievementCard() {
@@ -177,9 +231,36 @@ window.Guide = window.Guide || {};
     if (downloadBtn) downloadBtn.addEventListener('click', downloadAchievementCard);
     if (overlay) overlay.addEventListener('click', closeAchievementModal);
 
+    renderRewardsGallery();
+    modal.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-reward-toggle]');
+      if (!button || !modal.contains(button) || !hasRewardsGallery()) return;
+      var card = button.closest('[data-custom-reward]');
+      if (!card) return;
+      var checked = Guide.Progress.getState(guideId).checkedRewards;
+      Guide.Progress.setRewardChecked(guideId, card.dataset.customReward,
+        checked.indexOf(card.dataset.customReward) === -1);
+      renderRewardsGallery();
+    });
+
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+      if (modal.hasAttribute('hidden')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeAchievementModal();
+      } else if (e.key === 'Tab') {
+        var focusable = modal.querySelectorAll('button:not([disabled]), a[href], [tabindex="0"]');
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        var outside = !modal.contains(document.activeElement);
+        if (e.shiftKey && (document.activeElement === first || outside)) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && (document.activeElement === last || outside)) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
   }
@@ -220,12 +301,12 @@ window.Guide = window.Guide || {};
       Guide.Progress.setSpoilersHidden(guideId, isHidden);
     });
 
-    // 5. "Награда 100%" — open achievement modal if guide is complete
+    // Reward galleries are available throughout the guide; legacy awards unlock at 100%.
     var btnAchievement = document.getElementById('btn-achievement');
     if (btnAchievement) {
       updateAchievementButton(btnAchievement);
       btnAchievement.addEventListener('click', function () {
-        if (isGuideCompleted()) {
+        if (hasRewardsGallery() || isGuideCompleted()) {
           openAchievementModal();
         }
       });
@@ -242,11 +323,43 @@ window.Guide = window.Guide || {};
 
   function updateAchievementButton(btn) {
     if (!btn) return;
+    if (hasRewardsGallery()) {
+      btn.disabled = false;
+      btn.textContent = 'Награды';
+      btn.title = 'Открыть награды';
+      return;
+    }
     var completed = isGuideCompleted();
     btn.disabled = !completed;
     btn.title = completed
       ? 'Открыть награду за 100% прохождение гайда'
       : 'Откроется после 100% прохождения гайда';
+  }
+
+  function setupBackToTop() {
+    var button = document.getElementById('btn-back-to-top');
+    if (!button) return;
+
+    function updateVisibility() {
+      button.hidden = window.scrollY < Math.max(400, window.innerHeight * 0.75);
+    }
+
+    button.addEventListener('click', function () {
+      Guide.UI.saveCurrentReadingPosition(guideId);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      var heading = document.querySelector('.guide-header__title');
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      }
+      updateVisibility();
+      updateResumeButton(document.getElementById('btn-resume'));
+    });
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
+    window.addEventListener('pageshow', updateVisibility);
+    updateVisibility();
   }
 
   // --- Checkboxes ---
@@ -274,6 +387,7 @@ window.Guide = window.Guide || {};
     Guide.Progress.setChecked(guideId, input.dataset.step, input.checked);
     updateProgressBar();
     renderGuideStatus();
+    renderRewardsGallery();
     maybeShowCompletionAchievement();
     updateAchievementButton(document.getElementById('btn-achievement'));
   }
@@ -284,6 +398,7 @@ window.Guide = window.Guide || {};
     Guide.Progress.setTrophyChecked(guideId, input.dataset.trophy, input.checked);
     updateProgressBar();
     renderGuideStatus();
+    renderRewardsGallery();
     maybeShowCompletionAchievement();
     updateAchievementButton(document.getElementById('btn-achievement'));
   }
@@ -321,19 +436,11 @@ window.Guide = window.Guide || {};
   }
 
   function restoreSpoilers() {
-    if (state.spoilersHidden) {
-      document.body.classList.add('spoilers-hidden');
-      // Close all open spoilers
-      var openSpoilers = document.querySelectorAll('details.spoiler[open]');
-      for (var i = 0; i < openSpoilers.length; i++) {
-        openSpoilers[i].removeAttribute('open');
-      }
-      var btn = document.getElementById('btn-spoilers');
-      if (btn) {
-        btn.textContent = 'Показать спойлеры';
-        btn.classList.add('active');
-      }
-    }
+    Guide.UI.applySpoilerState(
+      document.getElementById('btn-spoilers'),
+      state.spoilersHidden,
+      state.spoilersRevealed
+    );
   }
 
   // --- Resume Banner ---
