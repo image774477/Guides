@@ -1,17 +1,17 @@
-# OS
+# Keep only the published site and its guide index in this repository.
+/*
+!/.gitignore
+!/README.md
+!/docs/
+/docs/*
+!/docs/.nojekyll
+!/docs/404.html
+!/docs/assets/
+!/docs/guides/
+/docs/**/*.md
+
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# IDE
-.vscode/
-.idea/
 *.swp
 *.swo
-
-# Source files (not part of the published site)
-Сам гайд с разными форматами файлов сам выбери какой удобнее/
-developer brief + план работ по спринтам.txt
-
-# Claude
-.claude/
