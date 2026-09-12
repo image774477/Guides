@@ -15,6 +15,37 @@ window.Guide.UI = (function () {
   var _savedPositionStepId = null;
   // Mobile breakpoint must match CSS @media
   var MOBILE_BP = 768;
+  var _spoilerSummaries = new WeakMap();
+
+  function _blockHiddenSpoilerActivation(event) {
+    if (document.body.classList.contains('spoilers-hidden') &&
+        (event.type === 'click' || event.key === 'Enter' ||
+         event.key === ' ' || event.key === 'Spacebar')) {
+      event.preventDefault();
+    }
+  }
+
+  function _setSpoilerSummaryHidden(summary, hidden) {
+    var original = _spoilerSummaries.get(summary);
+    if (!original) {
+      original = {
+        tabindex: summary.getAttribute('tabindex'),
+        ariaDisabled: summary.getAttribute('aria-disabled')
+      };
+      _spoilerSummaries.set(summary, original);
+      summary.addEventListener('click', _blockHiddenSpoilerActivation);
+      summary.addEventListener('keydown', _blockHiddenSpoilerActivation);
+    }
+    if (hidden) {
+      summary.setAttribute('tabindex', '-1');
+      summary.setAttribute('aria-disabled', 'true');
+    } else {
+      if (original.tabindex === null) summary.removeAttribute('tabindex');
+      else summary.setAttribute('tabindex', original.tabindex);
+      if (original.ariaDisabled === null) summary.removeAttribute('aria-disabled');
+      else summary.setAttribute('aria-disabled', original.ariaDisabled);
+    }
+  }
 
   function _isMobile() {
     return window.innerWidth <= MOBILE_BP;
@@ -112,22 +143,29 @@ window.Guide.UI = (function () {
     },
 
     /**
-     * toggleSpoilers — toggle body.spoilers-hidden,
-     * close all open <details class="spoiler">, update button state.
-     * Returns the new isHidden state.
+     * Apply the same state after a click and after reloading.
+     * An explicit reveal opens every spoiler; fresh/legacy state stays closed.
      */
-    toggleSpoilers: function (btn) {
-      var isHidden = document.body.classList.toggle('spoilers-hidden');
+    applySpoilerState: function (btn, hidden, revealed) {
+      var isHidden = !!hidden;
+      document.body.classList.toggle('spoilers-hidden', isHidden);
       if (btn) {
         btn.textContent = isHidden ? 'Показать спойлеры' : 'Скрыть спойлеры';
         btn.classList.toggle('active', isHidden);
+        btn.setAttribute('aria-pressed', String(isHidden));
       }
-      if (isHidden) {
-        var openSpoilers = document.querySelectorAll('details.spoiler[open]');
-        for (var i = 0; i < openSpoilers.length; i++) {
-          openSpoilers[i].removeAttribute('open');
-        }
+      var spoilers = document.querySelectorAll('details.spoiler');
+      for (var i = 0; i < spoilers.length; i++) {
+        spoilers[i].open = !isHidden && !!revealed;
+        var summary = spoilers[i].querySelector('summary');
+        if (summary) _setSpoilerSummaryHidden(summary, isHidden);
       }
+    },
+
+    /** Returns the new isHidden state for persistence. */
+    toggleSpoilers: function (btn) {
+      var isHidden = !document.body.classList.contains('spoilers-hidden');
+      Guide.UI.applySpoilerState(btn, isHidden, !isHidden);
       return isHidden;
     },
 

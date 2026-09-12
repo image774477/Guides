@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="42" y1="0" x2="423" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#14272C"/><stop offset=".55" stop-color="#0D1A20"/><stop offset="1" stop-color="#171B23"/></linearGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientTransform="translate(240 148) rotate(90) scale(126 159)" gradientUnits="userSpaceOnUse"><stop stop-color="#64D6C4" stop-opacity=".19"/><stop offset="1" stop-color="#64D6C4" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gold" x1="177" y1="66" x2="308" y2="245" gradientUnits="userSpaceOnUse"><stop stop-color="#F6E5AF"/><stop offset=".45" stop-color="#D7AC5E"/><stop offset="1" stop-color="#99733D"/></linearGradient>
+    <linearGradient id="teal" x1="198" y1="86" x2="283" y2="224" gradientUnits="userSpaceOnUse"><stop stop-color="#ADF4D7"/><stop offset="1" stop-color="#40AFA7"/></linearGradient>
+    <linearGradient id="metal" x1="210" y1="88" x2="265" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#385653"/><stop offset="1" stop-color="#142C30"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h480v300H0z"/>
+  <path fill="url(#halo)" d="M0 0h480v300H0z"/>
+  <g stroke="#87BAAF" stroke-opacity=".09">
+    <path d="M28 235V86a22 22 0 0 1 44 0v136M408 222V86a22 22 0 0 1 44 0v149"/>
+    <path d="M18 238c46-14 65-3 101-12m242 0c36 9 55-2 101 12M0 258c49-9 79 4 111-7m258 0c32 11 62-2 111 7"/>
+  </g>
+  <g fill="#C3DCC7" fill-opacity=".35"><circle cx="97" cy="53" r="1"/><circle cx="386" cy="65" r="1.5"/><circle cx="366" cy="35" r="1"/><circle cx="81" cy="202" r="1.5"/><circle cx="400" cy="204" r="1"/></g>
+  <circle cx="240" cy="149" r="114" stroke="#D7AC5E" stroke-opacity=".16"/>
+  <circle cx="240" cy="149" r="105" fill="#102027" fill-opacity=".48" stroke="#D7AC5E" stroke-opacity=".44"/>
+  <g stroke="#D7AC5E" stroke-opacity=".7" stroke-linecap="round"><path d="M240 27v9m0 226v10M118 149h9m226 0h9"/><path d="m154 63 6 6m160 160 6 6M154 235l6-6M320 69l6-6" stroke-opacity=".25"/></g>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M171 193c-15-3-17-17-13-32l17-61c3-12 13-15 21-5l22 28h44l22-28c8-10 18-7 21 5l17 61c4 15 2 29-13 32-19 4-39 6-69 6s-50-2-69-6Z" fill="url(#metal)" stroke="url(#gold)" stroke-width="5"/>
+    <path d="M221 161h38v24h-38z" fill="#102027" stroke="#D7AC5E" stroke-opacity=".4" stroke-width="2"/>
+    <circle cx="215" cy="139" r="14" fill="#102027" stroke="url(#teal)" stroke-width="4"/>
+    <circle cx="265" cy="139" r="14" fill="#102027" stroke="url(#teal)" stroke-width="4"/>
+    <circle cx="215" cy="139" r="6" fill="#385653"/>
+    <circle cx="265" cy="139" r="6" fill="#385653"/>
+    <path d="M182 161v22m-11-11h22" stroke="url(#gold)" stroke-width="7"/>
+    <g fill="#ADF4D7"><circle cx="296" cy="161" r="4"/><circle cx="285" cy="172" r="4"/><circle cx="307" cy="172" r="4"/><circle cx="296" cy="183" r="4"/></g>
+    <path d="M189 75c28-25 78-21 100 7m-18-3 19 5-1-19" stroke="url(#teal)" stroke-width="5"/>
+    <path d="M291 224c-28 25-78 21-100-7m18 3-19-5 1 19" stroke="url(#gold)" stroke-width="5"/>
+  </g>
+  <path d="m229 275 11-4 11 4-11 4z" fill="#D7AC5E" fill-opacity=".55"/>
+</svg>
