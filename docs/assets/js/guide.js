@@ -237,10 +237,15 @@ window.Guide = window.Guide || {};
       if (!button || !modal.contains(button) || !hasRewardsGallery()) return;
       var card = button.closest('[data-custom-reward]');
       if (!card) return;
+      var rewardId = card.dataset.customReward;
       var checked = Guide.Progress.getState(guideId).checkedRewards;
-      Guide.Progress.setRewardChecked(guideId, card.dataset.customReward,
-        checked.indexOf(card.dataset.customReward) === -1);
+      var completing = checked.indexOf(rewardId) === -1;
+      Guide.Progress.setRewardChecked(guideId, rewardId, completing);
       renderRewardsGallery();
+      if (completing && Guide.Analytics &&
+          Guide.Progress.getState(guideId).checkedRewards.indexOf(rewardId) !== -1) {
+        Guide.Analytics.goal('custom_achievement_complete', guideId, rewardId);
+      }
     });
 
     document.addEventListener('keydown', function (e) {
