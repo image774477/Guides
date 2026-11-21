@@ -83,6 +83,34 @@ window.Guide.UI = (function () {
     document.body.style.overflow = '';
   }
 
+  function _readingTarget(item) {
+    return item.closest('details:not([open])') || item;
+  }
+
+  function _getReadingItemId() {
+    var content = document.getElementById('guide-content');
+    if (!content) return null;
+    var firstStep = content.querySelector('.step');
+    if (!firstStep) return null;
+
+    // Match the offset used by scrollIntoView when it aligns a step.
+    var offset = (parseFloat(getComputedStyle(firstStep).scrollMarginTop) || 0) + 1;
+    var region = content.getBoundingClientRect().bottom > offset
+      ? content : document.querySelector('.trophy-checklist');
+    if (!region) return null;
+    var regionRect = region.getBoundingClientRect();
+    if (regionRect.top > offset || regionRect.bottom <= offset) return null;
+
+    var items = region.querySelectorAll('.step, .trophy-checklist__item[id]');
+    for (var i = 0; i < items.length; i++) {
+      var rect = _readingTarget(items[i]).getBoundingClientRect();
+      if (rect.height > 0 && rect.bottom > offset && rect.top < window.innerHeight) {
+        return items[i].id;
+      }
+    }
+    return null;
+  }
+
   /* ---- public API ---- */
 
   return {
@@ -101,17 +129,18 @@ window.Guide.UI = (function () {
       }
     },
 
-    /**
-     * Save the user's current reading position (step id) so they can
-     * navigate away (e.g. to TOC) and return.
-     * Source of truth: the topmost visible step tracked by IntersectionObserver
-     * and stored via Guide.Progress.setLastStep().
-     * This function snapshots that value into a session variable.
-     */
+    trackReadingPosition: function (guideId) {
+      var stepId = _getReadingItemId();
+      if (stepId && Guide.Progress.getState(guideId).lastStepId !== stepId) {
+        Guide.Progress.setLastStep(guideId, stepId);
+      }
+      return stepId;
+    },
+
     saveCurrentReadingPosition: function (guideId) {
       if (!guideId) return;
-      var state = Guide.Progress.getState(guideId);
-      _savedPositionStepId = state.lastStepId || null;
+      _savedPositionStepId = Guide.UI.trackReadingPosition(guideId) ||
+        _savedPositionStepId || Guide.Progress.getState(guideId).lastStepId;
     },
 
     /**
@@ -126,7 +155,8 @@ window.Guide.UI = (function () {
         targetId = Guide.Progress.getState(guideId).lastStepId;
       }
       if (targetId) {
-        Guide.UI.scrollToStep(targetId);
+        Guide.UI.scrollToStep(targetId, 'instant');
+        _savedPositionStepId = null;
       }
     },
 
@@ -144,9 +174,9 @@ window.Guide.UI = (function () {
 
     /**
      * Apply the same state after a click and after reloading.
-     * An explicit reveal opens every spoiler; fresh/legacy state stays closed.
+     * Both modes start with collapsed spoilers. The visible mode allows manual disclosure.
      */
-    applySpoilerState: function (btn, hidden, revealed) {
+    applySpoilerState: function (btn, hidden) {
       var isHidden = !!hidden;
       document.body.classList.toggle('spoilers-hidden', isHidden);
       if (btn) {
@@ -156,7 +186,7 @@ window.Guide.UI = (function () {
       }
       var spoilers = document.querySelectorAll('details.spoiler');
       for (var i = 0; i < spoilers.length; i++) {
-        spoilers[i].open = !isHidden && !!revealed;
+        spoilers[i].open = false;
         var summary = spoilers[i].querySelector('summary');
         if (summary) _setSpoilerSummaryHidden(summary, isHidden);
       }
@@ -165,7 +195,7 @@ window.Guide.UI = (function () {
     /** Returns the new isHidden state for persistence. */
     toggleSpoilers: function (btn) {
       var isHidden = !document.body.classList.contains('spoilers-hidden');
-      Guide.UI.applySpoilerState(btn, isHidden, !isHidden);
+      Guide.UI.applySpoilerState(btn, isHidden);
       return isHidden;
     },
 
@@ -306,10 +336,11 @@ window.Guide.UI = (function () {
     /**
      * Smooth scroll to a step/element and highlight it.
      */
-    scrollToStep: function (stepId) {
+    scrollToStep: function (stepId, behavior) {
       var el = document.getElementById(stepId);
       if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el = _readingTarget(el);
+      el.scrollIntoView({ behavior: behavior || 'smooth', block: 'start' });
       // Delay highlight slightly for scroll to settle
       setTimeout(function () {
         Guide.UI.highlightStep(el);

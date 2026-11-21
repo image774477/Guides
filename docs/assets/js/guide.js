@@ -24,6 +24,7 @@ window.Guide = window.Guide || {};
     trophyEl = document.querySelector('.trophy-checklist');
     state = Guide.Progress.getState(guideId);
 
+    setupTrophyReadingTargets();
     restoreCheckboxes();
     restoreTrophyCheckboxes();
     restoreViewMode();
@@ -55,7 +56,7 @@ window.Guide = window.Guide || {};
     // Mobile action bar
     setupMobileActionBar();
 
-    // Scroll tracking (route steps only)
+    // Scroll tracking for route steps and trophy rows
     setupScrollTracker();
 
     // Handle initial hash (deep link)
@@ -443,12 +444,20 @@ window.Guide = window.Guide || {};
   function restoreSpoilers() {
     Guide.UI.applySpoilerState(
       document.getElementById('btn-spoilers'),
-      state.spoilersHidden,
-      state.spoilersRevealed
+      state.spoilersHidden
     );
   }
 
   // --- Resume Banner ---
+
+  function setupTrophyReadingTargets() {
+    if (!trophyEl) return;
+    var inputs = trophyEl.querySelectorAll('input[data-trophy]');
+    for (var i = 0; i < inputs.length; i++) {
+      var row = inputs[i].closest('.trophy-checklist__item');
+      if (row && !row.id) row.id = 'reading-trophy-' + inputs[i].dataset.trophy;
+    }
+  }
 
   function showResumeBanner() {
     var banner = document.getElementById('resume-banner');
@@ -457,10 +466,12 @@ window.Guide = window.Guide || {};
     var targetStep = document.getElementById(state.lastStepId);
     if (!targetStep) return;
 
-    var stepTitle = targetStep.querySelector('.step__title');
+    var stepTitle = targetStep.querySelector('.step__title, .trophy-checklist__name');
     var nameSpan = document.getElementById('resume-step-name');
     if (nameSpan && stepTitle) {
-      nameSpan.textContent = stepTitle.textContent;
+      nameSpan.textContent = targetStep.closest('details:not([open])')
+        ? 'Скрытый трофей'
+        : stepTitle.textContent;
     }
 
     banner.removeAttribute('hidden');
@@ -468,8 +479,8 @@ window.Guide = window.Guide || {};
     var resumeBtn = document.getElementById('resume-btn');
     if (resumeBtn) {
       resumeBtn.addEventListener('click', function () {
-        Guide.UI.scrollToStep(state.lastStepId);
         banner.setAttribute('hidden', '');
+        Guide.UI.restoreCurrentReadingPosition(guideId);
       });
     }
 
@@ -484,39 +495,18 @@ window.Guide = window.Guide || {};
   // --- Scroll Tracking ---
 
   function setupScrollTracker() {
-    var steps = contentEl.querySelectorAll('.step');
-    if (!steps.length || !('IntersectionObserver' in window)) return;
-
-    var lastSaveTime = 0;
-    var pendingStepId = null;
-
-    var headerHeight = getComputedStyle(document.documentElement)
-      .getPropertyValue('--header-height').trim() || '56px';
-
-    var observer = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        if (entries[i].isIntersecting) {
-          pendingStepId = entries[i].target.id;
-        }
-      }
-
-      var now = Date.now();
-      if (pendingStepId && now - lastSaveTime > 500) {
-        Guide.Progress.setLastStep(guideId, pendingStepId);
-        lastSaveTime = now;
-
-        // Update resume button availability
-        var btnResume = document.getElementById('btn-resume');
-        if (btnResume) updateResumeButton(btnResume);
-      }
-    }, {
-      rootMargin: '-' + headerHeight + ' 0px -80% 0px',
-      threshold: 0
-    });
-
-    for (var i = 0; i < steps.length; i++) {
-      observer.observe(steps[i]);
+    var timer;
+    var resumeButton = document.getElementById('btn-resume');
+    function saveSettledPosition() {
+      Guide.UI.trackReadingPosition(guideId);
+      updateResumeButton(resumeButton);
     }
+
+    window.addEventListener('scroll', function () {
+      clearTimeout(timer);
+      timer = setTimeout(saveSettledPosition, 120);
+    }, { passive: true });
+    window.addEventListener('pagehide', saveSettledPosition);
   }
 
   // --- Mobile Action Bar ---

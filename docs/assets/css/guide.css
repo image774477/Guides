@@ -632,11 +632,16 @@ body.spoilers-hidden .spoiler > :not(summary) {
 }
 
 .trophy-checklist__item {
+  scroll-margin-top: var(--scroll-offset);
   display: flex;
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-sm) 0;
   border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+}
+
+.trophy-checklist details:has(.trophy-checklist__item) {
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .trophy-checklist__item:last-child {

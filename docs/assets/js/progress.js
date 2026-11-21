@@ -16,7 +16,6 @@ window.Guide.Progress = (function () {
     lastStepId: null,
     viewMode: 'all',
     spoilersHidden: false,
-    spoilersRevealed: false,
     achievementShown: false
   };
 
@@ -37,7 +36,6 @@ window.Guide.Progress = (function () {
         lastStepId: parsed.lastStepId || null,
         viewMode: parsed.viewMode === 'story' ? 'story' : 'all',
         spoilersHidden: !!parsed.spoilersHidden,
-        spoilersRevealed: !parsed.spoilersHidden && parsed.spoilersRevealed === true,
         achievementShown: !!parsed.achievementShown
       };
     } catch (e) {
@@ -110,7 +108,6 @@ window.Guide.Progress = (function () {
     setSpoilersHidden: function (guideId, hidden) {
       var state = _load(guideId);
       state.spoilersHidden = !!hidden;
-      state.spoilersRevealed = !hidden;
       _save(guideId, state);
     },
 
