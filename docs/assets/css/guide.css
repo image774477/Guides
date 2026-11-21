@@ -997,18 +997,20 @@ body.spoilers-hidden .spoiler > :not(summary) {
 
 .reward-action--glow {
   border-color: var(--color-accent);
-  box-shadow: 0 0 9px color-mix(in srgb, var(--color-accent) 30%, transparent);
+  background-color: var(--color-accent-bg);
+  box-shadow: 0 0 8px rgba(255, 107, 53, .42);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .reward-action--glow {
+  .reward-action--glow:not(:hover) {
     animation: reward-action-glow 2.6s ease-in-out infinite;
   }
 }
 
 @keyframes reward-action-glow {
   50% {
-    box-shadow: 0 0 18px color-mix(in srgb, var(--color-accent) 68%, transparent);
+    background-color: rgba(255, 107, 53, .24);
+    box-shadow: 0 0 4px rgba(255, 107, 53, .85), 0 0 18px rgba(255, 107, 53, .8);
   }
 }
 
