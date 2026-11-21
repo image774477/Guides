@@ -989,6 +989,12 @@ body.spoilers-hidden .spoiler > :not(summary) {
   min-height: 0;
 }
 
+.rewards-modal__create {
+  display: inline-block;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
 .rewards-modal__count {
   margin-bottom: 12px;
   color: var(--color-muted);
