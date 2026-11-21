@@ -992,20 +992,23 @@ body.spoilers-hidden .spoiler > :not(summary) {
 .rewards-modal__create {
   display: inline-block;
   margin-bottom: 12px;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 8px var(--color-accent-bg);
   text-decoration: none;
 }
 
+.reward-action--glow {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 9px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .rewards-modal__create {
-    animation: reward-create-glow 2.6s ease-in-out infinite;
+  .reward-action--glow {
+    animation: reward-action-glow 2.6s ease-in-out infinite;
   }
 }
 
-@keyframes reward-create-glow {
+@keyframes reward-action-glow {
   50% {
-    box-shadow: 0 0 16px color-mix(in srgb, var(--color-accent) 55%, transparent);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--color-accent) 68%, transparent);
   }
 }
 
