@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GTA VI — гайд к платине на PS5 | Achiever</title>
+<meta content="Что делать по дороге между миссиями, как заполнить игровой счётчик на 100% и получить все 55 трофеев." name="description"/>
+<link href="https://image774477.github.io/Guides/guides/gta-vi-platinum/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="GTA VI — гайд к платине на PS5" property="og:title"/>
+<meta content="Что делать по дороге между миссиями, как заполнить игровой счётчик на 100% и получить все 55 трофеев." property="og:description"/>
+<meta content="https://image774477.github.io/Guides/guides/gta-vi-platinum/" property="og:url"/>
+<meta content="https://image774477.github.io/Guides/guides/gta-vi-platinum/media/cover.jpg" property="og:image"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="GTA VI — гайд к платине на PS5" name="twitter:title"/>
+<meta content="Что делать по дороге между миссиями, как заполнить игровой счётчик на 100% и получить все 55 трофеев." name="twitter:description"/>
+<meta content="https://image774477.github.io/Guides/guides/gta-vi-platinum/media/cover.jpg" name="twitter:image"/>
+<link href="../../assets/icons/favicon.png" rel="icon" type="image/png"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/reset.css" rel="stylesheet"/>
+<link href="../../assets/css/theme.css" rel="stylesheet"/>
+<link href="../../assets/css/guide.css?v=reward-glow-2" rel="stylesheet"/>
+<style>:root {
+  color-scheme: dark;
+  --color-bg: #171222;
+  --color-surface: #251d35;
+  --color-text: #fff4ef;
+  --color-muted: #c5b6ce;
+  --color-accent: #ff96b6;
+  --color-accent-hover: #ffc295;
+  --color-accent-bg: rgba(255, 150, 182, .12);
+  --color-border: #56445f;
+  --color-success: #84dfcb;
+  --color-warning: #ffcc8a;
+  --color-danger: #ff98a3;
+  --sunset: linear-gradient(100deg, #ffc295, #ff96b6 55%, #bfacff);
+}
+
+body {
+  background-image: radial-gradient(ellipse at 67% 0, #47253f, transparent 68%),
+                    linear-gradient(to bottom, #282038, var(--color-bg));
+  background-size: 100% 740px;
+  background-repeat: no-repeat;
+}
+
+@supports (background-clip: text) {
+  .guide-header__title {
+    width: fit-content;
+    background-image: var(--sunset);
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.progress-bar__fill { background-image: var(--sunset); }
+
+.reward-action--glow {
+  --color-accent: #ffda67;
+  --color-accent-bg: rgba(255, 207, 73, .12);
+  box-shadow: 0 0 8px rgba(255, 207, 73, .35);
+}
+.reward-action--glow:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@keyframes reward-action-glow {
+  50% {
+    background-color: rgba(255, 207, 73, .20);
+    box-shadow: 0 0 4px rgba(255, 219, 99, .75), 0 0 18px rgba(255, 190, 49, .55);
+  }
+}
+
+.reward-card.is-earned { border-color: var(--color-success); }
+.reward-card__art { background-color: var(--color-surface); }
+
+@media (forced-colors: active) {
+  .guide-header__title { color: CanvasText; background: none; }
+}
+/* Keep the palm print in the margins of the reading column. */
+body { position: relative; isolation: isolate; }
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: clamp(30px, calc((100% - var(--container-width)) / 2), 480px);
+  z-index: -1;
+  pointer-events: none;
+  background: url("media/palms.svg") repeat;
+  mask-image: linear-gradient(to right, black 65%, transparent);
+}
+body::before { left: 0; }
+body::after { right: 0; transform: scaleX(-1); background-position: 40px 160px; }
+@media (max-width: 768px) {
+  body::before, body::after {
+    width: 60px;
+    background-size: 135px auto;
+    background-position: -16px 25px;
+    mask-image: linear-gradient(to right, black, transparent);
+  }
+  body::after { background-position-y: 130px; }
+}
+@media (forced-colors: active) {
+  body::before, body::after { display: none; }
+}
+
+</style></head>
+<body>
+<header class="guide-header" id="top">
+<h1 class="guide-header__title">Grand Theft Auto VI</h1>
+<p class="guide-header__subtitle">Маршрут к платине на PS5</p>
+<p class="guide-header__description">Что делать по дороге между миссиями, как заполнить игровой счётчик на 100% и получить все 55 трофеев.</p>
+<div class="guide-header__meta-badges">
+<span class="badge badge--platform">PS5</span>
+<span class="badge badge--spoiler">Умеренные спойлеры</span>
+<time class="badge badge--date" datetime="2026-11-25">Обновлено 25.11.2026</time>
+<span class="badge badge--status" data-status="not-started" id="guide-status">Не начато</span>
+</div>
+<figure class="step__media">
+<img alt="Джейсон и Люсия на капоте машины в Вайс-Сити" height="900" loading="lazy" src="media/cover.jpg?v=jason-lucia-01" width="1600"/>
+</figure>
+</header>
+<div class="resume-banner" hidden="" id="resume-banner">
+<p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
+<button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+<button aria-label="Закрыть" class="resume-banner__close" id="resume-close" type="button">×</button>
+</div>
+<section aria-label="Сводка" class="meta-summary">
+<dl class="meta-summary__list"><div class="meta-summary__item"><dt>Цель</dt><dd>55 трофеев</dd></div><div class="meta-summary__item"><dt>Время</dt><dd>Около 200 часов</dd></div><div class="meta-summary__item"><dt>Прохождения</dt><dd>Одно</dd></div><div class="meta-summary__item"><dt>Режим</dt><dd>Одиночная игра</dd></div><div class="meta-summary__item"><dt>После титров</dt><dd>Свободное исследование</dd></div></dl>
+</section>
+<nav aria-label="Быстрые действия" class="quick-actions">
+<button class="quick-actions__btn" data-action="open-toc" id="btn-toc" type="button">Содержание</button>
+<button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+<button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+<button aria-controls="achievement-modal" aria-haspopup="dialog" class="quick-actions__btn reward-action--glow" id="btn-achievement" type="button">Награды</button>
+<button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+</nav>
+<div class="progress-bar" id="progress-bar">
+<div class="progress-bar__inner">
+<div class="progress-bar__track">
+<div class="progress-bar__fill" id="progress-fill"></div>
+</div>
+<span class="progress-bar__text" id="progress-text">0/64 · 0%</span>
+</div>
+</div>
+<nav aria-label="Оглавление" class="toc" id="toc">
+<button aria-label="Закрыть оглавление" class="toc__close" type="button">×</button>
+<h2 class="toc__heading">Оглавление</h2>
+<ol class="toc__list"><li class="toc__item"><a class="toc__link" href="#quick-route">Перед первой миссией</a></li><li class="toc__item"><a class="toc__link" href="#step-1">До первой миссии</a></li><li class="toc__item"><a class="toc__link" href="#step-2">Глава 1. Начните две коллекции по дороге</a></li><li class="toc__item"><a class="toc__link" href="#step-3">Главы 2–3. Совмещайте задания с исследованием</a></li><li class="toc__item"><a class="toc__link" href="#step-4">Главы 4–5. Завершите сюжет</a></li><li class="toc__item"><a class="toc__link" href="#step-5">После финала. Сверьте счётчики</a></li><li class="toc__item"><a class="toc__link" href="#step-6">Все условия трофея «Долгая дорога»</a></li><li class="toc__item"><a class="toc__link" href="#step-7">Сюжет, поручения и заработок</a></li><li class="toc__item"><a class="toc__link" href="#step-8">Исследование и коллекции</a></li><li class="toc__item"><a class="toc__link" href="#step-9">Гонки, спорт и испытания</a></li><li class="toc__item"><a class="toc__link" href="#trophy-checklist">Все 55 трофеев</a></li><li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li></ol>
+</nav>
+<section class="quick-route" id="quick-route"><h2 class="quick-route__heading">Что стоит знать перед первой миссией</h2><ol><li>Выделите отдельную ячейку для ручного сохранения. В игре нет меню повтора пройденных миссий.</li><li>По дороге сканируйте новые модели транспорта и изучайте животных. Игра уже ведёт учёт, хотя итоговый список откроется после титров.</li><li>После финала откройте Progress → Stats → 100% Completion. Сверьте оставшиеся категории, затем доберите отдельные трофеи.</li></ol></section>
+<main class="guide-content" data-guide-id="gta-vi-platinum" data-total-steps="9" id="guide-content"><article class="step" data-step-num="1" data-step-type="critical" id="step-1">
+<div class="step__header">
+<span class="step__number">1</span>
+<h3 class="step__title">До первой миссии</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 1" data-step="step-1" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 1" class="step__link-btn" data-link="step-1" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Оставьте отдельную ячейку для начала каждой главы. Выбрать пройденную миссию из меню нельзя. Если захотите вернуться к конкретной сцене, понадобится ручное сохранение. Чит-коды отключают получение трофеев и сохранение игры.</p></div>
+</article><article class="step" data-step-num="2" data-step-type="critical" id="step-2">
+<div class="step__header">
+<span class="step__number">2</span>
+<h3 class="step__title">Глава 1. Начните две коллекции по дороге</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 2" data-step="step-2" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 2" class="step__link-btn" data-link="step-2" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Увидев незнакомую модель транспорта, удерживайте ↑ на крестовине и удерживайте R1, пока приложение WAiNK не зарегистрирует модель. Катера и самолёты тоже идут в счёт. Когда появится бинокль, выберите его через L1, приблизьте животное кнопкой ↑ и удерживайте R1 до регистрации. Разные породы домашних кошек и собак учитываются отдельно.</p><p>Обучение медитации первой главы легко пропустить. Если хотите увидеть эту сцену, примите приглашение сразу. Пропуск не лишает платины.</p><details class="spoiler"><summary>Где пройти обучение</summary><div class="spoiler__body"><p>Когда Люсия предложит медитацию у дома Джейсона, следуйте за ней на балкон. Если пропустили эту сцену, дождитесь задания Learn to Meditate Together после того, как сможете играть обоими героями. Пройдите его, чтобы открыть остальные места.</p></div></details></div>
+</article><article class="step" data-step-num="3" data-step-type="critical" id="step-3">
+<div class="step__header">
+<span class="step__number">3</span>
+<h3 class="step__title">Главы 2–3. Совмещайте задания с исследованием</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 3" data-step="step-3" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 3" class="step__link-btn" data-link="step-3" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Продолжайте по розовым значкам с чёрными буквами. Чёрные значки с розовыми буквами и фиолетовые значки обозначают дополнительные задания. Для итогового счётчика нужно 100 дополнительных заданий. Доставка транспорта Мозесу и Рэнди тоже засчитывается. Увидев песочные часы, возьмитесь за поручение сразу, если хотите увидеть его развязку.</p></div>
+</article><article class="step" data-step-num="4" data-step-type="critical" id="step-4">
+<div class="step__header">
+<span class="step__number">4</span>
+<h3 class="step__title">Главы 4–5. Завершите сюжет</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 4" data-step="step-4" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 4" class="step__link-btn" data-link="step-4" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Следуйте сюжетным отметкам до титров. После финала можно закончить побочные истории, необходимые для платины. У отдельных необязательных поручений ограничен срок.</p><details class="spoiler"><summary>Как открыть хранилища банков</summary><div class="spoiler__body"><p>В четвёртой главе пройдите дополнительное задание That’s Where the Money Is… Если Ясмани ещё не предлагает наводки, выполните два его поручения в конторах займов.</p></div></details></div>
+</article><article class="step" data-step-num="5" data-step-type="optional" id="step-5">
+<div class="step__header">
+<span class="step__number">5</span>
+<h3 class="step__title">После финала. Сверьте счётчики</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 5" data-step="step-5" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 5" class="step__link-btn" data-link="step-5" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Откройте Progress → Stats → 100% Completion. Сюда уже записаны находки, сделанные по дороге. Сначала закройте занятия, у которых требуется полный комплект, включая 33 подводные находки, 42 золотые медали в тирах и 42 испытания дронов. Затем доберите недостающее в категориях со свободным выбором. Например, изучите 100 видов животных, отсканируйте 200 моделей транспорта и выполните любые 70 испытаний из 80.</p><p>Когда получите трофей «Долгая дорога» за 100%, откройте список трофеев PS5. Закройте оставшиеся личные поручения и отдельные условия трофеев: некоторые цепочки встреч с незнакомцами не нужны для внутриигровых 100%, но нужны для платины.</p></div>
+</article><article class="step" data-step-num="6" data-step-type="optional" id="step-6">
+<div class="step__header">
+<span class="step__number">6</span>
+<h3 class="step__title">Все условия трофея «Долгая дорога»</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 6" data-step="step-6" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 6" class="step__link-btn" data-link="step-6" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p>Для трофея за 100% завершите три группы условий ниже. Каждая категория ведёт собственный счётчик.</p></div>
+</article><article class="step" data-step-num="7" data-step-type="optional" id="step-7">
+<div class="step__header">
+<span class="step__number">7</span>
+<h3 class="step__title">Сюжет, поручения и заработок</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 7" data-step="step-7" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 7" class="step__link-btn" data-link="step-7" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><ul><li>Завершите пять глав и выполните 100 дополнительных заданий. Учитываются, например, доставки для Мозеса и Рэнди, рыбалка с Кэлом и медитации.</li>
+<li>Завершите 39 операций банд, 22 дела в банках, 7 дел в конторах срочных займов, 34 налёта Smash ’N’ Grabs и 50 налётов Stick Ups. Наведите курсор на значок операции и проверьте число ключевых ценностей. Если ушли раньше, вернитесь после восстановления объекта.</li>
+<li>Заберите игровую добычу из хранилищ всех восьми крупных банков. Простое посещение не засчитывается. Условие доступа указано <a href="#step-4">в шаге для четвёртой главы</a>.</li>
+<li>Суммы сбыта игра ведёт отдельно: наркотики и украшения — по 100 000 долларов, меченые купюры — 250 000, транспорт — 200 000. Во второй главе Мозес принимает в своём гараже в Порт-Геллхорне машины без трекера. В третьей главе откроется список заказов Рэнди. Машины из этого списка идут и в сумму сбыта, и в счётчик отдельного трофея за заказы Рэнди.</li></ul></div>
+</article><article class="step" data-step-num="8" data-step-type="optional" id="step-8">
+<div class="step__header">
+<span class="step__number">8</span>
+<h3 class="step__title">Исследование и коллекции</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 8" data-step="step-8" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 8" class="step__link-btn" data-link="step-8" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><ul>
+<li>Сдайте Кентону пять комплектов.<details class="spoiler"><summary>Как открыть поручения Кентона</summary><div class="spoiler__body"><p>После задания Island Dreams дождитесь звонка и найдите зелёный значок KR в Ки-Ленто. Металлоискатель поможет найти подводные ценности.</p></div></details></li><li>Откройте отдельно все 33 подводные находки. Доберитесь до объекта на лодке и погрузитесь. На некоторых лодках сзади лежит акваланг. Список обнаруженных объектов можно посмотреть на карте в разделе Exploration → Underwater Discoveries.</li>
+<li>Закончите 15 серий коллекционных карточек. В Progress → Collections → Collectible Cards выберите серию, где осталось меньше всего пробелов. Цветовые варианты одной карточки учитываются отдельно. Дубликат того же цвета можно продать.</li>
+<li>Отсканируйте в WAiNK 100 достопримечательностей, скульптур и других объектов. Выходите из машины: подсказка о ближайшем объекте появляется, когда герой идёт пешком.</li>
+<li>Найдите 30 разных изданий или точек книгообмена. Большинство журналов встречается в нескольких местах; второй экземпляр того же номера можно пропустить.</li>
+<li>Для 100% нужны 15 из 18 отметок за медитации. Они распределены по десяти локациям. В восьми местах Джейсон и Люсия могут получить по одной отметке, поэтому берите второго героя с собой.</li>
+<li>Разбейте 100 фигурок фламинго. У нужных фигурок чёрно-белый клюв; жёлто-чёрный у обычных украшений.</li>
+<li>Соберите оба музыкальных плейлиста, сканируя афиши. Для 70 открытых стилей сканируйте журналы с татуировками и подбирайте дорогие часы, отмеченные золотым значком на объектах банд.</li>
+<li>Зарегистрируйте 200 базовых моделей транспорта, найдите 50 стандартных видов оружия и изучите в бинокль 100 животных. Лодки и самолёты входят в число базовых моделей. Особый транспорт из категории Standout Vehicles учитывается отдельно.</li></ul></div>
+</article><article class="step" data-step-num="9" data-step-type="optional" id="step-9">
+<div class="step__header">
+<span class="step__number">9</span>
+<h3 class="step__title">Гонки, спорт и испытания</h3>
+<div class="step__actions">
+<label class="step__checkbox"><input aria-label="Отметить шаг 9" data-step="step-9" type="checkbox"/></label>
+<button aria-label="Копировать ссылку на шаг 9" class="step__link-btn" data-link="step-9" title="Копировать ссылку" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><ul>
+<li>Победите в 30 разных гонках и получите золотые медали в 10 из 13 гоночных испытаний. Откройте на карте фильтр Activities → Racing. Результаты этих двух типов заездов хранятся отдельно.</li>
+<li>Соберите 42 золотые медали в тирах Griffin Shooting Range и Rodgers Ranch. В каждом купите пропуск за 5 долларов у продавца: появятся метки упражнений.</li>
+<li>Запустите четыре видеоигры. Три доступны через контроллер у домашнего телевизора, Bang For Your Buck — на аркадном автомате. Для счётчика достаточно запустить каждую игру; для отдельного трофея пройдите одну до конца.</li>
+<li>Победите пятерых разных соперников в бильярд и сыграйте на двух площадках для мини-гольфа. Подойдут, например, King Gator Adventure Golf и Frontier Adventure Golf.</li>
+<li>Забросьте по мячу в 90 разных баскетбольных колец. Мяч лежит возле площадки. Уже открытые кольца видны через Map → Exploration → Points of Interest → Basketball Hoops.</li>
+<li>Завершите 42 заезда дронов: на каждой из 14 площадок Top Fun пройдите первые две трассы быстрее контрольного времени, а на третьей доберитесь до финиша. Площадки собраны в фильтре Activities → Top Fun Drones.</li>
+<li>Выполните 300 разных трюков. Комбинируйте пролёты под мостами, прыжки с трамплинов и парашютом, полёты между зданиями. В Progress → Activities → Stunts нажмите R3, чтобы увидеть остаток по районам.</li>
+<li>Выполните все 15 наборов целей Брета. Под конец маршрута откройте Progress → Challenges: нужно закончить любые 70 испытаний. Десять самых неудобных можно оставить.</li></ul></div>
+</article></main><section class="trophy-checklist" id="trophy-checklist"><h2 class="trophy-checklist__heading" id="trophy-heading">Все 55 трофеев PS5</h2><p>Отмечайте трофеи после получения. Сюжетные задания и разгадки секретов раскрываются по нажатию.</p>
+<div class="trophy-checklist__item"><img alt="Значок трофея «У порока есть цена!»" class="trophy-checklist__icon" height="64" src="media/trophies/00.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="vice-got-a-price" type="checkbox"/><span class="trophy-checklist__name">У порока есть цена! (Vice Got a Price!)</span></label><p class="trophy-checklist__desc">Получите остальные 54 трофея основной игры на PS5.</p><a href="#step-5">К шагу 5 маршрута</a></div></div>
+<details class="spoiler"><summary>Скрытый трофей № 2</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Как в раю»" class="trophy-checklist__icon" height="64" src="media/trophies/01.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="just-like-paradise" type="checkbox"/><span class="trophy-checklist__name">Как в раю (Just Like Paradise)</span></label><p class="trophy-checklist__desc">Завершите первое сюжетное задание «Крупный улов».</p><a href="#step-2">К шагу 2 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 3</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Потерянный рай»" class="trophy-checklist__icon" height="64" src="media/trophies/02.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="paradise-lost" type="checkbox"/><span class="trophy-checklist__name">Потерянный рай (Paradise Lost)</span></label><p class="trophy-checklist__desc">Завершите первую главу и пройдите первую сюжетную миссию второй главы. После неё появится трофей.</p><a href="#step-2">К шагу 2 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 4</summary><div class="trophy-checklist__item"><img alt="Значок трофея «С****и, жопы, наркоденьги»" class="trophy-checklist__icon" height="64" src="media/trophies/03.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="t-s-ass-drug-money" type="checkbox"/><span class="trophy-checklist__name">С****и, жопы, наркоденьги (T**s Ass Drug Money)</span></label><p class="trophy-checklist__desc">Завершите вторую главу и пройдите первую сюжетную миссию третьей главы. После неё появится трофей.</p><a href="#step-3">К шагу 3 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 5</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Вайс-Сити, детка!»" class="trophy-checklist__icon" height="64" src="media/trophies/04.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="vice-city-baby" type="checkbox"/><span class="trophy-checklist__name">Вайс-Сити, детка! (Vice City, Baby!)</span></label><p class="trophy-checklist__desc">Завершите третью главу и пройдите первые две сюжетные миссии четвёртой главы. После второй появится трофей.</p><a href="#step-3">К шагу 3 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 6</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Я на вершине мира, мам»" class="trophy-checklist__icon" height="64" src="media/trophies/05.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="top-of-the-world-ma" type="checkbox"/><span class="trophy-checklist__name">Я на вершине мира, мам (Top Of The World, Ma)</span></label><p class="trophy-checklist__desc">Завершите четвёртую главу.</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 7</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Важно вовремя соскочить»" class="trophy-checklist__icon" height="64" src="media/trophies/06.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="you-gotta-know-when-to-get-off" type="checkbox"/><span class="trophy-checklist__name">Важно вовремя соскочить (You Gotta Know When to Get Off)</span></label><p class="trophy-checklist__desc">Дойдите до конца финальной миссии.</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 8</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Ты веришь мне?»" class="trophy-checklist__icon" height="64" src="media/trophies/07.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="trust" type="checkbox"/><span class="trophy-checklist__name">Ты веришь мне? (Trust)</span></label><p class="trophy-checklist__desc">Во второй главе завершите сюжетное задание «Утренний моцион».</p><a href="#step-3">К шагу 3 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 9</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Сорвать банк»" class="trophy-checklist__icon" height="64" src="media/trophies/08.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="break-the-bank" type="checkbox"/><span class="trophy-checklist__name">Сорвать банк (Break the Bank)</span></label><p class="trophy-checklist__desc">В третьей главе завершите сюжетное задание «Ограбление картеля».</p><a href="#step-3">К шагу 3 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 10</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Дела семейные»" class="trophy-checklist__icon" height="64" src="media/trophies/09.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="family-matters" type="checkbox"/><span class="trophy-checklist__name">Дела семейные (Family Matters)</span></label><p class="trophy-checklist__desc">В четвёртой главе завершите сюжетное задание «Недетские забавы».</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 11</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Смени пластинку»" class="trophy-checklist__icon" height="64" src="media/trophies/10.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="dwnfall" type="checkbox"/><span class="trophy-checklist__name">Смени пластинку (DWNFALL)</span></label><p class="trophy-checklist__desc">В четвёртой главе завершите сюжетное задание «Гвоздь программы».</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 12</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Предполетная подготовка»" class="trophy-checklist__icon" height="64" src="media/trophies/11.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="hi-jacked" type="checkbox"/><span class="trophy-checklist__name">Предполетная подготовка (Hi-Jacked)</span></label><p class="trophy-checklist__desc">Завершите сюжетное задание «Разборка в МАВС».</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 13</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Снежная буря»" class="trophy-checklist__icon" height="64" src="media/trophies/12.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="snow-storm" type="checkbox"/><span class="trophy-checklist__name">Снежная буря (Snow Storm)</span></label><p class="trophy-checklist__desc">Завершите сюжетное задание «Операция „Звериная ярость“».</p><a href="#step-4">К шагу 4 маршрута</a></div></div></details>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Долгая дорога»" class="trophy-checklist__icon" height="64" src="media/trophies/13.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="a-long-road" type="checkbox"/><span class="trophy-checklist__name">Долгая дорога (A Long Road)</span></label><p class="trophy-checklist__desc">Доведите игровой счётчик до 100%. После финала откройте «Progress → Stats → 100% Completion» и проверьте, какие категории ещё открыты.</p><a href="#step-6">К шагу 6 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Лихачи и трюкачи»" class="trophy-checklist__icon" height="64" src="media/trophies/14.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="cunning-stunts" type="checkbox"/><span class="trophy-checklist__name">Лихачи и трюкачи (Cunning Stunts)</span></label><p class="trophy-checklist__desc">Выполните 250 разных трюков. Суммируются прыжки с трамплинов, полёты под мостами, полёты на боку между зданиями и прыжки с парашютом.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Широкий круг интересов»" class="trophy-checklist__icon" height="64" src="media/trophies/15.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="master-of-none" type="checkbox"/><span class="trophy-checklist__name">Широкий круг интересов (Master of None)</span></label><p class="trophy-checklist__desc">Попробуйте рыбалку, охоту, гольф, тир и бильярд. Запустите видеоигру, забросьте баскетбольный мяч в кольцо, выиграйте гонку и выполните трюк. Эти девять видов занятий можно сверить в разделе Progress → Activities.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Стрелок»" class="trophy-checklist__icon" height="64" src="media/trophies/16.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="the-shootist" type="checkbox"/><span class="trophy-checklist__name">Стрелок (The Shootist)</span></label><p class="trophy-checklist__desc">Соберите 42 золотые медали в двух тирах. В Griffin Shooting Range шесть упражнений по три уровня, всего 18 золотых медалей. В Rodgers Ranch шесть упражнений по четыре уровня, ещё 24 золотые медали. В каждом тире купите у стойки пропуск за 5 долларов.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Top Fun»" class="trophy-checklist__icon" height="64" src="media/trophies/17.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="top-fun" type="checkbox"/><span class="trophy-checklist__name">Top Fun</span></label><p class="trophy-checklist__desc">Выиграйте гонку дронов Top Fun на каждой из 14 площадок. Для трофея важны победы в разных местах.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Зарабатывать надо деньги, а не признание»" class="trophy-checklist__icon" height="64" src="media/trophies/18.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="earn-cash-not-kudos" type="checkbox"/><span class="trophy-checklist__name">Зарабатывать надо деньги, а не признание (Earn Cash, Not Kudos)</span></label><p class="trophy-checklist__desc">Победите в 20 разных гонках. Выбирайте новые трассы по меткам на карте.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Снасть в масть»" class="trophy-checklist__icon" height="64" src="media/trophies/19.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="baited-my-tackle" type="checkbox"/><span class="trophy-checklist__name">Снасть в масть (Baited My Tackle)</span></label><p class="trophy-checklist__desc">После задания Feng Shui дождитесь сообщения Кэла и доберитесь до фиолетовой метки к западу от Key Lento. Победите Кэла в рыболовном состязании.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Умелые ручки»" class="trophy-checklist__icon" height="64" src="media/trophies/20.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="stick-fiddler" type="checkbox"/><span class="trophy-checklist__name">Умелые ручки (Stick Fiddler)</span></label><p class="trophy-checklist__desc">Пройдите все уровни одной аркадной игры. Уже в первой главе можно взять контроллер у домашнего телевизора и выбрать игру.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<details class="spoiler"><summary>Скрытый трофей № 22</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Путь к реабилитации»" class="trophy-checklist__icon" height="64" src="media/trophies/21.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="road-to-rehabilitation" type="checkbox"/><span class="trophy-checklist__name">Путь к реабилитации (Road to Rehabilitation)</span></label><p class="trophy-checklist__desc">В третьей главе переключитесь на Люсию и дождитесь звонка Энди. После сообщения с адресом отправляйтесь в Belville и выполните её поручения до конца.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 23</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Нам понадобится лодка побольше»" class="trophy-checklist__icon" height="64" src="media/trophies/22.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="this-was-no-boat-accident" type="checkbox"/><span class="trophy-checklist__name">Нам понадобится лодка побольше (This Was No Boat Accident)</span></label><p class="trophy-checklist__desc">После задания Island Dreams дождитесь звонка Кентона и найдите зелёную метку KR в Key Lento. Заберите подводные сокровища с семи затонувших кораблей и верните их Кентону. После сдачи очередной партии дождитесь звонка с новыми метками. После первой главы Кентон на время пропадёт. Продолжайте сюжет, пока Джейсон не получит его сообщение.</p><a href="#step-8">К шагу 8 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 24</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Одинокий ездок»" class="trophy-checklist__icon" height="64" src="media/trophies/23.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="the-lone-rider" type="checkbox"/><span class="trophy-checklist__name">Одинокий ездок (The Lone Rider)</span></label><p class="trophy-checklist__desc">После Coffee Break посетите клуб Thrillbilly Mudclub в округе Келли. Выполните пять заданий Билли, включая заключительное Hometown Heroes.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 25</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Чудаки и прочие незнакомцы»" class="trophy-checklist__icon" height="64" src="media/trophies/24.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="strangers-freaks" type="checkbox"/><span class="trophy-checklist__name">Чудаки и прочие незнакомцы (Strangers &amp; Freaks)</span></label><p class="trophy-checklist__desc">Завершите восемь цепочек незнакомцев. Для счётчика подходят Kirk, Kyle, Alvan, Yago, Pilot Pete, Dr. Merle, Freddie и Papa Audacity. Поручения Энди, Билли и Тайрона относятся к другим трофеям. После заключительного задания каждого незнакомца сверяйте счётчик в карточке трофея PS5.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 26</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Спрос и предложение»" class="trophy-checklist__icon" height="64" src="media/trophies/25.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="supply-demand" type="checkbox"/><span class="trophy-checklist__name">Спрос и предложение (Supply &amp; Demand)</span></label><p class="trophy-checklist__desc">В третьей главе выполните Clonin’ Keys, Makin’ Gs. Первая из 16 машин, Granforma Zorrusso, засчитывается во время этого задания. Остальные 15 смотрите на карте в Robberies → Randy’s Wish List и доставляйте в гараж Рэнди у зелёной метки RK на западе Вайс-Сити.</p><a href="#step-7">К шагу 7 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 27</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Кручу-верчу!»" class="trophy-checklist__icon" height="64" src="media/trophies/26.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="spin-on-this" type="checkbox"/><span class="trophy-checklist__name">Кручу-верчу! (Spin On This!)</span></label><p class="trophy-checklist__desc">После задания Here, Kitty Kitty играйте за Джейсона. Выполняйте цели Тайрона у фиолетовых меток лабораторий в Вайс-Сити, пока он не предложит заключительное поручение Spin On This. Завершите это поручение.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 28</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Больше позитива»" class="trophy-checklist__icon" height="64" src="media/trophies/27.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="positive-mental-attitude" type="checkbox"/><span class="trophy-checklist__name">Больше позитива (Positive Mental Attitude)</span></label><p class="trophy-checklist__desc">Помедитируйте Джейсоном и Люсией в каждом из восьми мест открытого мира с парными записями. После этого появится последняя метка на вершине горы Kalaga. Завершите медитацию в каменном круге. Записи видны в Progress → Collections → Exploration → Meditations. Если пропустили обучение на балконе в первой главе, выполните Learn to Meditate Together, когда сможете взять второго героя в напарники и увидите на карте метку обучения. Порог в 15 медитаций относится к общему счётчику прохождения.</p><a href="#step-8">К шагу 8 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 29</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Честная игра»" class="trophy-checklist__icon" height="64" src="media/trophies/28.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="fair-game" type="checkbox"/><span class="trophy-checklist__name">Честная игра (Fair Game)</span></label><p class="trophy-checklist__desc">После Coffee Break дождитесь сообщения Брета, играя за Джейсона. Встретьтесь с ним в округе Ламмокс и выполняйте задания по его охотничьим карточкам, пока не добудете уникальное животное.</p><a href="#step-9">К шагу 9 маршрута</a></div></div></details>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Колоду не трожь»" class="trophy-checklist__icon" height="64" src="media/trophies/29.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="don-t-touch-my-deck" type="checkbox"/><span class="trophy-checklist__name">Колоду не трожь (Don’t Touch My Deck)</span></label><p class="trophy-checklist__desc">Завершите три набора коллекционных карточек. Сосредоточьтесь на трёх уже начатых наборах.</p><a href="#step-8">К шагу 8 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Зондирование»" class="trophy-checklist__icon" height="64" src="media/trophies/30.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="you-wainker" type="checkbox"/><span class="trophy-checklist__name">Зондирование (You WAiNKer!)</span></label><p class="trophy-checklist__desc">Отсканируйте 100 разных объектов через приложение WAiNK. Сканируйте достопримечательности, скульптуры, необычные объекты, рекламные щиты и граффити.</p><a href="#step-8">К шагу 8 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «И напоследок»" class="trophy-checklist__icon" height="64" src="media/trophies/31.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="one-last-thing" type="checkbox"/><span class="trophy-checklist__name">И напоследок (One Last Thing)</span></label><p class="trophy-checklist__desc">Пройдите 50 испытаний из раздела Progress → Challenges. Для игрового счётчика 100% продолжайте до 70.</p><a href="#step-9">К шагу 9 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Знойная парочка»" class="trophy-checklist__icon" height="64" src="media/trophies/32.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="hot-together" type="checkbox"/><span class="trophy-checklist__name">Знойная парочка (Hot Together)</span></label><p class="trophy-checklist__desc">После задания Coffee Break пригласите напарника. Получите вместе четыре звезды розыска и покиньте красную область на мини-карте. Трофей можно получить по ходу дополнительного задания That’s Where the Money Is… в четвёртой главе.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Терапевтический шопинг»" class="trophy-checklist__icon" height="64" src="media/trophies/33.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="retail-therapy" type="checkbox"/><span class="trophy-checklist__name">Терапевтический шопинг (Retail Therapy)</span></label><p class="trophy-checklist__desc">После Coffee Break пригласите напарника и ограбьте три магазина подряд. Пока едете от одной зелёной метки к другой, звёзды розыска должны оставаться активными.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Наметанный глаз»" class="trophy-checklist__icon" height="64" src="media/trophies/34.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="whip-it-good" type="checkbox"/><span class="trophy-checklist__name">Наметанный глаз (Whip It Good)</span></label><p class="trophy-checklist__desc">Откройте 100 видов транспорта. Удерживайте ↑ на крестовине, чтобы открыть приложение WAiNK. Наведите его на транспорт и удерживайте R1 до завершения сканирования. Результат виден в Progress → Vehicles.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Скорострел»" class="trophy-checklist__icon" height="64" src="media/trophies/35.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="gunslinger" type="checkbox"/><span class="trophy-checklist__name">Скорострел (Gunslinger)</span></label><p class="trophy-checklist__desc">Выведите из строя пять противников за одно включение боевой концентрации. Начните с полной фиолетовой шкалой и включите способность, когда рядом окажутся сразу пять противников.</p></div></div>
+<details class="spoiler"><summary>Скрытый трофей № 37</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Поймай меня, если сможешь»" class="trophy-checklist__icon" height="64" src="media/trophies/36.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="catch-me-if-you-can" type="checkbox"/><span class="trophy-checklist__name">Поймай меня, если сможешь (Catch Me If You Can)</span></label><p class="trophy-checklist__desc">В аэропорту МАВС найдите большой пассажирский самолёт у телетрапа, например возле выхода E3/E4. Взлетите и продолжайте полёт до появления трофея, примерно в километре от аэропорта.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 38</summary><div class="trophy-checklist__item"><img alt="Значок трофея «С танками на ты»" class="trophy-checklist__icon" height="64" src="media/trophies/37.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="challenging-tank" type="checkbox"/><span class="trophy-checklist__name">С танками на ты (Challenging Tank)</span></label><p class="trophy-checklist__desc">На юго-западе карты найдите базу Mile Zero Air Station. Займите танк Rhino в южной части базы и используйте его в бою.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 39</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Невидимка»" class="trophy-checklist__icon" height="64" src="media/trophies/38.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="sneakthief" type="checkbox"/><span class="trophy-checklist__name">Невидимка (Sneakthief)</span></label><p class="trophy-checklist__desc">В третьей главе пройдите Yasmani’s Jewelry Jobs. На карте появится зелёная метка задания в ювелирном магазине. Начните задание в режиме скрытности и выполните три цели в подсобке: возьмите добычу из сейфа, взаимодействуйте с записями камер и панелью сигнализации. Покиньте магазин незамеченным. Трофей появится после выхода.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 40</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Обналичивание по максимуму»" class="trophy-checklist__icon" height="64" src="media/trophies/39.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="maximum-withdrawal" type="checkbox"/><span class="trophy-checklist__name">Обналичивание по максимуму (Maximum Withdrawal)</span></label><p class="trophy-checklist__desc">Вместе с напарником завершите пять ограблений банковских хранилищ и каждый раз покидайте зону розыска. Первое хранилище входит в дополнительную миссию That’s Where the Money Is… в четвёртой главе. После неё для трофея остаются ещё четыре. Наведите курсор на банк на карте, чтобы проверить отметку хранилища.</p><a href="#step-7">К шагу 7 маршрута</a></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 41</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Классический блиц»" class="trophy-checklist__icon" height="64" src="media/trophies/40.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="a-classic-blitz-play" type="checkbox"/><span class="trophy-checklist__name">Классический блиц (A Classic Blitz Play)</span></label><p class="trophy-checklist__desc">В четвёртой главе выполните дополнительное задание That’s Where the Money Is… Игра засчитает броневик по сюжету этой миссии. Доведите побег до конца и покиньте красную область розыска на мини-карте.</p></div></div></details>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Штат приятных эмоций»" class="trophy-checklist__icon" height="64" src="media/trophies/41.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="the-goodtime-state" type="checkbox"/><span class="trophy-checklist__name">Штат приятных эмоций (The Goodtime State)</span></label><p class="trophy-checklist__desc">Откройте всю карту Леониды. С самолёта удобно последовательно раскрывать оставшиеся тёмные участки.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Борьба с вредителями»" class="trophy-checklist__icon" height="64" src="media/trophies/42.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="pest-control" type="checkbox"/><span class="trophy-checklist__name">Борьба с вредителями (Pest Control)</span></label><p class="trophy-checklist__desc">Завершите хотя бы одну отмеченную жёлтым операцию каждой из девяти банд. Для игрового счётчика 100% понадобятся все 39 операций.</p></div></div>
+<details class="spoiler"><summary>Скрытый трофей № 44</summary><div class="trophy-checklist__item"><img alt="Значок трофея «В начале…»" class="trophy-checklist__icon" height="64" src="media/trophies/43.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="in-the-beginning" type="checkbox"/><span class="trophy-checklist__name">В начале… (In The Beginning…)</span></label><p class="trophy-checklist__desc">В районе Оушен-Бич поднимитесь в бар Ocean View Rooftop Bar. Закажите Apple Martini и выпейте коктейль у стойки.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 45</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Капитальный ремонт»" class="trophy-checklist__icon" height="64" src="media/trophies/44.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="capital-offense" type="checkbox"/><span class="trophy-checklist__name">Капитальный ремонт (Capital Offense)</span></label><p class="trophy-checklist__desc">Получите устройство Key Cloner в третьей главе. В автосалоне на юге Вайс-Сити сядьте в синий Banshee и выезжайте через витрину. Продолжайте ехать по улице, пока не появится трофей.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 46</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Идем в боулинг»" class="trophy-checklist__icon" height="64" src="media/trophies/45.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="let-s-go-bowling" type="checkbox"/><span class="trophy-checklist__name">Идем в боулинг (Let’s Go Bowling)</span></label><p class="trophy-checklist__desc">В Kingpin Bowling в Порт-Геллхорне возьмите часы в юго-восточном офисе, уникальный дробовик на столе в северо-восточном углу и содержимое сейфа в офисе северо-восточного коридора. Затем дождитесь снятия розыска.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 47</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Личный рекорд»" class="trophy-checklist__icon" height="64" src="media/trophies/46.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="personal-best" type="checkbox"/><span class="trophy-checklist__name">Личный рекорд (Personal Best)</span></label><p class="trophy-checklist__desc">Добейтесь, чтобы показатель Strength одновременно достиг максимума у Джейсона и Люсии. После Coffee Break пригласите напарника и купите абонемент в фитнес-клубе. Пока вы тренируетесь одним героем, второй занимается рядом. Сверяйте силу каждого в разделе Jason &amp; Lucia.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 48</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Судите по делам»" class="trophy-checklist__icon" height="64" src="media/trophies/47.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="actions-speak-louder" type="checkbox"/><span class="trophy-checklist__name">Судите по делам (Actions Speak Louder)</span></label><p class="trophy-checklist__desc">Выполните 500 действий, меняющих криминальную репутацию. В разделе HUD Notifications включите Criminal Profile, чтобы видеть, какие действия игра учитывает.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 49</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Просто не повезло»" class="trophy-checklist__icon" height="64" src="media/trophies/48.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="bad-luck-i-guess" type="checkbox"/><span class="trophy-checklist__name">Просто не повезло (Bad Luck, I Guess)</span></label><p class="trophy-checklist__desc">После задания Credit Check приезжайте за Люсию без Джейсона в отделение Payday Loans из пролога, в районе Little Cuba. Завершите игровое ограбление и соберите деньги из всех трёх касс. Затем покиньте зону поиска пешком и продолжайте бежать, пока не появится трофей.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 50</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Истина где-то рядом»" class="trophy-checklist__icon" height="64" src="media/trophies/49.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="the-truth-is-out-there" type="checkbox"/><span class="trophy-checklist__name">Истина где-то рядом (The Truth Is Out There)</span></label><p class="trophy-checklist__desc">Приезжайте без напарника после двух часов ночи к дороге к северо-западу от Starlet Motel в округе Келли. Ищите машину с мигающими огнями. Если её нет, отъедьте и вернитесь. По тропе рядом с машиной пройдите к голубому свету. Поговорите с появившейся женщиной, предложите помочь и вернитесь к её машине у дороги.</p></div></div></details>
+<details class="spoiler"><summary>Скрытый трофей № 51</summary><div class="trophy-checklist__item"><img alt="Значок трофея «Кегли»" class="trophy-checklist__icon" height="64" src="media/trophies/50.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="ten-pin" type="checkbox"/><span class="trophy-checklist__name">Кегли (Ten Pin)</span></label><p class="trophy-checklist__desc">За 60 секунд выполните десять ударов ногой с мотоцикла по пешеходам в игре. Для этого испытания подойдёт Оушен-Бич.</p></div></div></details>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Цент доллар бережет»" class="trophy-checklist__icon" height="64" src="media/trophies/51.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="dime-on-the-dollar" type="checkbox"/><span class="trophy-checklist__name">Цент доллар бережет (Dime on the Dollar)</span></label><p class="trophy-checklist__desc">После Credit Check сдавайте меченые купюры скупщикам, пока общая сумма не достигнет 250 000 долларов. Можно сдавать деньги частями.</p><a href="#step-7">К шагу 7 маршрута</a></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Транжира»" class="trophy-checklist__icon" height="64" src="media/trophies/52.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="treat-yo-self" type="checkbox"/><span class="trophy-checklist__name">Транжира (Treat Yo Self)</span></label><p class="trophy-checklist__desc">Потратьте в магазинах в сумме 100 000 долларов. Подходят покупки оружия, деталей для машин и татуировок.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Коробочки»" class="trophy-checklist__icon" height="64" src="media/trophies/53.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="little-boxes" type="checkbox"/><span class="trophy-checklist__name">Коробочки (Little Boxes)</span></label><p class="trophy-checklist__desc">После задания Daily Driver во второй главе купите восемь гаражей. На все покупки понадобится 160 000 долларов.</p></div></div>
+<div class="trophy-checklist__item"><img alt="Значок трофея «Я скоро буду, ждите»" class="trophy-checklist__icon" height="64" src="media/trophies/54.png" width="64"/><div class="trophy-checklist__content"><label><input data-trophy="on-the-spot" type="checkbox"/><span class="trophy-checklist__name">Я скоро буду, ждите (On the Spot)</span></label><p class="trophy-checklist__desc">После задания Moses во второй главе откроется приложение Scooter Bros для вызова зарегистрированного транспорта. Купите гаражи, чтобы вместить десять машин. Привезите машину в гараж Мозеса в Порт-Геллхорне и выберите Respray → Register. Регистрация платная. Сначала Мозес принимает машины без трекера. Повторите регистрацию, пока в списке не появятся десять машин.</p></div></div>
+</section>
+
+<section aria-labelledby="mistakes-heading" class="mistakes" id="section-mistakes">
+<h2 class="section-heading" id="mistakes-heading">Частые ошибки</h2>
+<ul class="mistakes__list"><li>Включили чит-код? Загрузите отдельное сохранение до его активации, прежде чем продолжать охоту за трофеями.</li><li>Пропустили первую медитацию? Со второй главы пройдите обучение Learn to Meditate Together, чтобы открыть остальные точки. Для внутриигровых 100% засчитываются 15 отметок персонажей.</li><li>Если после титров игра показывает 100%, а платина ещё закрыта, сверьте неотмеченные трофеи за отдельные действия и побочные истории.</li></ul>
+</section>
+<footer class="guide-footer">
+<p>© 2026 Achiever</p>
+</footer>
+<button aria-label="Вернуться в начало" class="back-to-top" hidden="" id="btn-back-to-top" title="Наверх" type="button">
+<svg aria-hidden="true" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+<nav aria-label="Мобильные действия" class="action-bar" id="action-bar">
+<button class="action-bar__btn" data-action="open-toc" id="mob-toc" type="button">Содержание</button>
+<button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+<button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+</nav>
+<div aria-describedby="rewards-description" aria-labelledby="achievement-heading" aria-modal="true" class="achievement-modal" data-rewards-gallery="" hidden="" id="achievement-modal" role="dialog">
+<div class="achievement-modal__overlay"></div>
+<div class="achievement-modal__card">
+<header class="rewards-modal__header">
+<button aria-label="Закрыть награды" class="achievement-modal__close" id="achievement-close" type="button">×</button>
+<h2 class="achievement-modal__title" id="achievement-heading">Награды</h2>
+<p class="achievement-modal__desc" id="rewards-description">Отмечайте авторские ачивки кнопкой «Выполнено». Любую отметку можно отменить. Эти пять ачивок не влияют на 100% гайда.</p>
+</header>
+<div class="rewards-modal__body">
+<a class="quick-actions__btn rewards-modal__create reward-action--glow" href="https://app.achvr.ru/constructor" rel="noopener" target="_blank">Создать свою ачивку</a>
+<p aria-atomic="true" aria-live="polite" class="rewards-modal__count" data-rewards-count="">Выполнено 0 из 5</p>
+<div class="rewards-grid">
+<article aria-labelledby="reward-custom-1-title" class="reward-card" data-custom-reward="custom-1">
+<div class="reward-card__art"><img alt="Первый автосалон" height="480" src="media/rewards/car.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Необычная</p>
+<h3 class="reward-card__title" id="reward-custom-1-title">Первый автосалон</h3>
+<p class="reward-card__condition" id="reward-custom-1-condition">Отсканируйте за одну поездку пять разных моделей транспорта.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-custom-1-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=rqkybtfl861i" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-custom-1-title reward-custom-1-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-custom-2-title" class="reward-card" data-custom-reward="custom-2">
+<div class="reward-card__art"><img alt="Тихое сафари" height="480" src="media/rewards/binoculars.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Редкая</p>
+<h3 class="reward-card__title" id="reward-custom-2-title">Тихое сафари</h3>
+<p class="reward-card__condition" id="reward-custom-2-condition">Изучите три вида животных через бинокль за одну прогулку.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-custom-2-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=upf5cj0k2dtc" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-custom-2-title reward-custom-2-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-custom-3-title" class="reward-card" data-custom-reward="custom-3">
+<div class="reward-card__art"><img alt="Вечер у воды" height="480" src="media/rewards/fishing.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Эпическая</p>
+<h3 class="reward-card__title" id="reward-custom-3-title">Вечер у воды</h3>
+<p class="reward-card__condition" id="reward-custom-3-condition">Между двумя сюжетными заданиями съездите на рыбалку и поймайте рыбу.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-custom-3-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=54wxbqj0lc05" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-custom-3-title reward-custom-3-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-custom-4-title" class="reward-card" data-custom-reward="custom-4">
+<div class="reward-card__art"><img alt="Ещё один жетон" height="480" src="media/rewards/arcade.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Редкая</p>
+<h3 class="reward-card__title" id="reward-custom-4-title">Ещё один жетон</h3>
+<p class="reward-card__condition" id="reward-custom-4-condition">Пройдите одну аркадную игру до конца.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-custom-4-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=ypbjsuxgr6xg" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-custom-4-title reward-custom-4-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-custom-5-title" class="reward-card" data-custom-reward="custom-5">
+<div class="reward-card__art"><img alt="С первого дубля" height="480" src="media/rewards/stunt.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Обычная</p>
+<h3 class="reward-card__title" id="reward-custom-5-title">С первого дубля</h3>
+<p class="reward-card__condition" id="reward-custom-5-condition">Выполните два разных прыжка с трамплина на одной машине.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-custom-5-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=cvoy806zmkxv" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-custom-5-title reward-custom-5-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-completion-title" class="reward-card" data-completion-reward="">
+<div class="reward-card__art"><img alt="Вся Леонида" height="480" src="media/rewards/platinum.webp?v=postcards" width="960"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Награда за 100% · Легендарная</p>
+<h3 class="reward-card__title" id="reward-completion-title">Вся Леонида</h3>
+<p class="reward-card__condition">Отметьте все шаги маршрута и все трофеи PS5.</p>
+<p class="reward-card__status">Не получена</p>
+<p class="reward-card__progress" data-completion-progress="">Шаги и трофеи: 0 из 64</p>
+<a aria-describedby="reward-completion-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=tpur5rmw04hx" rel="noopener" target="_blank">Добавить в Ачивер</a>
+</div>
+</article>
+</div>
+</div>
+<footer class="rewards-modal__footer"><button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Вернуться к гайду</button></footer>
+</div>
+</div>
+<div aria-modal="true" class="lightbox" hidden="" id="lightbox" role="dialog">
+<button aria-label="Закрыть" class="lightbox__close" type="button">×</button>
+<img alt="" class="lightbox__img" id="lightbox-img" src=""/>
+</div>
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/guide.js"></script>
+</body>
+</html>
