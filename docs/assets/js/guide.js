@@ -444,7 +444,8 @@ window.Guide = window.Guide || {};
   function restoreSpoilers() {
     Guide.UI.applySpoilerState(
       document.getElementById('btn-spoilers'),
-      state.spoilersHidden
+      state.spoilersHidden,
+      state.spoilersRevealed
     );
   }
 

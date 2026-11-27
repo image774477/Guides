@@ -174,9 +174,9 @@ window.Guide.UI = (function () {
 
     /**
      * Apply the same state after a click and after reloading.
-     * Both modes start with collapsed spoilers. The visible mode allows manual disclosure.
+     * A fresh visit starts collapsed. An explicit reveal opens every spoiler.
      */
-    applySpoilerState: function (btn, hidden) {
+    applySpoilerState: function (btn, hidden, revealed) {
       var isHidden = !!hidden;
       document.body.classList.toggle('spoilers-hidden', isHidden);
       if (btn) {
@@ -186,7 +186,7 @@ window.Guide.UI = (function () {
       }
       var spoilers = document.querySelectorAll('details.spoiler');
       for (var i = 0; i < spoilers.length; i++) {
-        spoilers[i].open = false;
+        spoilers[i].open = !isHidden && !!revealed;
         var summary = spoilers[i].querySelector('summary');
         if (summary) _setSpoilerSummaryHidden(summary, isHidden);
       }
@@ -195,7 +195,7 @@ window.Guide.UI = (function () {
     /** Returns the new isHidden state for persistence. */
     toggleSpoilers: function (btn) {
       var isHidden = !document.body.classList.contains('spoilers-hidden');
-      Guide.UI.applySpoilerState(btn, isHidden);
+      Guide.UI.applySpoilerState(btn, isHidden, !isHidden);
       return isHidden;
     },
 

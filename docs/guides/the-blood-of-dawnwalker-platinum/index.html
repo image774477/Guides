@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>The Blood of Dawnwalker — гайд на платину PS5 | Achiever</title>
+<meta content="Маршрут к платине на PS5: как уложиться в 30 дней, где сохранить игру для разных концовок и как получить все 47 трофеев." name="description"/>
+<link href="https://image774477.github.io/Guides/guides/the-blood-of-dawnwalker-platinum/" rel="canonical"/>
+
+<meta content="article" property="og:type"/>
+<meta content="The Blood of Dawnwalker — Платина за одно прохождение на PS5" property="og:title"/>
+<meta content="Маршрут к платине на PS5: как уложиться в 30 дней, где сохранить игру для разных концовок и как получить все 47 трофеев." property="og:description"/>
+<meta content="https://image774477.github.io/Guides/guides/the-blood-of-dawnwalker-platinum/" property="og:url"/>
+<meta content="https://image774477.github.io/Guides/guides/the-blood-of-dawnwalker-platinum/media/cover.jpg" property="og:image"/>
+<meta content="ru_RU" property="og:locale"/>
+
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Blood of Dawnwalker — Платина за одно прохождение на PS5" name="twitter:title"/>
+<meta content="Маршрут к платине на PS5: как уложиться в 30 дней, где сохранить игру для разных концовок и как получить все 47 трофеев." name="twitter:description"/>
+<meta content="https://image774477.github.io/Guides/guides/the-blood-of-dawnwalker-platinum/media/cover.jpg" name="twitter:image"/>
+
+<link href="../../assets/icons/favicon.png" rel="icon" type="image/png"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+
+<link href="../../assets/css/reset.css" rel="stylesheet"/>
+<link href="../../assets/css/theme.css" rel="stylesheet"/>
+<link href="../../assets/css/guide.css" rel="stylesheet"/>
+<meta content="#171311" name="theme-color"/><style id="dawnwalker-theme">:root {
+  color-scheme: dark;
+  --color-bg: #171311;
+  --color-surface: #221b17;
+  --color-text: #f4e8d6;
+  --color-muted: #c6b6a3;
+  --color-accent: #e7bd80;
+  --color-accent-hover: #f5d7a6;
+  --color-accent-bg: rgba(231, 189, 128, .12);
+  --color-border: #584334;
+  --color-success: #c5d2ae;
+  --color-warning: #f4c38d;
+  --color-danger: #ef9a83;
+  --dawnwalker-ember: #c46349;
+  --dawnwalker-ivory: #efdab5;
+  --dawnwalker-heading: Georgia, "Times New Roman", serif;
+}
+
+body {
+  isolation: isolate;
+  background-image: radial-gradient(ellipse at 70% 0, #44251b 0, transparent 69%),
+                    linear-gradient(#271c16, var(--color-bg));
+  background-size: 100% 700px;
+  background-repeat: no-repeat;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset-block: 0;
+  width: clamp(0px, (100vw - var(--container-width)) / 2, 450px);
+  z-index: -1;
+  pointer-events: none;
+  background-size: min(76%, 230px) auto;
+  background-repeat: no-repeat;
+  filter: grayscale(.45);
+  opacity: .14;
+}
+
+body::before {
+  left: 0;
+  background-image: url("media/trophies/arbiter-s-blade.jpg"), url("media/trophies/shadow-roamer.jpg");
+  background-position: 28% 16%, 60% 79%;
+  mask-image: linear-gradient(to right, #000 55%, transparent);
+}
+
+body::after {
+  right: 0;
+  background-image: url("media/trophies/arch-warlock.jpg"), url("media/trophies/master-of-arms.jpg");
+  background-position: 68% 27%, 36% 91%;
+  mask-image: linear-gradient(to left, #000 55%, transparent);
+}
+
+.guide-header__title,
+.section-heading,
+.quick-route__heading,
+.trophy-checklist__heading,
+.rewards-modal__header h2 {
+  font-family: var(--dawnwalker-heading);
+  color: var(--dawnwalker-ivory);
+}
+
+.guide-header__title {
+  font-size: clamp(2.15rem, 5.5vw, 3.5rem);
+  line-height: 1.02;
+  max-width: 15ch;
+  text-wrap: balance;
+}
+
+.guide-header__cover {
+  margin-top: var(--space-lg);
+  border: 1px solid #8e6548;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, .4);
+}
+
+.progress-bar__fill {
+  background-image: linear-gradient(90deg, var(--dawnwalker-ember), var(--dawnwalker-ivory));
+}
+
+.step__body h4 {
+  margin-block: 1em .35em;
+  color: var(--dawnwalker-ivory);
+}
+
+.step__body p,
+.trophy-directions p {
+  margin-block-end: .65em;
+}
+
+.step__body :is(ul, ol),
+.quick-route ol {
+  padding-inline-start: 1.35em;
+  margin-block: .55em .85em;
+}
+
+.step__body ol,
+.quick-route ol { list-style: decimal; }
+.step__body ul { list-style: disc; }
+.step__body li + li,
+.quick-route li + li { margin-block-start: .65em; }
+.step__body li::marker,
+.quick-route li::marker { color: var(--color-accent); }
+.step__body li h4 { margin-block-start: 0; }
+
+.trophy-checklist__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  padding-block: 1em;
+}
+
+.trophy-directions {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 769px) {
+  .trophy-directions {
+    grid-column: 2;
+  }
+}
+
+.quick-actions__btn.reward-action--glow {
+  color: #271208;
+  background: #ff9850;
+  border-color: #ffd3a0;
+  font-weight: 700;
+  box-shadow: 0 0 7px #ff9a55, 0 0 20px rgba(255, 111, 38, .62);
+}
+
+.quick-actions__btn.reward-action--glow:hover,
+.quick-actions__btn.reward-action--glow:focus-visible {
+  background: #ffb575;
+  box-shadow: 0 0 9px #ffa768, 0 0 26px rgba(255, 111, 38, .72);
+}
+
+@keyframes reward-action-glow {
+  50% {
+    box-shadow: 0 0 11px #ffad70, 0 0 27px rgba(255, 111, 38, .79);
+  }
+}
+
+.reward-card__art {
+  aspect-ratio: 4 / 3;
+  background: radial-gradient(ellipse, #36251b, var(--color-bg) 70%);
+}
+
+.reward-card__art img {
+  object-fit: contain;
+}
+
+.reward-card.is-earned {
+  border-color: var(--dawnwalker-ember);
+}
+
+[data-completion-reward].is-earned {
+  border-color: var(--dawnwalker-ivory);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .guide-header__title,
+  .section-heading,
+  .quick-route__heading,
+  .trophy-checklist__heading,
+  .rewards-modal__header h2 {
+    color: CanvasText;
+  }
+}
+#cleanup details[id] {
+  scroll-margin-top: var(--scroll-offset);
+}
+</style></head>
+<body>
+
+<header class="guide-header" id="top">
+<h1 class="guide-header__title">The Blood of Dawnwalker</h1>
+<p class="guide-header__subtitle">Платина за одно прохождение</p>
+<p class="guide-header__description">Пройдите сюжет на Duelist, спасите семью Коэна в срок и закройте остальные концовки через ручные сохранения.</p>
+<div class="guide-header__meta-badges">
+
+<span class="badge badge--platform">PS5</span>
+
+
+<span class="badge badge--spoiler">Сюжетные спойлеры</span>
+<time class="badge badge--date" datetime="2026-11-26">Обновлено 26.11.2026</time>
+<span class="badge badge--status" data-status="not-started" id="guide-status">Не начато</span>
+</div>
+<img alt="Коэн с клинком на фоне солнечного затмения" class="guide-header__cover" height="720" src="media/cover.jpg" width="1280"/></header>
+
+<div class="resume-banner" hidden="" id="resume-banner">
+<p class="resume-banner__text">Последнее место чтения: <span id="resume-step-name"></span></p>
+<button class="resume-banner__btn" id="resume-btn" type="button">Вернуться</button>
+<button aria-label="Закрыть" class="resume-banner__close" id="resume-close" type="button">×</button>
+</div>
+
+<section aria-label="Сводка" class="meta-summary">
+<dl class="meta-summary__list"><div class="meta-summary__item"><dt>Цель</dt><dd>47 трофеев</dd></div><div class="meta-summary__item"><dt>Время</dt><dd>Около 40–60 часов</dd></div><div class="meta-summary__item"><dt>Прохождения</dt><dd>Одно с сохранениями</dd></div><div class="meta-summary__item"><dt>Сложность для платины</dt><dd>Duelist</dd></div><div class="meta-summary__item"><dt>Платформа</dt><dd>PS5</dd></div><div class="meta-summary__item"><dt>Версия</dt><dd>1.2</dd></div></dl>
+</section>
+
+<nav aria-label="Быстрые действия" class="quick-actions">
+<button class="quick-actions__btn" data-action="open-toc" id="btn-toc" type="button">Содержание</button>
+<button class="quick-actions__btn" id="btn-resume" type="button">Вернуться к моему месту</button>
+<button class="quick-actions__btn" id="btn-story-only" type="button">Только сюжет</button>
+<button aria-controls="achievement-modal" aria-haspopup="dialog" class="quick-actions__btn reward-action--glow" id="btn-achievement" type="button">Награды</button>
+<button class="quick-actions__btn" id="btn-spoilers" type="button">Скрыть спойлеры</button>
+</nav>
+
+<div class="progress-bar" id="progress-bar">
+<div class="progress-bar__inner">
+<div class="progress-bar__track">
+<div class="progress-bar__fill" id="progress-fill"></div>
+</div>
+<span class="progress-bar__text" id="progress-text">0/0 · 0%</span>
+</div>
+</div>
+
+<nav aria-label="Оглавление" class="toc" id="toc">
+<button aria-label="Закрыть оглавление" class="toc__close" type="button">×</button>
+<h2 class="toc__heading">Оглавление</h2>
+<ol class="toc__list"><li class="toc__item"><a class="toc__link" href="#quick-route">Краткий маршрут</a></li><li class="toc__item"><a class="toc__link" href="#prologue">1. Начните на Duelist и закончите пролог</a></li><li class="toc__item"><a class="toc__link" href="#prepare-valley">2. Подготовьтесь и заберите трофеи в Svartrau</a></li><li class="toc__item"><a class="toc__link" href="#three-boyars">3. Выведите на бой трёх наместников</a></li><li class="toc__item"><a class="toc__link" href="#duelist-finale">4. Закончите первое прохождение на Duelist</a></li><li class="toc__item"><a class="toc__link" href="#personal-quests">5. Завершите личные задания</a></li><li class="toc__item"><a class="toc__link" href="#early-endings">6. Закройте две ранние концовки отдельными ветками</a></li><li class="toc__item"><a class="toc__link" href="#cleanup">7. Доберите находки, экипировку и боевые трофеи</a></li><li class="toc__item"><a class="toc__link" href="#ending-branches">8. Пройдите три оставшиеся основные развязки</a></li><li class="toc__item"><a class="toc__link" href="#trophy-checklist">Все 47 трофеев PS5</a></li><li class="toc__item"><a class="toc__link" href="#section-mistakes">Частые ошибки</a></li></ol>
+</nav>
+
+<section class="quick-route" id="quick-route">
+<h2 class="quick-route__heading">Краткий маршрут</h2>
+
+
+
+<ol>
+<li>Начните на Duelist и сохраняйтесь вручную в разные ячейки. Оставьте отдельные записи после пролога и перед финальным решением.</li>
+<li>Следите за значками времени в диалогах и заданиях. На спасение семьи отведено 30 игровых дней.</li>
+<li>Заберите городские трофеи до закрытия ворот, откройте укрытие повстанцев и сохранитесь перед финальными переговорами.</li>
+<li>Дойдите до титров на Duelist. Затем загрузите сохранение до переговоров и закройте побочные трофеи и остальные концовки.</li>
+</ol>
+</section>
+
+
+<main class="guide-content" data-guide-id="the-blood-of-dawnwalker-platinum" data-total-steps="8" id="guide-content"><article class="step" data-step-num="1" data-step-type="critical" id="prologue">
+<div class="step__header">
+<span class="step__number">1</span>
+<h3 class="step__title">Начните на Duelist и закончите пролог</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 1" data-step="prologue" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 1" class="step__link-btn" data-link="prologue" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Выберите сложность в новой игре и приготовьте лекарство для Esme до истечения её срока.</strong></p><p><strong>Выберите Duelist при запуске новой игры.</strong> До получения <i>Uphill Battle</i> сохраняйте этот набор настроек. Подсказка направления удара и автоматический блок переводят игру на Custom.</p> <p>Загрузка финала и переключение сложности перед боем трофей не дадут.</p>
+<p>В задании <i>Withering Away</i>, где Коэн ищет лекарство для матери, положите дрова в печь, экипируйте меч из соседней комнаты и идите к дому Anca. Если дома никого нет, обойдите дом и найдите Anca у реки.</p> <p>Возьмите травы и возвращайтесь к Pieter. Заварите <strong>три ложки трав горячей водой</strong>. Выбирайте горячую воду, не кипяток. Приготовьте лекарство до вечерней мессы в <i>Sacred Covenant</i>, чтобы спасти Esme.</p>
+<p>Дальше следуйте цепочке <i>Like Father, Like Son</i> (обучение бою), <i>Sacred Covenant</i> (события в деревне), <i>Bad Blood</i> (побег) и <i>Smoke and Ashes</i> (выход из Laslea).</p> <p>После открытия долины сохранитесь в новый ручной слот, чтобы можно было вернуться к самому началу.</p></div>
+</article><article class="step" data-step-num="2" data-step-type="critical" id="prepare-valley">
+<div class="step__header">
+<span class="step__number">2</span>
+<h3 class="step__title">Подготовьтесь и заберите трофеи в Svartrau</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 2" data-step="prepare-valley" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 2" class="step__link-btn" data-link="prepare-valley" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Разведайте север долины и зайдите на рынок до девятого уровня дурной славы.</strong></p><p>После пролога начинается отсчёт 30 игровых дней на спасение семьи. За сутки проходит 16 делений времени, по восемь днём и ночью. При ходьбе и осмотре местности часы стоят.</p> <p>Перед шагом, который расходует время, игра показывает число делений. Экономьте дни на финал и сохраняйтесь вручную каждый игровой день в отдельный слот.</p>
+<ul><li><h4>Днём зайдите на рынок Svartrau</h4><p> Найдите продавщицу, у которой при разговоре написано Fishmonger. Купите Dried Fish и продайте ей обратно для <i>Selfish</i>. После Infamy 9 торговка исчезает.</p> <p>Серебряные предметы пока складывайте в сундук или оставляйте в сумке.</p></li>
+<li><p><strong>На уровнях Infamy 4–8</strong> продайте серебро специальному торговцу в Svartrau на 1000 денариев суммарно для <i>Smuggler</i>.</p> <p>Ищите его в юго-западной части Neustadt, в первом доме справа от западного входа со стороны Middens. На карте это белый кубок. Можно открыть торговлю раньше через письмо в <i>Into the Den</i>.</p> <p>На девятом уровне городские ворота закроют и стража станет враждебной. Обычных жителей и торговцев оставляйте в живых. Пока город открыт, поговорите с Ocha в западной таверне и с лекарем в центре города.</p> <p>Если по ходу линии Vicho появится <i>The Good Samaritan</i>, пройдите его до девятого уровня дурной славы. Порядок расследования указан в <a href="#personal-quests">личных заданиях</a>.</p></li>
+<li><p>Поднимайтесь на башни ночью через Shadowstep, прыжок к удалённому уступу. Синхронизация отмечает на карте окрестные занятия. Начните с северных лагерей, логовищ и спасения пленников.</p> <p>Красный череп означает, что место пока слишком опасно. Для быстрого перемещения открывайте Shapeshift (ночная форма волка) и Mercurial Fervour (ускорение днём). Делайте быстрые сохранения перед стычками.</p></li></ul>
+<p>Старайтесь перейти к основной цели до 15-го дня. В приоритете дневной рынок, подготовка к боям и задания раздела Court.</p> <p>До первой концовки оставьте дальние находки и длинные побочные цепочки, за исключением первых трёх заданий Crake.</p></div>
+</article><article class="step" data-step-num="3" data-step-type="boss" id="three-boyars">
+<div class="step__header">
+<span class="step__number">3</span>
+<h3 class="step__title">Выведите на бой трёх наместников</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 3" data-step="three-boyars" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 3" class="step__link-btn" data-link="three-boyars" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Сверяйтесь с вкладкой Court, делайте ручные сохранения перед боями и следите за календарём.</strong></p><p><strong>Перед Infamy 9 проверьте Selfish и Smuggler.</strong> Пока растёт дурная слава, начните цепочку Crake по <a href="#duelist-finale">шагу с первым финалом</a>. При Infamy 4 уже можно вступить в его отряд.</p> <p>Это экономит время в финале и избавляет от лишних переходов через закрытые ворота.</p>
+<p>Во вкладке <i>Court</i> у каждого наместника своя шкала гнева. Выполняйте местные задания, пока шкала не заполнится и в журнале не появится вызов на бой.</p> <p>Если журнал предлагает дождаться возможности, продолжите другие задания или продвиньте время и дождитесь встречи с посланником. Ориентир по порядку боёв — Ambrus, Bakir, Xanthe.</p> <p>Оставьте запас до 30-го дня, желательно выйти к приглашению на переговоры примерно к 22-му. <strong>Оставьте дверь на верхнем этаже Silts Tower закрытой</strong> до отдельного сохранения для ранней концовки.</p>
+<p>Когда игра даст срок на спасение связной, идите к ней сразу. Перед дуэлью с наместником в маске сохранитесь. Если игра уводит вас с арены, вернитесь за экипировкой с его тела.</p>
+<details class="spoiler"><summary>Где искать задания двора и как победить наместников</summary>
+<h4>Ambrus</h4><p>Начинайте с северных дорог и болот. Перехватывайте обозы, ломайте бочки с пиявками в лагерях сборщиков, освобождайте пленников. Один из лагерей идёт в зачёт при спасении мельника из Stoneward Post.</p> <p>В городе можно зачистить подвал с бочками по заданию <i>Trouble Brewing</i>. Под землёй проверяйте золотые подсказки концентрацией (L2), чтобы найти клетки и ящики.</p>
+<p>В <i>The Gilded Gauntlet</i> подойдите к месту дуэли ночью и позвоните в колокол.</p> <p>По желанию можно сначала согласиться на план Iulian в <i>The Bittersweet Toast</i>: осмотрите ловушки Vera, проследите за следами до свитка, завершите ритуал и вернитесь на дуэль в течение трёх суток.</p> <p>Если Iulian присутствует, откажитесь пить первым. На арене уходите от выпадов после телепортации и бейте после блока или уклонения.</p> <p>Когда полоса здоровья Ambrus сереет и появляется значок щита, переждите: удары в этой фазе лечат его. Если после боя выпить его кровь, откроется Scarlet Shield и первое посещение Anachora.</p>
+<h4>Bakir</h4><p>Ищите обозы и перегонные установки, разберитесь с охотниками на повстанцев. Освободите людей у колодок во дворе Svartrau, на южной дороге в Parlita и у Lunar Manor.</p> <p>У последнего защитите Catalin и поговорите с ним в его лагере к северо-западу от колодок, если нужен ещё один наставник меча.</p>
+<p>В <i>The Lunar Game</i> встретьтесь с Farkas у входа в Lunar Manor в период <i>Afternoon</i>, через пять делений после начала дня. До встречи можно заняться другими заданиями.</p> <p>Пройдите лабиринт и собирайте экипировку по пути. В коробке-ловушке выбирайте левое отверстие. Снимете маску перед Bakir — придётся драться и с его людьми.</p> <p>Для шанса пройти к нему в сокровищницу оставьте маску, поддержите его тосты и попросите награду. Если добрались до сокровищницы, начните бой, пока активно задание.</p> <p>Сбоку уходите от птиц и полос крови, держите запас выносливости для уклонений. Заберите Bakir’s Armour с тела. Если после боя вас сразу уводят в сокровищницу, вернитесь за доспехом во двор.</p>
+<h4>Xanthe</h4><p>Ищите южные раскопки, конвои с пленницами и артефактами, лагеря её гвардии. Для <i>Unsealed Secrets</i> проверьте записку в палатках и вторую за щелью в холме.</p> <p>В лагере из задания двора <i>Xanthe’s Blood Guards: Unquenchable Thirst</i> осмотрите палатку и заберите Sword Shard для будущего меча.</p> <p>В городе в <i>Taste of Power</i> после боя осмотрите золотую коробку и документ в сундуке.</p>
+<p>В <i>The Cycle of Love</i> возьмите фонарь у посланников и идите в Howling Keep. Фонари на статуях убирают красные лозы.</p> <p>Поднимитесь по южной лестнице, возьмите фонарь в северо-западной комнате и поставьте его на балконную статую, чтобы вынести второй.</p> <p>С двумя фонарями откройте западную дверь на первом этаже, возьмите третий фонарь и возвращайтесь через люк и псарню. Ключ от псарни лежит на светящемся теле.</p> <p>Поднимитесь по западной лестнице и поставьте фонарь на статую. В левой комнате на столе лежит Relic of St. Dasius для доспехов.</p> <p>Заберите фонари и поставьте два на статуи по сторонам дальней лестницы, чтобы попасть к Chariklea.</p>
+<p>В бою уходите из зон на земле, сбивайте красные щупальца блоком и уничтожайте красные сферы, пока Xanthe ими не вылечилась. <i>The Dark Mistress</i> дают и за победу с последующей сделкой.</p> <p>Чтобы сразу открыть Blood Surge для <i>Make It Rain</i>, выпейте её кровь после победы. Если заключили сделку, можно взять флакон её крови в сокровищнице у собора Svartrau.</p> <p>Ключ находится с обратной стороны книги в кладовой на первом этаже собора, сам флакон — в золотом сундуке на верхнем этаже отдельного здания с северной стороны двора.</p></details></div>
+</article><article class="step" data-step-num="4" data-step-type="critical" id="duelist-finale">
+<div class="step__header">
+<span class="step__number">4</span>
+<h3 class="step__title">Закончите первое прохождение на Duelist</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 4" data-step="duelist-finale" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 4" class="step__link-btn" data-link="duelist-finale" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Откройте укрытие повстанцев, сделайте ручное сохранение перед переговорами и пройдите эпилог до титров.</strong></p><p>Цепочку Crake можно начать ещё до наместников. Как только журнал ставит срок на отдельную цель, завершите её, прежде чем тратить дни на что-либо ещё.</p> <p><strong>Сделайте отдельное сохранение после трёх наместников и до переговоров. Не перезаписывайте его.</strong></p>
+<details class="spoiler"><summary>Как открыть укрытие и завершить первый финал</summary>
+<ol><li><p><i>The Firebrand</i> (поиск повстанцев). После <i>Smoke and Ashes</i> идите к хижине Vladimir, внутри в дальней комнате переверните мешок муки и осмотрите наконечники.</p> <p>Днём у мельницы подыграйте Renna, когда она говорит о сломанной телеге. После появления цели в Stoneward Post поговорите с мельником Mert до рассвета четвёртого дня.</p> <p>Днём представьтесь новобранцем и возразите, что солдату нужен меч. У надзирателя Friedo можно купить доступ к узнику за 100 денариев.</p> <p>Скажите охраннику, что Mert сейчас стошнит, и поговорите с мельником наедине. Можно обещать вернуться за ним позже.</p> <p>Если Mert уже казнили, поговорите с Friedo и найдите тело за башней Stoneward Post. В ближайшей палатке заберите обручальное кольцо из мешка сразу справа от входа. Используйте кольцо как катализатор для <i>Compel Soul</i>, чтобы поговорить с духом Mert и продолжить задание.</p></li>
+<li><p><i>Shadows in the Woods</i> (спасение связной). От Small Bridge Shrine спуститесь за мост и идите на юго-восток к развилке. У развалившейся хижины Sara привязана к дереву.</p> <p>Как только нашли её, спасите в течение двух дней: победите стражу либо днём назовите её сестрой и предложите стражникам 100 денариев. Следуйте за Sara до встречи с Crake.</p></li>
+<li><p><i>Where Loyalty Lies</i> (вступление в отряд). Дойдите до Infamy 4 и днём зайдите на центральную площадь Svartrau. Следуйте за Sara до убежища и примите приглашение.</p> <p>Для первого финала достаточно вступить в отряд. Для продолжения цепочки найдите на юго-западе города розовый дом в Neustadt, сверните в переулок западнее и осмотрите кровь у телеги.</p> <p>След ведёт из западных ворот, а затем на север в трущобы. Если ворота закрыты, выйдите через юго-восточную сторону у замка или перелезьте через стену ночью.</p> <p>В доме с отпечатком руки рядом с дверью спуститесь через дыру в крыше, поговорите с выжившим во дворе и победите солдат.</p></li>
+<li><p>После трёх наместников проверьте, что дурная слава достигла 9. Если остались на 8, выполните ещё пару действий из вкладки Court, например освободите пленников или зачистите лагерь.</p> <p>Дождитесь следующего дня, когда зачитают указы, и получите <i>A Deal with the Devil</i>. В Shrike’s Crag к западу от Svartrau ночью поднимитесь на башню, зажгите жаровню и выберите мирные реплики.</p> <p>Скажите, что хотите вернуть семью, и примите предложение (реплика <i>I’ll do it</i>). Не выбирайте ответ со значком меча. Отбейте волны нежити вместе с Brencis и вернитесь к Pieter у входа.</p> <p>Ночью отметьте дверь укрытия повстанцев по заданию. Сделайте это <strong>до истечения 30 суток</strong>.</p></li>
+<li><p>Доведите эпилог до титров. Поговорите с отмеченными жителями Laslea, проверьте ловушки в лесу и войдите в пещеру. Убедитесь, что открылись <i>The Turncoat</i>, <i>In the Nick of Time</i> и <i>Uphill Battle</i>.</p> <p>Если <i>Uphill Battle</i> не появился после титров, загрузите сохранение до переговоров, проверьте, что Duelist всё ещё активен, и победите Brencis в одиночку на этой сложности. Затем снова дойдите до титров.</p> <p>Снижайте сложность только после получения золотого трофея.</p></li></ol>
+</details></div>
+</article><article class="step" data-step-num="5" data-step-type="critical" id="personal-quests">
+<div class="step__header">
+<span class="step__number">5</span>
+<h3 class="step__title">Завершите личные задания</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 5" data-step="personal-quests" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 5" class="step__link-btn" data-link="personal-quests" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Сделайте побочные задания партнёров до согласия на штурм и проверяйте сроки в журнале.</strong></p><p>После получения Uphill Battle загрузите ручное сохранение до переговоров и выполняйте эти задания на нём. Теперь можно выбрать Story для остальных трофеев.</p> <p>Сохраните ещё одну копию после завершения линий Lacra и Crake. Она понадобится для трёх развязок. Особенно следите за синим значком часов. Как только появится цель со сроком, отложите остальное.</p> <p>Гибель мирных героев может закрыть их цепочки. Сохранитесь перед ночной встречей у Crown Rock и добейтесь мирного прохода в деревню.</p>
+<details class="spoiler"><summary>Личные задания Lacra и Crake</summary>
+<p><strong>Lacra и Misery Loves Company.</strong> В северо-восточной части Svartrau пройдите вдоль стены и осмотрите золотые следы через L2. Следуйте по крышам к комнате с вампиром. Так начинается <i>A Friend Like This</i>.</p> <p>Далее проходите <i>Song of the Mountain</i> (путь в Uriash), <i>Hive and Seek</i> и <i>Our Rotten Roots</i>. Когда дело дойдёт до встречи у Crown Rock, приходите ближайшей ночью и сохранитесь перед разговором со стражей.</p> <p><strong>Добейтесь мирного прохода в Uriash.</strong> Согласитесь поговорить, успокойте Lacra, скажите, что никому не нужно умирать, и остановите ссору. Спросите, какое доказательство нужно.</p> <p>Во время испытания дважды выберите бездействие, затем скажите, что это испытание, и продолжите. Мирный исход сохраняет доступ к жителям и торговцам Uriash. Если ещё не начали задание Ocha, поговорите с ней в западной таверне Svartrau.</p> <p>До запуска <i>Midnight Reckoning</i> подождите сутки после <i>Our Rotten Roots</i> и в башне у Westridge Outpost Shrine спросите Lacra о её идее.</p> <p>В <i>The Night of Horrors</i> следуйте за болотными огнями, осмотрите каменную плиту, отрубленную руку под ветками и камень среди красных корней.</p> <p>В склепе отыщите саркофаг, отбейтесь от духов и идите с Lacra за сломанную стену. Поговорите с ней в следующей комнате, где растёт мандрагора.</p> <p>Употребление мандрагоры даёт Mandrake Ward, а сам трофей дают за завершение задания.</p>
+<p><strong>Crake и The Manumit.</strong> После <i>Where Loyalty Lies</i> пройдите <i>What Hunts the Night</i>, <i>What Moves the Dead</i> и <i>Who Pulls the Strings</i>.</p> <p>В <i>What Hunts the Night</i> поговорите с Crake о Sara, проявите участие и выслушайте его.</p> <p>В конце <i>What Moves the Dead</i> лично проводите Crake до убежища и останьтесь помочь с лечением. Выберите <i>Let me help.</i>, затем <i>Quite bad.</i> и <i>Sure.</i> Так открывается <i>Distant Shadows</i>, которое можно получить одновременно с <i>Who Pulls the Strings</i>. Закончите оба личных расследования до запуска <i>Rise at Dawn</i>.</p> <p>В <i>Distant Shadows</i> отправляйтесь днём в Tantari к юго-востоку от Svartrau. Дом с ульями стоит южнее святилища. Через восточное окно можно пробраться внутрь и осмотреть Ascar, собаку и игрушку перед слежкой.</p> <p>Проследите за Ascar от ульев до лесных силков, прячась за телегами, бочками и деревом. Вернитесь к Marat в убежище. Когда он уйдёт, скажите Drogos, что пойдёте за ним. Это открывает <i>A Closer Look</i>.</p> <p>В течение суток найдите Marat к югу от Svartrau, у леса.</p> <p>Попросите присоединиться, спросите, что случилось, скажите, что знаете причину, назовите Ascar его отцом и заверьте, что это не меняет вашего отношения. Роман для трофея не нужен.</p></details>
+<details class="spoiler"><summary>Остальные личные трофеи</summary>
+<ul><li><h4>Sins of the Past</h4><p> После пролога найдите Anca в Crossroads Inn на востоке долины. Проследуйте по её цепочке <i>Echoes of Silenced Bells</i>, <i>Between the Words</i>, <i>Where Old Devils Lie</i>, <i>Stronger Than Achilles</i>.</p> <p>В монастыре заберите Relic of St. Tyna для доспехов. В трактире осмотрите на столе нижнюю левую книгу <i>Sancti Mihai Historia Vera</i> и поднесите её к свече.</p> <p>После суток ожидания вернитесь к Anca и в загадке выберите среднюю правую точку карты, затем правую точку у реки. Отправляйтесь с ней утром.</p> <p>У руин пролезьте через щель возле упавшей колонны, осмотрите роспись, ниже найдите ступку и разбитый горшок слева и роспись справа.</p> <p>В испытаниях держите руку в пасти идола до открытия двери, затем примените Astral Communion к рунам на столбе и переживите волны врагов. Осмотрите чашу и роспись у источника.</p> <p>Завершите разговор с Anca в трактире. Лучше довести эту линию до конца до ковки меча Mihai. Если отдали реликвию в побочном задании, используйте Relic of St. Dasius из Howling Keep.</p></li>
+<li><h4>The Unquenchable Thirst</h4><p> Ночью проникните в Vicho’s Emporium через балкон. Вернитесь к Vicho, когда до утра есть хотя бы четыре деления.</p> <p>В доме ювелира осмотрите тело Devora в левой комнате наверху и тело Eli в подвале.</p> <p>Проследуйте за Vicho до дома врача, через L2 осмотрите стол и книги в сарае, возьмите ключ от дома, а наверху найдите документ на склад.</p> <p>На склад заберитесь с задней стороны через балкон третьего этажа и победите Simeon. В следующий дневной период возьмите <i>The Good Samaritan</i> у лекаря в центре города.</p> <p>Отправляйтесь на ферму к югу от Svartrau. На южном поле победите двух волков, осмотрите тело через L2 и прочтите записку.</p> <p>Если лекаря уже нет в городе, можно попробовать осмотреть тело и записку на ферме напрямую. Сохранитесь перед этим. Для продолжения расследования меч фермера и свадебное кольцо помогут вызвать дух с помощью <i>Compel Soul</i>.</p> <p>Чтобы завершить историю, доложите лекарю о находке днём, а ночью вернитесь к Vicho и расскажите ему правду.</p></li>
+<li><h4>The Outcast</h4><p> Поговорите с Ocha за угловым столом в таверне в западной части Svartrau. Для <i>The Heart Wants What It Wants</i> ночью заберитесь на южный балкон дома Andrei на севере города.</p> <p>На столе в маленьком сундуке заберите кольцо. Передайте его Ocha, откройте калитку у дома, чтобы свиньи отвлекли стражника, и наложите знак у окна. Закончите разговор с Ocha у реки.</p> <p>Старт этой цепочки также доступен по просьбе старейшины Uriash в <i>A Mother’s Plea</i>. Не откладывайте встречу с Lacra у Crown Rock, если уже начали <i>Song of the Mountain</i>.</p></li>
+<li><h4>The Tsarina’s Favourite Human</h4><p> Найдите первое кольцо грибов к северу от Sandy Gorge Shrine и следуйте за огнями на восток в нору.</p> <p>В <i>Good Home</i> поговорите с Heile, найдите углежогов к западу от Wooden Palace, затем идите на северо-восток по крестам на деревьях к костру Tonis.</p> <p>Приведите его в нору и завершите разговор или отдайте три блестящих зуба, если решили забрать Heile. В <i>Come Hither</i> к северу от Verda Marsh Guardpost Shrine спуститесь в нору и победите Murohn.</p> <p>В <i>Burrow Sorrows</i> севернее Boarback Trail Shrine выгоните кобольдов и заберите амулет с деревянного столба.</p> <p>В <i>Pearly and Precious</i> к югу от Small Bridge Shrine пройдите от лагеря по следам до грибного кольца, затем на юго-запад к бандитам.</p> <p>После победы поговорите с крылатым существом, у него можно купить Silk Threads. В <i>Tiny Dancer</i> в центре Svartrau возьмите письмо на первом этаже, осмотрите лютню, ключом откройте лестницу.</p> <p>Наверху возьмите ключ от клетки со стола, освободите пленника и осмотрите доски пола слева в соседней комнате. <i>Letters to Lunka</i> для трофея не требуется.</p></li></ul></details></div>
+</article><article class="step" data-step-num="6" data-step-type="decision" id="early-endings">
+<div class="step__header">
+<span class="step__number">6</span>
+<h3 class="step__title">Закройте две ранние концовки отдельными ветками</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 6" data-step="early-endings" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 6" class="step__link-btn" data-link="early-endings" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Сохранитесь перед воротами на западе и отдельно перед дверью Silts Tower.</strong></p><p>Возвращайтесь к свободному сохранению после каждой концовки. <strong>Сохранитесь перед дверью наверху Silts Tower.</strong> В этом задании можно навсегда завершить нужную ветку, если выйти слишком рано.</p>
+<details class="spoiler"><summary>Западный выход и решение для Silts Tower</summary>
+<ul><li><h4>A Hero They Deserve</h4><p> На западе Briar Sloughs, к западу от Coward’s Path Shrine, найдите разрушенный мост у ворот. Ночью поднимитесь по стене ущелья с помощью Planeshift и Shadowstep.</p> <p>Пройдите в ворота и подтвердите, что уходите из долины навсегда.</p></li>
+<li><h4>Together Forever</h4><p> Зайдите в Silts Tower с нижнего этажа и поднимитесь внутри до верхней двери. Откройте дверь для <i>Home Sweet Home</i>. Четыре раза победите две группы врагов и горгулью.</p> <p>Игнорируйте колодец у второй группы. В начале пятого круга поговорите с семьёй и останьтесь. Это отдельная ранняя концовка.</p></li>
+<li><h4>Выход из сна и предметы</h4><p> Загрузите сохранение перед дверью или подходящее автосохранение до завершения четвёртого круга. У второй группы противников осмотрите колодец с L2.</p> <p>Пройдите пещеру и портал, в церкви осмотрите Alin, Esme и Коэна именно в этом порядке. Пройдите дверь и портал, осмотрите светящийся пень и спуститесь к реке, цепляясь за стену.</p> <p>После возвращения победите врага и заберите Astrologer’s Ring. Снова поднимитесь в верхнюю комнату башни и возьмите со стола Flask of Quicksilver для доспехов.</p></li></ul>
+</details></div>
+</article><article class="step" data-step-num="7" data-step-type="collectible" id="cleanup">
+<div class="step__header">
+<span class="step__number">7</span>
+<h3 class="step__title">Доберите находки, экипировку и боевые трофеи</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 7" data-step="cleanup" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 7" class="step__link-btn" data-link="cleanup" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Вернитесь в свободную долину, доведите Коэна до 50-го уровня и сохраните очки на финальные таланты.</strong></p><p>Продолжайте на свободном сохранении после личных заданий. Если только что получили раннюю концовку, загрузите последний сохранённый свободный слот.</p> <p>На этой ветке можно продолжать исследовать долину после истечения 30 дней. Для опыта чередуйте побочные цепочки, лагеря, спасение пленников и логова.</p> <p>Если нужно проверить опасный район, сохранитесь на входе. За достижение 50-го уровня откроется <i>Glass Ceiling</i>.</p>
+<p>Для <i>Master of Arms</i> и <i>Arch Warlock</i> в соответствующих ветках нужно потратить по 35 очков на таланты и ещё 4 на итоговый талант.</p> <p>Откройте нужные приёмы у наставников и по руководствам, накопите недостающие очки и сделайте ручное сохранение перед покупкой.</p> <p>Купите один итоговый талант, проверьте трофей и загрузите сохранение, чтобы вложить те же очки в другое дерево. Для финального таланта вампиризма отдельно нужен 15-й уровень осквернения.</p>
+<p>Новая игра+ доступна из главного меню после завершения эпилога. Для этого маршрута она не требуется.</p><details id="scout-towers"><summary>11 башен для Bird’s-Eye View</summary><ol><li>Church Tower — колокольня церкви в Laslea Glen, где в прологе проходит служба.</li><li>Briar Sloughs Tower — к югу от Laslea Glen, у дороги в Briar Sloughs и реки.</li><li>Maragir Wealds Tower — поднимитесь по тропе восточнее Codrin’s Hunting Lodge Shrine на скалистую высоту.</li><li>Boar’s Back Tower — у Shrike’s Crag Shrine, к западу от Svartrau.</li><li>Neustadt Tower — на стене у юго-западной окраины Svartrau, в квартале Neustadt.</li><li>Market Tower — южнее северо-восточных ворот Svartrau, между рынком и соборным комплексом.</li><li>Cathedral Tower — используйте леса на южной стороне собора в Svartrau.</li><li>St. Tyna’s Grove Tower — на холме западнее Pilgrim’s Trail Shrine.</li><li>Tantari Tower — на северо-западе Tantari Woods, севернее Howling Keep и Withered Gorge Shrine.</li><li>Rockfalls Tower — на высоте к югу от Oghasti и западнее Lunar Manor.</li><li>Silts Tower — на юго-западе The Silts, далеко к югу от Turtle Rock Shrine. Для разведки осмотрите окрестности снаружи. Дверь внутри запускает Home Sweet Home.</li></ol></details><details id="brencis-banners"><summary>5 знамён для Capture the Flag</summary><ol><li>North East Gate — начните с северо-восточных ворот Svartrau и поднимитесь на стену над воротами.</li><li>North West Gate — обойдите северный участок стены до северо-западных ворот.</li><li>West Gate — продолжайте по западному периметру до следующих ворот.</li><li>Dragosti Gate — найдите на внешнем кольце ворота с названием Dragosti Gate и поднимитесь к знамени.</li><li>South Gate — закончите обход у южного входа в Svartrau.</li></ol></details><details id="valley-settlements"><summary>8 поселений для Tour Guide Training</summary><ol><li>Laslea — стартовая деревня в Laslea Glen на севере.</li><li>Military Camp — укреплённый лагерь у Stoneward Post в Briar Sloughs, к юго-западу от Laslea. Днём поговорите со стражником у входа, скажите, что несёте сообщение командиру, и сдайте оружие на время визита.</li><li>Maragir — деревня в Maragir Wealds, восточнее и немного южнее Military Camp.</li><li>Parlita — поселение в Boar’s Back. Ищите дома среди открытых полей западнее Svartrau.</li><li>Svartrau — город за стеной в центре долины. Пройдите внутрь через ворота.</li><li>Tantari — по дороге на юго-восток из Svartrau в Tantari Woods. В деревне откройте святилище.</li><li>Oghasti — заброшенная деревня в лесу севернее Rockfalls Tower. Зайдите между домами, здесь встречаются чудовища.</li><li>Uriash Village — крайний запад долины. В A Friend Like This осмотрите переулок под северо-восточной стеной Svartrau, идите по подсвеченным уликам через крыши, завершите встречу с Lacra и пощадите пленника. Song of the Mountain приведёт в деревню. Зайдите в неё пешком по заданию.</li></ol></details><details id="vrakhiri-transports"><summary>10 перевозок для Delivery Delay</summary><ol><li>Roadside Surprise — дорога восточнее Stoneward Post. После боя разбейте отмеченные бочки.</li><li>Bloody Business — на дороге восточнее Maragir Road, возле Hedge. У командира отряда заберите Letter of Reprimand.</li><li>Lucky Crossing — южная часть дороги от северо-восточных ворот Svartrau к Military Camp, у Svartrau Bridge Shrine. Освободите Ursul. Если хотите открыть торговлю руководствами, встретьтесь с ним позже в лагере по новому указателю и примите поединок.</li><li>Fate’s Mercy — продолжение той же дороги севернее Military Camp, к югу от Western Slopes Shrine. Освободите ученика кузнеца и поговорите с ним.</li><li>Curious Shipment — дорога в северо-западной части Rockfalls. Перехватите патруль и завершите задание по отметке.</li><li>Fool’s Gold — патруль у Turtle Rock Shrine. После боя заберите письма. Если пощадите выживших, получите наводку на отдельный клад.</li><li>Past Glory — на пути к Howling Keep, между Tantari Woods и The Silts, к западу от Whispering Bogs Shrine. После победы заберите Ring of the Night.</li><li>When Two Dogs… — отрезок дороги между Drunken Bear Inn Shrine и Tantari Watermill Shrine. Осмотрите добычу после схватки.</li><li>Fair Maiden — дорога южнее Shepherd’s Rest и севернее Eastridge Outpost. После боя освободите пленницу.</li><li>Chosen One — восточнее Tantari Twin Rocks Shrine, западнее Birch Woodlet Shrine. Ищите отряд на дороге и поговорите с пленником после боя.</li></ol></details><details id="skill-manuals"><summary>Руководства для боевого приёма и высших умений</summary><ol><li>Artery Strike — сверяйте точное название руководства. Сундуки с ним есть в солдатских лагерях к востоку от Woodland Outpost Shrine, к востоку от Vedera Spring Shrine и в Rockfalls, а также в бандитском лагере к югу от Svartrau. Два экземпляра продаёт наставник Catalin, ещё один — Ocha. Для Mastery прочитайте нужное число экземпляров и купите все ранги активной способности.</li><li>Фехтование — после Lucky Crossing и поединка с Ursul купите руководства для талантов. Второй городской источник — Ocha после её задания. Дополните покупку книгами из лагерных сундуков. До покупки высшего умения проверьте, что счётчик внизу ветки показывает 35 очков в талантах, и оставьте ещё 4.</li><li>Колдовство — купите книги у Vera на болотах к юго-востоку от Mert’s Mill, у Anca в Crossroads Inn после Echoes of Silenced Bells и у матриарха Uriash, открываемого по Song of the Mountain. Проверьте сундуки на Briar Sloughs Tower, Rockfalls Tower, Boar’s Back Tower и St. Tyna’s Grove Tower. Сохраните 4 очка сверх 35, вложенных именно в таланты.</li><li>Если очки уже распределены, на обновлении 1.1 и выше можно сбросить их зельем Draught of Mind Rebirth. Другой способ — вложить очки в одну ветку на отдельном сохранении, получить трофей и вернуться к сохранению с запасом очков.</li></ol></details><details class="spoiler" id="mihai-sword"><summary>Три осколка и рукоять меча святого Михаила</summary><ol><li>Do Not Disturb — ищите покинутый лагерь на севере Maragir Wealds у Upper Maragir Wealds Shrine. Удерживая L2, выследите вход в пещеру, зачистите её и возьмите осколок у сломанного креста. Осмотрите настенный рисунок, чтобы открыть метки других осколков.</li><li>Hostile Takeover — от Giant’s Pawns Shrine идите к юго-западу, к пещере с белым крестом у Shrike’s Crag. Одолейте Munch-Munch и проверьте гнездо в конце.</li><li>Executive Order — от Crossroads Inn идите по южной дороге и сверните к холмам. В опустевшей пещере осмотрите записку, затем идите по новой метке в солдатский лагерь у Drunken Bear Inn. Осколок в главной палатке.</li><li>Рукоять через Night Terrors. Ночью во дворе к северу от собора Svartrau осмотрите заколоченный колодец и спуститесь. Осмотрите тело через L2 и прочитайте записку в мешочке, чтобы начать A Monk and a Saint. Ночью войдите в собор через башню на крыше. Осмотрите потолок, алтарь и книгу. Затем поднимитесь на дальние строительные леса слева и изучите книгу на фреске, чтобы узнать знак Mihai.</li><li>Ветка через Albertus. В Middens к западу от Svartrau найдите надпись на стене через L2 и идите по следу к дьякону Albertus. В соборе поговорите с дьяконом и пройдите A Dubious Gift, чтобы получить доступ в библиотеку. Если дьякон недоступен, ночью можно попасть в библиотеку через балкон с тыльной стороны восточного здания соборного комплекса при помощи Shadowstep. Наверху возьмите The Annals of Svartrau Cathedral с полки, где летают мотыльки, и осмотрите четыре детали книги на пюпитре. Затем проверьте фреску у дальних левых лесов в соборе или дно чаши в сокровищнице.</li><li>Во дворе севернее собора откройте вторую могилу справа. В склепе зайдите в первую дверь слева, осмотрите стену, из-за которой доносится звук, и победите Mihai. Заберите Broken Sword of St. Mihai.</li><li>Отнесите рукоять и осколки к кузнецу-отшельнику в Uriashi Hermitage, отдельно от деревни Uriash. После восстановления отправляйтесь в отмеченную пещеру, активируйте красную сферу в ритуальной комнате и переживите все волны врагов.</li></ol></details><details class="spoiler" id="arbiter-materials"><summary>Четыре материала для доспехов Арбитра</summary><ol><li>Large Lizard Moult, сброшенная шкура ящера — пещера восточнее Muddy Trail Shrine и южнее торговки колдовством Vera. Протиснитесь через щель у пруда, победите ящеров и осмотрите пол в конце пещеры.</li><li>Relic of St. Tyna, реликвия — в монастыре по Echoes of Silenced Bells. Если отдали её по заданию, подойдёт Relic of St. Dasius. В Howling Keep по The Cycle of Love соберите фонари и откройте ими комнату в правом дальнем углу двора, считая от входа. Для легендарной экипировки можно надеть другой амулет.</li><li>Flask of Quicksilver, ртуть — на столе в верхней комнате Silts Tower после выхода из сна в Home Sweet Home. Во втором скоплении врагов осмотрите колодец с L2, пройдите через пещеру в церковь, осмотрите Alin, Esme, Coen именно в этом порядке, войдите в открывшуюся дверь. Осмотрите светящийся пень и спуститесь по стене к реке. Затем вернитесь в комнату наверху.</li><li>Silk Threads, шёлковые нити — бесплатно на камне в пещере чудовища Murohn во время Come Hither, к северу от Vedera Marsh Guardpost Shrine. Если пропустили, нити продаёт торговка санжани после Pearly and Precious.</li></ol></details><details class="spoiler" id="legendary-accessories"><summary>Два кольца и амулет для легендарного комплекта</summary><ol><li>Ring of Focus — сундук на юго-восточной окраине Parlita.</li><li>Astrologer’s Ring — заберите с тела астролога, который нападёт после выхода из Home Sweet Home. Заменить его можно кольцом Ring of the Night по Past Glory.</li><li>Fear of the Wilds — легендарный амулет из сундука в норе, куда ведёт Burrow Sorrows. Зачистите кобольдов и откройте сундук до возвращения к санжани.</li></ol></details></div>
+</article><article class="step" data-step-num="8" data-step-type="decision" id="ending-branches">
+<div class="step__header">
+<span class="step__number">8</span>
+<h3 class="step__title">Пройдите три оставшиеся основные развязки</h3>
+<div class="step__actions">
+<label class="step__checkbox">
+<input aria-label="Отметить шаг 8" data-step="ending-branches" type="checkbox"/>
+</label>
+<button aria-label="Копировать ссылку на шаг 8" class="step__link-btn" data-link="ending-branches" title="Копировать ссылку" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+</button>
+</div>
+</div>
+<div class="step__body"><p><strong>Загружайте ручное сохранение перед финалом и сохраняйте отдельную копию перед каждым штурмом.</strong></p><p>После исследования долины сделайте новое ручное сохранение с завершёнными линиями Lacra и Crake и ещё не начатым финалом. Используйте эту запись для каждой из трёх развязок.</p> <p>Незавершённые квесты обрываются в момент согласия на штурм с союзником. <strong>Выполните его личный трофей до подтверждения штурма.</strong></p>
+<details class="spoiler"><summary>Условия трёх развязок и бой в финале</summary>
+<ul><li><h4>The Folk Hero</h4><p> В <i>A Deal with the Devil</i> ночью зажгите жаровню в Shrike’s Crag и выберите реплику со значком меча, чтобы сразиться с Brencis в одиночку.</p> <p>Если 30 дней уже истекли, ночью поднимитесь по внешней стене Griefberg Castle с Planeshift и Shadowstep. Подтвердите вход в финальную зону и доберитесь до Brencis без союзников.</p></li>
+<li><h4>The Patricide</h4><p> Выполните цепочку Lacra и <i>The Night of Horrors</i> из <a href="#personal-quests">шага с личными заданиями</a>. После <i>Our Rotten Roots</i> подождите минимум сутки и найдите Lacra в Westridge Outpost Tower.</p> <p>Ответ о том, что пора разобраться с Brencis, запустит <i>Midnight Reckoning</i>. В подвале пролезьте через щель у бочек, спуститесь в руины, перепрыгните разрыв через Shadowstep и зачистите храм.</p> <p>По лесам поднимитесь к подземелью замка, а из двора поднимитесь к верхнему проходу через парящие камни. В тронном зале вызывайте Brencis на бой, чтобы завершить ветку с Lacra.</p></li>
+<li><h4>The Knyazmaker</h4><p> Выполните цепочку Crake и его личный трофей. После <i>Who Pulls the Strings</i> выждите двое суток и скажите Marat в убежище, что готовы идти на замок.</p> <p>В <i>Rise at Dawn</i> спуститесь за группой по верёвке, зачистите укрепления и поверните ворот на башне справа от ворот, чтобы впустить союзников. У северных ворот подтвердите готовность продолжать.</p> <p>В <i>Fall Before Dusk</i> пробейтесь через замок, догоните Brencis и выберите начало боя вместо сделки.</p></li></ul>
+<p>В первой фазе Brencis блокируйте обычные удары, уклоняйтесь от дальних атак. Burning Blood даёт короткое окно для удара, если колдовство доступно.</p> <p>Во второй фазе в Anachora обходите крик сбоку и уклоняйтесь от удара большой рукой. После захвата следите за призванными противниками и не расходуйте всю выносливость на атаку.</p></details>
+<p>После трёх развязок проверьте, что закрыты остальные 46 трофеев. Тогда появится платина <i>Every Last Drop</i>.</p></div>
+</article></main>
+
+
+<section class="trophy-checklist" id="trophy-checklist">
+<h2 class="trophy-checklist__heading" id="trophy-heading">Все 47 трофеев PS5</h2>
+
+
+<div class="trophy-checklist__category"><h3 class="trophy-checklist__category-title">Платина</h3>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Every Last Drop" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/every-last-drop.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="every-last-drop" type="checkbox"/>
+<span><span class="trophy-checklist__name">Every Last Drop</span>
+<span class="trophy-checklist__desc"> — Получить все трофеи основной игры.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Закройте остальные 46 трофеев PS5. Трофеи, заработанные в разных ветках одного сохранения, суммируются в профиле.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div></div><div class="trophy-checklist__category"><h3 class="trophy-checklist__category-title">Золотые</h3>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Uphill Battle" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/uphill-battle.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="uphill-battle" type="checkbox"/>
+<span><span class="trophy-checklist__name">Uphill Battle</span>
+<span class="trophy-checklist__desc"> — Пройти игру на Duelist и спасти жителей Laslea.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Выберите Duelist при старте новой игры. Сохраните эту настройку до окончания эпилога и оставьте параметры боя как есть.</p><p>Для маршрута с минимальным числом боёв примите сделку Brencis, пока срок спасения семьи ещё не истёк. Ранние концовки условия не закрывают.</p>
+<a href="#duelist-finale">К шагу маршрута</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея In the Nick of Time" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/in-the-nick-of-time.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="in-the-nick-of-time" type="checkbox"/>
+<span><span class="trophy-checklist__name">In the Nick of Time</span>
+<span class="trophy-checklist__desc"> — Спасти семью до истечения 30 дней.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Приготовьте правильное лекарство матери в прологе, затем успейте закончить полноценную ветку со спасением семьи до жертвоприношения.</p><p>Оставьте запас времени перед финальным заданием и сохранитесь до развилки.</p>
+<a href="#duelist-finale">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Blood of Dawnwalker" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-blood-of-dawnwalker.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-blood-of-dawnwalker" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Blood of Dawnwalker</span>
+<span class="trophy-checklist__desc"> — Дойти до концовки игры.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Завершите любую сюжетную ветку до титров. Ранний уход из долины и ранняя концовка в Silts Tower тоже подходят для этого трофея.</p>
+<a href="#duelist-finale">К шагу маршрута</a>
+</div>
+</div></details></div><div class="trophy-checklist__category"><h3 class="trophy-checklist__category-title">Серебряные</h3>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Glass Ceiling" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/glass-ceiling.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="glass-ceiling" type="checkbox"/>
+<span><span class="trophy-checklist__name">Glass Ceiling</span>
+<span class="trophy-checklist__desc"> — Достичь 50-го уровня персонажа.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Вернитесь к сохранению перед концовкой, когда трофеи за спасение семьи уже получены. Выполняйте личные квесты и поручения двора, затем добирайте опыт лагерями и логовами.</p><p>Трофей проверяет 50-й уровень и не требует достижения потолка New Game+.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Turncoat" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-turncoat.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-turncoat" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Turncoat</span>
+<span class="trophy-checklist__desc"> — Предать союзников и заключить сделку с Brencis ради семьи.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>При дурной славе 9 дождитесь приглашения Brencis, пока не истекли 30 дней. В A Deal with the Devil скажите, что хотите вернуть семью, и согласитесь на сделку.</p><p>Если укрытие повстанцев ещё не открыто, пройдите The Firebrand, Shadows in the Woods и Where Loyalty Lies. Ночью взаимодействуйте с дверью укрытия и завершите эпилог.</p>
+<a href="#duelist-finale">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Patricide" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-patricide.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-patricide" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Patricide</span>
+<span class="trophy-checklist__desc"> — Победить Brencis вместе с Lacra.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Загрузите сохранение до финала. Пройдите её цепочку, запустите Midnight Reckoning и штурмуйте замок вместе с Lacra. Завершите бой и эпилог в этой ветке.</p>
+<a href="#ending-branches">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Knyazmaker" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-knyazmaker.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-knyazmaker" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Knyazmaker</span>
+<span class="trophy-checklist__desc"> — Победить Brencis вместе с Crake.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Загрузите предфинальное сохранение и пройдите ветку Crake до Rise at Dawn и Fall Before Dusk. Отправляйтесь на штурм с повстанцами и добейте Brencis вместе с Crake.</p>
+<a href="#ending-branches">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Folk Hero" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-folk-hero.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-folk-hero" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Folk Hero</span>
+<span class="trophy-checklist__desc"> — Победить Brencis в одиночку.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>После трёх бояр начните A Deal with the Devil без союзников. В первом диалоге выберите «Enough. Time to End this.», чтобы вызвать Brencis на бой.</p><p>Победите его самостоятельно и закончите эпилог. Если срок уже истёк, ночью проберитесь в Griefberg Castle по внешней стене и начните финал без союзников.</p>
+<a href="#ending-branches">К шагу маршрута</a>
+</div>
+</div></details></div><div class="trophy-checklist__category"><h3 class="trophy-checklist__category-title">Бронзовые</h3><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Selfish" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/selfish.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="selfish" type="checkbox"/>
+<span><span class="trophy-checklist__name">Selfish</span>
+<span class="trophy-checklist__desc"> — Продать рыбу торговке рыбой.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Днём зайдите на рынок Svartrau. Найдите продавца еды, у которого при взаимодействии указано Fishmonger. Купите Dried Fish, сушёную рыбу, и сразу продайте её обратно.</p><p>Сделайте это до 9-го уровня дурной славы.</p>
+<a href="#prepare-valley">К шагу маршрута</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Throne of Thorns" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/throne-of-thorns.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="throne-of-thorns" type="checkbox"/>
+<span><span class="trophy-checklist__name">Throne of Thorns</span>
+<span class="trophy-checklist__desc"> — Достичь максимальной дурной славы.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Доведите показатель в меню двора до 9-го уровня. Выполняйте поручения против двора и зачищайте солдатские лагеря. Каждый побеждённый боярин даёт целый уровень.</p><p>Сначала завершите дела с торговкой рыбой и с городскими персонажами.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Better Safe than Sorry" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/better-safe-than-sorry.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="better-safe-than-sorry" type="checkbox"/>
+<span><span class="trophy-checklist__name">Better Safe than Sorry</span>
+<span class="trophy-checklist__desc"> — Обезглавить противника ударом Artery Strike, пока действует Burning Blood.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Днём поставьте в быстрые слоты Burning Blood, проклятие крови, и Artery Strike, удар с шансом обезглавливания.</p><p>Наберите три заряда на обычных людях, наложите проклятие и сразу используйте удар.</p><p>Для надёжности доведите Artery Strike до максимального ранга и сначала вызовите кровотечение у той же цели. Сохранитесь перед боем.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Make It Rain" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/make-it-rain.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="make-it-rain" type="checkbox"/>
+<span><span class="trophy-checklist__name">Make It Rain</span>
+<span class="trophy-checklist__desc"> — Взорвать врага активной способностью.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>После боя с Xanthe выпейте её кровь, изучите и экипируйте Blood Surge — способность взрывать врагов. Ночью наберите заряды ударами, затем примените её к рядовому врагу без значка черепа.</p><p>Запасной флакон лежит в золотом сундуке сокровищницы к северу от двора собора Svartrau. Ключ спрятан с обратной стороны книги на столе в северной кладовой нижнего этажа собора.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Absolutely Insatiable" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/absolutely-insatiable.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="absolutely-insatiable" type="checkbox"/>
+<span><span class="trophy-checklist__name">Absolutely Insatiable</span>
+<span class="trophy-checklist__desc"> — Одновременно экипировать три пассивные способности.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В меню способностей экипируйте три умения с незакрашенными значками. Mercurial Fervour, ускорение, и Shapeshift, превращение в волка, занимают собственные ячейки.</p><p>С ними достаточно одной дополнительной пассивной способности.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Arbiter's Blade" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/arbiter-s-blade.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="arbiter-s-blade" type="checkbox"/>
+<span><span class="trophy-checklist__name">Arbiter's Blade</span>
+<span class="trophy-checklist__desc"> — Восстановить меч святого Михаила.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В Forge It Anew соберите три осколка и Broken Sword of St. Mihai из A Monk and a Saint. Отнесите части кузнецу в Uriashi Hermitage на северо-западе Briar Sloughs.</p><p>Затем закалите меч в пещере, на которую укажет кузнец, и заберите Imbued Sword of St. Mihai.</p>
+<a href="#mihai-sword">Где искать части меча</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Arbiter's Regalia" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/arbiter-s-regalia.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="arbiter-s-regalia" type="checkbox"/>
+<span><span class="trophy-checklist__name">Arbiter's Regalia</span>
+<span class="trophy-checklist__desc"> — Собрать и полностью восстановить доспехи Арбитра.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>После 4-го уровня дурной славы получите письмо для A Bulwark Against Darkness. Принесите четыре материала из списка кузнецу Nareh в Uriashi Hermitage.</p><p>Получив первый комплект, наденьте запасную броню и сдайте доспехи обратно для ритуала. Отбейте волны призрачных зверей, чтобы получить четыре усиленные части.</p>
+<a href="#arbiter-materials">Где искать материалы</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Gear of the Gods" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/gear-of-the-gods.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="gear-of-the-gods" type="checkbox"/>
+<span><span class="trophy-checklist__name">Gear of the Gods</span>
+<span class="trophy-checklist__desc"> — Заполнить все восемь ячеек экипировки легендарными предметами.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В одной вкладке экипировки, дневной или ночной, наденьте четыре части усиленных доспехов Арбитра, восстановленный меч, два золотых кольца и золотой амулет.</p><p>Кольцо Ring of Focus есть в сундуке на юго-востоке Parlita.</p>
+<a href="#legendary-accessories">Где искать кольца и амулет</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Capture the Flag" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/capture-the-flag.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="capture-the-flag" type="checkbox"/>
+<span><span class="trophy-checklist__name">Capture the Flag</span>
+<span class="trophy-checklist__desc"> — Сорвать все пять знамён Brencis.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Ночью поднимитесь через Shadowstep к каждой из пяти надвратных построек Svartrau. Войдите внутрь, победите охрану и взаимодействуйте со знаменем внутри.</p><p>Снятие одного знамени тратит один отрезок времени.</p>
+<a href="#brencis-banners">Где искать пять знамён</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Bird's-Eye View" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/bird-s-eye-view.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="bird-s-eye-view" type="checkbox"/>
+<span><span class="trophy-checklist__name">Bird's-Eye View</span>
+<span class="trophy-checklist__desc"> — Подняться на все 11 башен и разведать окрестности.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Поднимайтесь ночью, используя Shadowstep. На каждой вершине осмотрите все отмеченные ориентиры до появления знаков вопроса на карте.</p>
+<a href="#scout-towers">Расположение 11 башен</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Feral Hunger" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/feral-hunger.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="feral-hunger" type="checkbox"/>
+<span><span class="trophy-checklist__name">Feral Hunger</span>
+<span class="trophy-checklist__desc"> — Потерять контроль и выпить кровь человека вне боя.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Сохранитесь отдельно до изучения Closing Wounds, пассивного восстановления здоровья.</p><p>Ночью оставьте меньше одного деления здоровья, уйдите от врагов и начните разговор с трактирщиком в Parlita или в The Pewter Tankard к северо-востоку от Svartrau.</p><p>Если Коэн не сорвался, выйдите из диалога и попробуйте снова. Загрузите сохранение, чтобы вернуть персонажа.</p>
+<a href="#prepare-valley">К шагу маршрута</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Dead Man Talkin'" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/dead-man-talkin.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="dead-man-talkin" type="checkbox"/>
+<span><span class="trophy-checklist__name">Dead Man Talkin'</span>
+<span class="trophy-checklist__desc"> — Поговорить с мёртвым с помощью Compel Soul.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В начале Smoke and Ashes сюжет потребует применить Compel Soul, заклинание для разговора с погибшим. Следуйте цели задания.</p>
+<a href="#prologue">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Master of Arms" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/master-of-arms.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="master-of-arms" type="checkbox"/>
+<span><span class="trophy-checklist__name">Master of Arms</span>
+<span class="trophy-checklist__desc"> — Открыть высшее умение в ветке фехтования.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Соберите руководства и накопите очки. Сохранитесь, вложите 35 очков в таланты ветки фехтования и ещё 4 в одно открывшееся высшее умение. Очки в активных способностях не идут в порог 35.</p><p>Загрузите сохранение, чтобы потратить очки на другую ветку.</p>
+<a href="#skill-manuals">Где искать руководства</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Arch Warlock" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/arch-warlock.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="arch-warlock" type="checkbox"/>
+<span><span class="trophy-checklist__name">Arch Warlock</span>
+<span class="trophy-checklist__desc"> — Открыть высшее умение в ветке колдовства.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Соберите руководства у торговок колдовством, сохранитесь, потратьте 35 очков на таланты ветки колдовства и 4 на одно её высшее умение. Очки в активных способностях не идут в порог 35.</p><p>После трофея вернитесь к сохранению с нераспределёнными очками.</p>
+<a href="#skill-manuals">Где искать руководства</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Creature of the Night" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/creature-of-the-night.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="creature-of-the-night" type="checkbox"/>
+<span><span class="trophy-checklist__name">Creature of the Night</span>
+<span class="trophy-checklist__desc"> — Открыть высшее умение в ветке вампиризма.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Доведите порчу до 15-го уровня и изучите высшее умение за очки. Ночью пейте кровь зверей и врагов, в бою используйте Voracious Bite, укус с лечением.</p><p>Для роста порчи кровь можно пить и при полном здоровье.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея A Dawnwalker is Born" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/a-dawnwalker-is-born.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="a-dawnwalker-is-born" type="checkbox"/>
+<span><span class="trophy-checklist__name">A Dawnwalker is Born</span>
+<span class="trophy-checklist__desc"> — Закончить пролог и выйти в открытый мир.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Продолжайте Smoke and Ashes, пока игра не разрешит покинуть Laslea и свободно исследовать долину.</p>
+<a href="#prologue">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея A Hero They Deserve" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/a-hero-they-deserve.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="a-hero-they-deserve" type="checkbox"/>
+<span><span class="trophy-checklist__name">A Hero They Deserve</span>
+<span class="trophy-checklist__desc"> — Покинуть Vale Sangora.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Сохранитесь. Ночью доберитесь до сломанного моста к западу от Coward's Path Shrine в Briar Sloughs.</p><p>С помощью Planeshift и Shadowstep поднимитесь по стене ущелья к открытым воротам и выберите уход из долины навсегда. После титров загрузите сохранение.</p>
+<a href="#early-endings">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Right Fist of the Knyaz" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-right-fist-of-the-knyaz.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-right-fist-of-the-knyaz" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Right Fist of the Knyaz</span>
+<span class="trophy-checklist__desc"> — Убить Ambrus на дуэли.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Заполните шкалу гнева Ambrus поручениями против его людей, откройте The Gilded Gauntlet и победите его в дуэли. На Duelist стоит выполнить необязательный пункт с ядом перед боем.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Mad Khan" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-mad-khan.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-mad-khan" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Mad Khan</span>
+<span class="trophy-checklist__desc"> — Убить Bakir во время игр.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Поднимите гнев Bakir до предела, начните The Lunar Game и доведите задание до победы над ним в Lunar Manor.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Dark Mistress" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-dark-mistress.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-dark-mistress" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Dark Mistress</span>
+<span class="trophy-checklist__desc"> — Устранить угрозу со стороны Xanthe.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Заполните её шкалу гнева, отправьтесь в Howling Keep по The Cycle of Love и завершите встречу. Победа в бою или соглашение с Xanthe дают трофей.</p><p>После боя её кровь пригодится для Make It Rain.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Sins of the Past" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/sins-of-the-past.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="sins-of-the-past" type="checkbox"/>
+<span><span class="trophy-checklist__name">Sins of the Past</span>
+<span class="trophy-checklist__desc"> — Пройти с Anca её путь к Font of Life.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Встретьтесь с Anca в Crossroads Inn на востоке долины. Последовательно выполните Echoes of Silenced Bells, Between the Words, Where Old Devils Lie и Stronger Than Achilles.</p><p>Побочный Most Precious Thing можно пропустить ради сохранения реликвии.</p>
+<a href="#personal-quests">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Misery Loves Company" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/misery-loves-company.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="misery-loves-company" type="checkbox"/>
+<span><span class="trophy-checklist__name">Misery Loves Company</span>
+<span class="trophy-checklist__desc"> — Найти мандрагору вместе с Lacra.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Начните A Friend Like This у северо-восточной стены Svartrau, затем пройдите Song of the Mountain, Hive and Seek и Our Rotten Roots.</p><p>Закончите The Night of Horrors до запуска её финального задания Midnight Reckoning.</p>
+<a href="#ending-branches">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Manumit" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-manumit.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-manumit" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Manumit</span>
+<span class="trophy-checklist__desc"> — Узнать все тайны Crake.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В конце What Moves the Dead лично проводите Crake в убежище и помогите с лечением. Выберите Let me help., Quite bad. и Sure.</p><p>Днём в Tantari выполните Distant Shadows, затем скажите Drogos, что пойдёте за Marat, и найдите его в течение суток в A Closer Look. Выполните оба задания до запуска Rise at Dawn.</p>
+<a href="#ending-branches">К шагу маршрута</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Untouchable" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/untouchable.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="untouchable" type="checkbox"/>
+<span><span class="trophy-checklist__name">Untouchable</span>
+<span class="trophy-checklist__desc"> — Сделать пять идеальных блоков подряд.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Оставьте одного обычного врага с хорошо заметным замахом. Удерживайте L1 и к моменту удара направляйте левый стик в нужную сторону. Повторите пять раз без сбоя.</p><p>Если трудно, снизьте сложность только в отдельной ветке после получения Uphill Battle.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Delivery Delay" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/delivery-delay.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="delivery-delay" type="checkbox"/>
+<span><span class="trophy-checklist__name">Delivery Delay</span>
+<span class="trophy-checklist__desc"> — Сорвать восемь перевозок врахиров.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Перехватите любые восемь из десяти отрядов на дорогах.</p><p>После победы над охраной осмотрите груз, прочитайте записку или освободите пленника, в зависимости от цели задания.</p><p>Сверяйте название в журнале: отряды движутся по дороге и не всегда стоят у метки.</p>
+<a href="#vrakhiri-transports">Маршруты перевозок</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Shadow Roamer" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/shadow-roamer.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="shadow-roamer" type="checkbox"/>
+<span><span class="trophy-checklist__name">Shadow Roamer</span>
+<span class="trophy-checklist__desc"> — Переместиться на 1000 метров с помощью вампирских способностей.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Ночью пользуйтесь Shadowstep и Planeshift при переходах. Простой способ добрать расстояние — выучить Shapeshift, превратиться в волка и пробежать по длинной дороге.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Miser" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/miser.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="miser" type="checkbox"/>
+<span><span class="trophy-checklist__name">Miser</span>
+<span class="trophy-checklist__desc"> — Иметь при себе 5000 денариев одновременно.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Обыскивайте лагеря и продавайте ненужные вещи, пока в кошельке не будет 5000. Отложите крупные покупки до уведомления о трофее.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Balanced Diet" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/balanced-diet.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="balanced-diet" type="checkbox"/>
+<span><span class="trophy-checklist__name">Balanced Diet</span>
+<span class="trophy-checklist__desc"> — Утолить жажду, выпив кровь десять раз.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Ночью выпейте кровь животных, людей или чудовищ. Для зачёта у Коэна должно отсутствовать хотя бы немного здоровья. В бою работает Voracious Bite.</p><p>При полном здоровье кормление идёт в порчу, но не в этот трофей.</p>
+<a href="#cleanup">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Mastery" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/mastery.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="mastery" type="checkbox"/>
+<span><span class="trophy-checklist__name">Mastery</span>
+<span class="trophy-checklist__desc"> — Улучшить одну активную способность до максимума.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Соберите руководства для Artery Strike и приобретите все ранги у соответствующей способности. Так вы одновременно подготовите удар для Better Safe than Sorry.</p><p>Подойдёт любая полностью улучшенная активная способность фехтования, колдовства или вампиризма.</p>
+<a href="#skill-manuals">Где искать руководства</a>
+</div>
+</div><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Unquenchable Thirst" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-unquenchable-thirst.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-unquenchable-thirst" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Unquenchable Thirst</span>
+<span class="trophy-checklist__desc"> — Узнать правду о Vicho.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Начните A Study in Crimson у Vicho в Svartrau и пройдите эпизод с Simeon на складе. В следующий дневной период возьмите у городского лекаря The Good Samaritan. Лучше сделать это до 9-го уровня дурной славы.</p><p>На южном поле фермы к югу от Svartrau победите двух волков, осмотрите тело через L2 и прочтите записку. Чтобы закончить историю, отдельно доложите лекарю днём и вернитесь к Vicho ночью.</p>
+<a href="#personal-quests">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Outcast" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-outcast.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-outcast" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Outcast</span>
+<span class="trophy-checklist__desc"> — Помочь Ocha найти своё место.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Возьмите The Heart Wants What It Wants у Ocha и Nora в таверне района Altenmarkt.</p><p>Ночью доберитесь через балкон в дом мясника Andrei, заберите кольцо из комнаты наверху для плана Ocha и вернитесь к ней. Трофей даёт завершение задания при любом исходе.</p>
+<a href="#personal-quests">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Together Forever" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/together-forever.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="together-forever" type="checkbox"/>
+<span><span class="trophy-checklist__name">Together Forever</span>
+<span class="trophy-checklist__desc"> — Остаться с семьёй во сне.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Сделайте отдельное сохранение перед дверью наверху Silts Tower. Откройте её в Home Sweet Home, четыре раза победите обе группы врагов и босса. Колодец оставьте в покое.</p><p>На пятом круге поговорите с семьёй, чтобы получить раннюю концовку. Загрузите сохранение внутри сна и исследуйте колодец, чтобы вернуться в долину.</p>
+<a href="#early-endings">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея The Tsarina's Favourite Human" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/the-tsarina-s-favourite-human.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="the-tsarina-s-favourite-human" type="checkbox"/>
+<span><span class="trophy-checklist__name">The Tsarina's Favourite Human</span>
+<span class="trophy-checklist__desc"> — Выполнить все пять заданий санжани.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Найдите Yawning Burrow к северу от Svartrau. Закончите Good Home, после чего откроются Come Hither, Burrow Sorrows, Pearly and Precious и Tiny Dancer.</p><p>Выполните все четыре и вернитесь к предводительнице, если хотите вернуть один игровой день.</p>
+<a href="#personal-quests">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Realmwalker" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/realmwalker.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="realmwalker" type="checkbox"/>
+<span><span class="trophy-checklist__name">Realmwalker</span>
+<span class="trophy-checklist__desc"> — Впервые попасть в Anachora.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>После победы над боярином выберите выпить его кровь, чтобы попасть в Anachora, потусторонний мир врахиров. Если пропустили, этот мир откроется в ветке с финальным боем против Brencis.</p>
+<a href="#three-boyars">К шагу маршрута</a>
+</div>
+</div></details><details class="spoiler"><summary>Скрытый трофей</summary>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Antique Aficionado" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/antique-aficionado.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="antique-aficionado" type="checkbox"/>
+<span><span class="trophy-checklist__name">Antique Aficionado</span>
+<span class="trophy-checklist__desc"> — Обнаружить древние руины.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>В прологе начните Deep Down в Laslea и спуститесь в подземные руины. Позже подойдёт и вылазка Unsealed Secrets из раскопок Xanthe: протиснитесь в щель в склоне по метке задания.</p>
+<a href="#prologue">К шагу маршрута</a>
+</div>
+</div></details>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Big-City Living" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/big-city-living.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="big-city-living" type="checkbox"/>
+<span><span class="trophy-checklist__name">Big-City Living</span>
+<span class="trophy-checklist__desc"> — Посетить Svartrau.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Зайдите за ворота большого города в центре долины во время первого визита на рынок.</p>
+<a href="#prepare-valley">К шагу маршрута</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Tour Guide Training" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/tour-guide-training.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="tour-guide-training" type="checkbox"/>
+<span><span class="trophy-checklist__name">Tour Guide Training</span>
+<span class="trophy-checklist__desc"> — Посетить все восемь поселений Vale Sangora.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>Пройдите пешком в каждое поселение. Uriash Village открывается по цепочке Lacra A Friend Like This → Song of the Mountain, остальные семь доступны после пролога.</p>
+<a href="#valley-settlements">Список восьми поселений</a>
+</div>
+</div>
+<div class="trophy-checklist__item">
+<img alt="Значок трофея Smuggler" class="trophy-checklist__icon" height="64" loading="lazy" src="media/trophies/smuggler.jpg" width="64"/>
+<div class="trophy-checklist__content">
+<label><input data-trophy="smuggler" type="checkbox"/>
+<span><span class="trophy-checklist__name">Smuggler</span>
+<span class="trophy-checklist__desc"> — Выручить 1000 денариев продажей серебра.</span></span>
+</label>
+</div>
+<div class="trophy-checklist__desc trophy-directions">
+<p>При дурной славе 4–8 продайте серебро специальному торговцу в Svartrau, пока выручка от сделок с ним не достигнет 1000 денариев.</p><p>Его дом стоит сразу справа от западного входа в Neustadt со стороны Middens. На карте ищите белый кубок. Торговлю можно открыть и раньше через письмо в Into the Den.</p>
+<a href="#prepare-valley">К шагу маршрута</a>
+</div>
+</div></div></section>
+
+<section aria-labelledby="mistakes-heading" class="mistakes" id="section-mistakes">
+<h2 class="section-heading" id="mistakes-heading">Частые ошибки</h2>
+<ul class="mistakes__list"><li>Менять сложность после старта. Для Uphill Battle выберите Duelist при создании игры и оставьте его до титров.</li><li>Перезаписывать единственный сейв после запуска финала. Храните копию до финальной цепочки, чтобы вернуться в долину.</li><li>Тратить игровые дни на ожидание без необходимости. Если действие двигает время, игра предупреждает об этом.</li></ul>
+</section>
+
+<footer class="guide-footer">
+<p>© 2026 Achiever</p>
+</footer>
+<button aria-label="Вернуться в начало" class="back-to-top" hidden="" id="btn-back-to-top" title="Наверх" type="button">
+<svg aria-hidden="true" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+
+<nav aria-label="Мобильные действия" class="action-bar" id="action-bar">
+<button class="action-bar__btn" data-action="open-toc" id="mob-toc" type="button">Содержание</button>
+<button class="action-bar__btn" id="mob-resume" type="button">Моё место</button>
+<button class="action-bar__btn" id="mob-next" type="button">Далее</button>
+</nav>
+
+<div aria-describedby="rewards-description" aria-labelledby="achievement-heading" aria-modal="true" class="achievement-modal" data-rewards-gallery="" hidden="" id="achievement-modal" role="dialog">
+<div class="achievement-modal__overlay"></div>
+<div class="achievement-modal__card">
+<header class="rewards-modal__header">
+<button aria-label="Закрыть награды" class="achievement-modal__close" id="achievement-close" type="button">×</button>
+<h2 class="achievement-modal__title" id="achievement-heading">Награды</h2>
+<p class="achievement-modal__desc" id="rewards-description">Отмечайте авторские ачивки кнопкой «Выполнено». Любую отметку можно отменить. Эти пять ачивок не влияют на 100% гайда.</p>
+</header>
+<div class="rewards-modal__body">
+<a class="quick-actions__btn rewards-modal__create reward-action--glow" href="https://app.achvr.ru/constructor" rel="noopener" target="_blank">Создать свою ачивку</a><p aria-atomic="true" aria-live="polite" class="rewards-modal__count" data-rewards-count="">Выполнено 0 из 5</p>
+<div class="rewards-grid">
+<article aria-labelledby="reward-training-title" class="reward-card" data-custom-reward="training">
+<div class="reward-card__art"><img alt="Гравированный медальон с мечом и раскрытым руководством" height="458" src="media/rewards/training.webp?v=eclipse" width="480"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Необычная</p>
+<h3 class="reward-card__title" id="reward-training-title">Теория с клинком</h3>
+<p class="reward-card__condition" id="reward-training-condition">Найдите руководство по фехтованию и изучите открытый им приём.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-training-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=zebckgcwu33p" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-training-title reward-training-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-night-crossing-title" class="reward-card" data-custom-reward="night-crossing">
+<div class="reward-card__art"><img alt="Каменный мост и красный фонарь под луной" height="456" src="media/rewards/night-crossing.webp?v=eclipse" width="480"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Обычная</p>
+<h3 class="reward-card__title" id="reward-night-crossing-title">Ночная переправа</h3>
+<p class="reward-card__condition" id="reward-night-crossing-condition">Перейдите реку по мосту ночью, пока Коэн в вампирской форме.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-night-crossing-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=y3ujddvuyrvq" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-night-crossing-title reward-night-crossing-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-scout-title" class="reward-card" data-custom-reward="scout">
+<div class="reward-card__art"><img alt="Две башни в горной долине под затмением" height="455" src="media/rewards/scout.webp?v=eclipse" width="480"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Редкая</p>
+<h3 class="reward-card__title" id="reward-scout-title">Разведка на высоте</h3>
+<p class="reward-card__condition" id="reward-scout-condition">Поднимитесь на две разные обзорные башни за один игровой день.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-scout-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=7qg313dehhfi" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-scout-title reward-scout-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-herbalist-title" class="reward-card" data-custom-reward="herbalist">
+<div class="reward-card__art"><img alt="Склянка с алым зельем и веточки трав" height="480" src="media/rewards/herbalist.webp?v=eclipse" width="456"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Обычная</p>
+<h3 class="reward-card__title" id="reward-herbalist-title">Зельевар у дороги</h3>
+<p class="reward-card__condition" id="reward-herbalist-condition">Приготовьте зелье и используйте его в следующем бою.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-herbalist-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=jomrreohufzy" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-herbalist-title reward-herbalist-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-at-dawn-title" class="reward-card" data-custom-reward="at-dawn">
+<div class="reward-card__art"><img alt="Багровый рассвет над крепостью" height="480" src="media/rewards/at-dawn.webp?v=eclipse" width="457"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Авторская ачивка · Необычная</p>
+<h3 class="reward-card__title" id="reward-at-dawn-title">Успеть к рассвету</h3>
+<p class="reward-card__condition" id="reward-at-dawn-condition">Начните задание ночью и завершите его после смены времени суток.</p>
+<p class="reward-card__status">Не получена</p>
+<a aria-describedby="reward-at-dawn-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=kkai1bioe036" rel="noopener" target="_blank">Добавить в Ачивер</a>
+<button aria-describedby="reward-at-dawn-title reward-at-dawn-condition" aria-pressed="false" class="reward-card__toggle" data-reward-toggle="" type="button">Выполнено</button>
+</div>
+</article>
+<article aria-labelledby="reward-completion-title" class="reward-card" data-completion-reward="">
+<div class="reward-card__art"><img alt="Серебряный кубок в терновом венце на фоне затмения" height="480" src="media/rewards/completion.webp?v=eclipse" width="459"/></div>
+<div class="reward-card__body"><p class="reward-card__type">Награда за 100% · Легендарная</p>
+<h3 class="reward-card__title" id="reward-completion-title">До последнего рассвета</h3>
+<p class="reward-card__condition">Отметьте все шаги маршрута и трофеи. Награда откроется автоматически.</p>
+<p class="reward-card__status">Не получена</p>
+<p class="reward-card__progress" data-completion-progress="">Шаги и трофеи: 0 из 55</p>
+<a aria-describedby="reward-completion-title" class="reward-card__claim" href="https://app.achvr.ru/?rewardLinkCode=wivpaaa8fih1" rel="noopener" target="_blank">Добавить в Ачивер</a>
+</div>
+</article>
+</div>
+</div>
+<footer class="rewards-modal__footer"><button class="achievement-modal__btn achievement-modal__btn--close" id="btn-close-achievement" type="button">Вернуться к гайду</button></footer>
+</div>
+</div>
+
+<div aria-modal="true" class="lightbox" hidden="" id="lightbox" role="dialog">
+<button aria-label="Закрыть" class="lightbox__close" type="button">×</button>
+<img alt="" class="lightbox__img" id="lightbox-img" src=""/>
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/guide.js"></script>
+</body>
+</html>
